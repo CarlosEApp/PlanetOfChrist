@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet of Christ</title>
+     <link rel="shortcut icon" id="liskIMG" href="src/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="div_conntainer">
+      <a  id="a_inicio" href="#" title="inicio"></a>
+        <header>
+            <div id="header_um">
+                <div id="div_header_img"><img src="src/logo2.png" alt="" width="50"> <h2 id="h2_header_Titulo">Planet of Christ</h2></div> <div id="div_header_butoon_um"><button class="btnH" onclick="Home()">Home</button>   <button class="btnH">Filmes</button> <button class="btnH">Sermões</button> <button class="btnH"> Desbravadores</button> <button class="btnH">Aventureiros</button> <button class="btnH" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i> </button> <button onclick="menu()">Menu <i class="fa-solid fa-bars"></i></button></div>
+            </div>
+            <div id="header_dois">
+              <div id="divPesq"> <div id="inputpesq"><input id="pesquise" type="text" placeholder="Pesquisa.."></div><i id="pesq-1" onclick="pesquisarProduto()" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </header>
+
+         <div id="divConfgPerfil">
+           <div id="MeuPerfil">
+            <label id="fecharclickperfil" for=""> X </label>
+             <label id="lblFecharPerf" for="" onclick="fecharperf()"><i id="ffx" class="fa-solid fa-left-long" ></i></label> <br><br>
+               <h2>Perfil</h2>
+                <div id="meuPerfilIMGfllex">
+                 <div id="IMGmeuPerfil"> <img id="MeuPerFoto" src="src/Profile-PNG-Images.png" alt="" width="70"></div> <div id="MuPeerfilNome"> <label id="labeStars" for="">🌟</label><label id="MeuPerNome" for="">Nome</label> <label id="MeuPerEmail" for="">Email</label></div>
+                </div><br>     <label id="labellogarLater" for="" onclick="labelLog()">Login Google</label>
+               <div id="starsAvaliar"> 
+             <label id="labeAvaliação" for="">🌟 Avaliação</label>
+           </div><br>
+          <div id="EndereçoUser">
+           <div id="labeDivLater">
+            <label id="homeLater" for=""><i class="fa-solid fa-house"></i> Home</label><br>
+             <label id="FilmesLaterLater" for=""><i class="fa-solid fa-video"></i> Filmes</label><br>
+              <label id="SermõesLater" for="">📖 Sermões</label><br>
+               <label id="DevocionaisLater" for="">🙏 Devocional</label><br>
+                <label id="Vida_e_saudeLater" for="">🌱 Vida & Saúde</label><br>
+                 <label id="telaCheia" for="" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i> Tela</label><br>
+                  <label id="DesbravadoresLater" for=""><img src="src/D1(2).png" alt="" width="16px"> Desbravadores</label><br>
+                   <label id="AventureirosLater" for=""><img src="src/Logo dos Aventureiros.png" alt="" width="18px"> Aventureiros</label><br>
+                    <label id="SobreLater" for="">📦 Sobre</label><br>
+                     <label onclick="Admin()" for=""><i class="fa-solid fa-layer-group"></i> Administração</label><br>
+              </div>
+            </div><br>
+           <label id="desconectlab" onclick="LocalUserClouse()" for=""><i class="fa-sharp-duotone fa-solid fa-lock"></i> Desconectar conta</label>
+         </div>
+       </div>
+
+       <main>
+         <div id="div_maim_flex">
+            <div id="div_lateral">
+              <button id="PerfilBarra" onclick="PerfilB()"><i class="fa-solid fa-circle-user"></i> Perfil <b id="bbg"><i class="fa-brands fa-google"></i>oogle</b></button>       
+          </div>
+            <div id="div_maim_um">
+             <div id="bannersDiv" class="carousel">
+              <div class="carousel-inner">
+               <div class="carousel-item active">
+                <img id="banner01" src="src/banner um.png" alt="Banner 1">
+                 </div>
+                  <div class="carousel-item">
+                   <img id="banner02" src="src/banner um.png" alt="Banner 2">
+                    </div>
+                      <div class="carousel-item">
+                       <img id="banner03" src="src/banner um.png" alt="Banner 3">
+                        </div>
+                         <div class="carousel-item">
+                          <img id="banner04" src="src/banner um.png" alt="Banner 4">
+                           </div>
+                            <div class="carousel-item">
+                             <img id="banner05" src="src/banner um.png" alt="Banner 5">
+                              </div>
+                       </div>
+                             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                             <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+                <br>
+                <div id="divSelect"> 
+                <select name="Seleção de conteúdo" id="selectListaUm" title="Seleção de conteúdo">
+                        <option value="">Busque aqui por:</option>
+                          <option value="VD Semões">Sermões em videos</option>
+                           <option value="devocional">Videos Devocionais</option>
+                            <option value="vida&saúde">Videos Vida & saúde</option>
+                             <option value="Estudos">Estudos Bíblicos</option>
+                             <option value="Filmes">Filmes</option>
+                              <option value="series">Series</option>
+                </select></div>
+              <div id="Devocional_para_hoje">      
+                <div id="videoDevocional">
+                  <div>
+                      <div id="devflex"> <h3>Devocional</h3>  <label id="lblDataDevo" for="data">Data</label> <label id="lblHoraDevo" for="">Hora</label></div> 
+                       <iframe id="UrlDevo" width="" height="" 
+                         src="" 
+                       title="YouTube video player" 
+                       frameborder="0" 
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                       allowfullscreen >   
+                     </iframe>
+                         <div id="devflex2"> <button>Ver Mais Devocionais</button> </div>
+                    </div>
+                      <div>
+                  
+                      <div id="devflex"> <h3>Vida & Saúde</h3>   <label id="lblDataVida" for="data">Data</label> <label id="lblHoraVida" for="">Hora</label></div>
+                       <iframe id="UrlVidaSaude" width="" height="" 
+                         src=""
+                       title="YouTube video player" 
+                       frameborder="0" 
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                       allowfullscreen>
+                     </iframe><div id="devflex2"> <button>Ver Mais Vida & Saúde</button> </div></div>
+                </div>
+                
+              </div>
+              <div>
+                  <h2 id="h2Esperança">Faça seu Estudo Bíblico com a<br> Esperança <b id="bEsp"> pelo WhatsApp <i class="fa-brands fa-whatsapp"></i></b></h2>
+              <div id="EstudoszapDiv">      
+               <div> <img src="src/ST03.png" alt=""></div> <div> <br><p id="P_estudo">Aponte a camera do seu celular<br>para o Qr-code</p> <img src="src/QRCODE_Esperança_Geral.png" alt=""></div>
+              </div>
+            </div>
+        
+            </div>           
+                 <div id="divEstudosB">  
+                <h3 id="h2Esperança">Estudos Bíblicos<br> <b id="bPDF">📄 PDF</b> </h3>              
+                <div id="divflexEstudos">
+                  <img id="estudo01" src="src/stu/1.jpg" alt=""> <img id="estudo02" src="src/stu/2.jpg" alt=""><img id="estudo03" src="src/stu/3.jpg" alt=""><img id="estudo04" src="src/stu/4.jpg" alt=""> <img id="estudo05" src="src/stu/5.jpg"  alt="">
+                  <img id="estudo06" src="src/stu/6.jpg" alt=""><img id="estudo07" src="src/stu/7.jpg" alt=""><img id="estudo08" src="src/stu/8.jpg" alt=""><img id="estudo09" src="src/stu/9.jpg" alt=""> <img id="estudo10" src="src/stu/10.jpg" alt="">
+                  <img id="estudo11" src="src/stu/11.jpg" alt=""> <img id="estudo12" src="src/stu/12.jpg" alt=""><img id="estudo13" src="src/stu/13.jpg" alt=""><img id="estudo14" src="src/stu/14.jpg" alt=""><img id="estudo15" src="src/stu/15.jpg" alt="">
+                  <img id="estudo16" src="src/stu/16.jpg" alt=""><img id="estudo17" src="src/stu/17.jpg" alt=""><img id="estudo18" src="src/stu/18.jpg" alt=""><img id="estudo19" src="src/stu/19.jpg" alt=""><img id="estudo20" src="src/stu/20.jpg" alt="">
+                  <img id="estudo21" src="src/stu/21.jpg" alt=""><img id="estudo22" src="src/stu/22.jpg" alt=""><img id="estudo23" src="src/stu/23.jpg" alt=""><img id="estudo24" src="src/stu/24.jpg" alt=""><img id="estudo25" src="src/stu/25.jpg" alt="">
+                  <img id="estudo26" src="src/stu/26.jpg" alt=""><img id="estudo27" src="src/stu/27.jpg" alt="">
+                </div> <br>  <i id="rolar" onclick="role()" class="fa-solid fa-eject"></i>  
+                   <button id="btnLeft2" >&#10094;</button>
+                    <button id="btnRight2" >&#10095;</button>
+                  
+              </div></div>
+                <div id="filmesdiv">
+                     <h2>Encontre filmes online</h2>
+                     <div dir="divFilme01">
+                      <div id="filmesFlex">
+                        <div id="ultimoHomem"> <img src="src/post_Até_ultimo_homem.png" alt="" width="1">  <button onclick="filmesGospel()">Encontre Filmes</button></div>
+                         <div id="dvP"><p><b id="BBFilmes">Nota de responsabilidade:</b>  As indicações de sites são apenas sugestões informativas.
+                           Não temos vínculo ou parceria com os sites mencionados e não nos responsabilizamos pela legalidade ou pelo conteúdo disponibilizado. <br><br>
+                           <b id="BBOrintaçao">Orientação: </b>Ao acessar os sites indicados, procure filmes que transmitam inspiração, fé, esperança e aprendizados para a vida.
+                            Essas histórias podem fortalecer valores, trazer conforto e motivação, além de oferecer momentos de reflexão e alegria.
+                            <br><br>
+                          </p></div>
+                      </div>
+               </div>
+             </div>
+            </div>
+        </main>
+        <footer>
+            <div id="footerUm">
+              <div> <img  id="footerIMG" src="src/logo2.png" alt="" width="20"></div> <h2>Planet of Christ</h2>
+                  <div>
+               <p id="footerP"><b id="bpfooter" >Quem Somos</b><br>
+                  No Planet of Christ, nossa missão é levar a mensagem transformadora do Evangelho a todas as nações.
+                  Compartilhamos sermões em vídeo, devocionais, meditações e estudos bíblicos para fortalecer a fé e edificar vidas. 
+                  Também oferecemos filmes gospel e um espaço para pedidos de oração, porque acreditamos no poder da intercessão e
+                   na esperança que vem de Cristo. Somos uma comunidade que busca viver e anunciar o amor de Deus,
+                    unindo corações em todo o planeta.</p>
+            </div>
+            </div>
+        
+        </footer>
+
+    </div>
+     <script src="js/index.js"></script>
+</body>
+</html>

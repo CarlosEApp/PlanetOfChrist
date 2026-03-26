@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="../src/Logo2.png" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/cadastros.css">
+</head>
+<body>
+    <div id="divGeral">
+  <header id="header">
+    <div id="header01">
+       <h1>Cadastros</h1> <button>Menu</button>
+    </div>
+     <div id="header02">
+     <select name="Cadastros" id="selectCadastros" onchange="cadastroSelect()" title="Cadastros">
+          <option value="">Novo Cadastros </option>
+           <option value="Produtos">Cadastros</option>        
+            <option value="Clientes">Clientes</option>
+             <option value="Vendas">Vendas</option>
+              <option value="Colaboradores">Colaboradores</option>        
+              </select> 
+          <select name="Cadastrados" id="selectCadastrados" onchange="cadastradosSelect()" title="Cadastrados">
+            <option value="">Lista Cad. </option>
+             <option value="Produtos">Cadastrados</option>        
+              <option value="Clientes">Clientes</option>
+               <option value="Vendas">Vendas</option>
+                <option value="Colaboradores">Colaboradores</option>  
+       </select> 
+    </div>
+  </header>
+  <main id="main">
+  <div id="divMain01">
+  <div id="divCadProd">
+   <div id="h2Selec">
+     <label id="lblFecharColab" for="" onclick="fecharcolab()"><i id="ffx" class="fa-solid fa-left-long" ></i> voltar</label><br>
+     <h2>Cadastro de Produtos</h2> 
+         <select title="Lista de produtos para venda" name="" id="ListaCategoriaVendas">
+          <option value=''>Select lista:</option>
+           <option value='Destaques'>Em destaque</option>
+            <option value='Lançamentos'>Lançamentos</option>
+             <option value="VD Semões">VD. Sermões</option>
+              <option value="devocional">VD. Devocionais</option>
+               <option value="vida&saúde">VD. Vida & saúde</option>
+                <option value="Estudos">Estudos Bíblicos</option>
+                 <option value="Filmes">Filmes</option>
+                   <option value="series">Series</option>
+           
+            </select></div>     
+             <a id="init" href="#" title="incio"></a>     
+                 <br>
+                 <div id="divflex01">
+                  <label  for="">Produto (ID) <br>
+                   <input id="Input_ID" type="text" placeholder="ID...">
+                    </label> <br>
+                     <label for="">Titulo <br>
+                      <input id="Input_titulo" type="text" placeholder="Titulo...">
+                       </label> <br>
+                        <label for="">Sub-titulo <br>
+                        <input id="Input_Subtitulo" type="text" placeholder="Sub-titulo...">
+                         </label> <br>
+                               <label for="">Observação.<br>
+                                <input id="Input_OBS" type="text" placeholder="OBS">
+                                 </label> <br>
+                                  <label for="">Referência <br>
+                                   <select name=""  id="Input_Referencia" title="Referencia de lista">
+                                    <option value=''>Referencia:</option>
+                                     <option value="diversos">Diversos</option>
+                                      <option value="celular">Celulares</option>
+                                       <option value="desktop">PC Desktop</option>
+                                        <option value="capa_celular">Capa de Celular</option>
+                                         
+                                </select>
+                                 </label>
+                                   <br>  <label for="">Links <br>
+                                    <input id="Input_link" type="text" placeholder="Links..">
+                                     </label> 
+                                      <br> <label for="">Tamanhos (<label id="idTamanhos"></label>) <br>
+                                       <select name=""  id="Input_Tamanhos" title="Tamanhos">
+                                        <option value=''>Tamanos:</option>
+                                         <option value="P">P</option>
+                                          <option value="M">M</option>
+                                           <option value="G">G</option>
+                                             <option value="GG">GG</option> 
+                                              <option value="XG">XG</option>  
+                                                <option value="XGG">XGG</option>    
+                                                <option value="Limpar">Limpar (sem medidas)</option>                                      
+                                     </select>
+                                      </label>                         
+                                        <br> 
+                                        <label for="">Cores (<label id="idCores"></label>) <br>
+                                         <select name=""  id="Input_cores" title="Cores">
+                                          <option value=''>Cores:</option>
+                                           <option value="preto">Preto</option>
+                                            <option value="branco">Branco</option>
+                                             <option value="azul">Azul</option>
+                                              <option value="vermelho">Vermelho</option>
+                                               <option value="beje">Beje</option>
+                                                <option value="laranja">Laranja</option>
+                                                 <option value="roxo">Roxo</option>
+                                                  <option value="verde">Verde</option>
+                                                   <option value="amarelo">Amarelo</option>
+                                                    <option value="cinza">Cinza</option>
+                                                     <option value="marrom">Marrom</option>
+                                                      <option value="rosa">Rosa</option>
+                                                       <option value="vinho">Vinho</option>
+                                                        <option value="caqui">Caqui</option>  
+                                                         <option value="Limpar">Limpar (sem cores)</option>                                                                                   
+                                       </select>
+                                        </label> 
+                                         <br><label for="">Qual o sexo? <br>
+                                           <select id="Input_sexo"  name="sexo?" title="Qual o Sexo?">
+                                            <option value="">Sexo?</option>
+                                             <option value="masculino">Masculino</option>
+                                              <option value="feminino">Feminino</option>
+                                               <option value="unisex">Unisex</option>  
+                                        </select> </label> 
+                                           <label for="">Valor  <br>
+                                            <input id="Input_Valor" type="text" placeholder="00,00">
+                                            </label> <br>
+                                             <label for="">Valor com desconto R$ <br>
+                                              <input id="Input_ValorDesconto" type="text" placeholder="00,00">
+                                               </label><br>                                   
+                                           <br><label for="">Texto <br>
+                                            <textarea id="Input_Texto" type="text" placeholder="Digite seu texto..."></textarea>                                         
+                                             </label>   </div> <br>
+                                              <div id="divcadImg1">
+                                               <div><img id="imgcad" onclick="verImagem()" src="https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/logo%2FLogo2.png?alt=media&token=f1974392-e982-4cf4-9d9e-2103867ddd08" alt="" ></div>
+                                                <div><input id="files" type="file" title="foto files">
+                                                 <i id="clickImagem" onclick="imagens()" class="fa-solid fa-images"><b class="bb1">Imagem</b> </i><br>
+                                                  <div id="myProgress" title="Progresso">
+                                                  <div id="myBarIMG1">10%</div>
+                                                   </div></div> <br><div id="divEscoder"><img id="imgcad2" src="https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/logo%2FLogo2.png?alt=media&token=f1974392-e982-4cf4-9d9e-2103867ddd08"alt="" width="50"> <img id="imgcad3" src="https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/logo%2FLogo2.png?alt=media&token=f1974392-e982-4cf4-9d9e-2103867ddd08"alt="" width="50">
+                                                     <img id="imgcad4" src="https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/logo%2FLogo2.png?alt=media&token=f1974392-e982-4cf4-9d9e-2103867ddd08" alt="" width="50"> <img id="imgcad5" src="https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/logo%2FLogo2.png?alt=media&token=f1974392-e982-4cf4-9d9e-2103867ddd08" alt="" width="50"> 
+                                                     <img id="imgcad6" src="https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/logo%2FLogo2.png?alt=media&token=f1974392-e982-4cf4-9d9e-2103867ddd08" alt="" width="50"></div></div><br><br>
+                                                    <div id="salvarcadProdutos">
+                                                     <button  onclick="SalvarCadProdutos()">Salvar Cadastro.</button></div>
+         </div>
+
+         <div id="Lista_produtos">
+            <label id="lblFecharCadastradoslist" for="" onclick="FecharCadastradoslist()"><i  class="fa-solid fa-left-long" ></i> voltar</label><br>
+          <h2>Lista de Produtos</h2>
+          <label id="lblListaItens"> Lista Vázia!</label>
+          <div id="listProd"></div>
+         </div>
+    
+       </div>
+     </main>
+    <footer id="footer">
+   </footer>
+
+   <script src="../js/cadastros.js"></script>
+</div>
+</body>
+</html>
