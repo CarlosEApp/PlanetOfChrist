@@ -460,7 +460,8 @@ document.body.style.paddingRight = '0px';
 
 
 function filmesGospel(){
-  Swal.fire('','Página em desenvolvimento!','')
+//  Swal.fire('','Página em desenvolvimento!','')
+window.open('https://sites.google.com/view/supremoaudiofilm/at%C3%A9-o-ultimo-homem-filme-completo-dublado','_blank')
 }
 
 
@@ -483,10 +484,10 @@ function filmesGospel(){
 
 /////////////////Botões links estudos bíblicos//////////////////////////////////////////
 document.getElementById('estudo01').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/sem-resposta-voz%201.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%201.pdf?alt=media&token=5c131edd-7b9d-4099-96ff-d74787caba0e', '_blank')
 });
 document.getElementById('estudo02').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%202.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%202.pdf?alt=media&token=88f81eee-3c09-4f4f-8e72-f54a0b513a5f', '_blank')
 });
 document.getElementById('estudo03').addEventListener('click',function(){
   window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%203.pdf', '_blank')
