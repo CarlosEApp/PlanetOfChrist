@@ -490,79 +490,79 @@ document.getElementById('estudo02').addEventListener('click',function(){
   window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%202.pdf?alt=media&token=88f81eee-3c09-4f4f-8e72-f54a0b513a5f', '_blank')
 });
 document.getElementById('estudo03').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%203.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%203.pdf?alt=media&token=3b59c048-c9a8-4aff-8c66-e51b03ba99c4', '_blank')
 });
 document.getElementById('estudo04').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%204.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%204.pdf?alt=media&token=26393768-86db-4a3b-aab7-b082e6eed154', '_blank')
 });
 document.getElementById('estudo05').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%205.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%205.pdf?alt=media&token=1cf50e42-2ae1-4b2d-a7b9-8610e8a2c29f', '_blank')
 });
 document.getElementById('estudo06').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%206.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%206.pdf?alt=media&token=4cfed5c2-0bf8-4fdc-8091-bc8d214973a0', '_blank')
 });
 document.getElementById('estudo07').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%207.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%207.pdf?alt=media&token=2f36ff47-2846-47a4-ac90-c515fd2baab1', '_blank')
 });
 document.getElementById('estudo08').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%208.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%208.pdf?alt=media&token=5e9d4a87-1180-4f37-bc61-3cdc042b0233', '_blank')
 });
 document.getElementById('estudo09').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%209.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%209.pdf?alt=media&token=515ef341-f67a-4fd2-af50-19c231c8a3a7', '_blank')
 });
 document.getElementById('estudo10').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2010.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2010.pdf?alt=media&token=82be6c2f-b639-4d6b-b92d-b7eff108cdab', '_blank')
 });
 document.getElementById('estudo11').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2011.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2011.pdf?alt=media&token=9389dee6-e858-43dc-a124-2f2ab5ae3780', '_blank')
 });
 document.getElementById('estudo12').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2012.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2012.pdf?alt=media&token=a0930a88-f661-4157-99dd-e1a7dadf6b05', '_blank')
 });
 document.getElementById('estudo13').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2013.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2013.pdf?alt=media&token=3d8578f8-56c9-409a-91bf-53b82ec36f38', '_blank')
 });
 document.getElementById('estudo14').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2014.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2014.pdf?alt=media&token=7d6f0cf4-e64e-4674-972a-80b859f84b5e', '_blank')
 });
 document.getElementById('estudo15').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2015.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2015.pdf?alt=media&token=1ef4c2ec-9c7f-4e50-a98a-7c9a0327ed4a', '_blank')
 });
 document.getElementById('estudo16').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2016.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2016.pdf?alt=media&token=e7ac7d69-90bc-4b0f-9bad-8ac00e23455a', '_blank')
 });
 document.getElementById('estudo17').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2017.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2017.pdf?alt=media&token=120368a2-bd52-44c7-87f6-2c43d18b2ec9', '_blank')
 });
 document.getElementById('estudo18').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2018.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2018.pdf?alt=media&token=e9e1da18-3512-4116-8c4b-057938495d64', '_blank')
 });
 document.getElementById('estudo19').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2019.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2019.pdf?alt=media&token=ac94c277-4781-4f2c-a02d-c50f49f5fb4c', '_blank')
 });
 document.getElementById('estudo20').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2020.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2020.pdf?alt=media&token=a2e1a943-2c5b-4abf-8f6c-444adbe365c1', '_blank')
 });
 document.getElementById('estudo21').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2021.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2021.pdf?alt=media&token=af93475d-ba1c-400e-9271-bb02fc4dd68e', '_blank')
 });
 document.getElementById('estudo22').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2022.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2022.pdf?alt=media&token=f3b61667-7010-42db-9267-de57c9e55416', '_blank')
 });
 document.getElementById('estudo23').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2023.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2023.pdf?alt=media&token=4d15445b-c699-47c3-be6f-0b4e2a57565d', '_blank')
 });
 document.getElementById('estudo24').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2024.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2024.pdf?alt=media&token=3efa17ef-c834-41c2-a716-93991a0a3f1e', '_blank')
 });
 document.getElementById('estudo25').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2025.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2025.pdf?alt=media&token=8b8b8f97-5505-40dc-9658-a514bd82da64', '_blank')
 });
 document.getElementById('estudo26').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2026.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2026.pdf?alt=media&token=7b48e3f5-c1c5-49c2-b4fc-d32f82d718ba', '_blank')
 });
 document.getElementById('estudo27').addEventListener('click',function(){
-  window.open('http://deptos.adventistas.org.s3.amazonaws.com/ministerial/portal-pastor/pt/estudos-biblicos/ouvindo-a-voz-de-deus-completo/voz%2027.pdf', '_blank')
+  window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2027.pdf?alt=media&token=191c62dc-09f9-4bf8-b1f0-8918696c8907', '_blank')
 });
 
 
