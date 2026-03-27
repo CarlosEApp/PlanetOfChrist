@@ -101,6 +101,6 @@ main{
      font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
 }
 #label{
-     font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+     font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
      color: red;
 }
