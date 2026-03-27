@@ -14,9 +14,7 @@ var firebaseConfigure = {
   measurementId: "G-PML0R4VJD1"
 };
 firebase.initializeApp(firebaseConfigure);
-
 /////////////////////////////////////////////////////////////////////////////
-
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -59,7 +57,6 @@ sessionStorage.setItem('data', data)
 localStorage.setItem('data', data)
 localStorage.setItem('hora', timeString)
 }, 1000)
-
 //Banners iniciação
 function iniciar_banners(){
 var bnn=firebase.firestore()
@@ -78,7 +75,6 @@ document.getElementById('banner05').src=doc.Imagem05;
 })
 }
 iniciar_banners()
-
 //Menu
 function fecharperf(){
 document.getElementById("divConfgPerfil").classList.remove("divConfgPerfil-ativo");
@@ -89,7 +85,6 @@ function menu(){
 document.getElementById('fecharclickperfil').addEventListener('click',function(){
  fecharperf()
 })
-
 //carrocel
 let currentIndex = 0;
 function moveSlide(direction) {
@@ -118,7 +113,6 @@ function loop(timestamp) {
 // inicia o loop
 requestAnimationFrame(loop);
 /////////////////////
-
 //Adiministrador Geral
 var adbb = firebase.firestore();
 var produtosRef = adbb.collection(`Admin`);
@@ -134,7 +128,6 @@ setTimeout(function(){
 },2000)
 })
 })
-
 // Administrador
 function Admin(){
 //  window.open('html/cadastros.html','_blank')
@@ -179,7 +172,6 @@ document.getElementById("entrebtn").addEventListener('click',function(){
 var resp1= sessionStorage.getItem('PassW01')
 var resp2= sessionStorage.getItem('PassW02')
 var pass = document.getElementById('inputAD').value;
-
 if(pass== resp1|| pass== resp2){
 swal('Sucesso','Você seráredirecionado(a)!\n (Tela de cadastros!)','success');
 setTimeout(function(){
@@ -190,9 +182,7 @@ swal('Senha incorreta!','','error');
 }
 })
 };
-
 // Videos devocionais e vida $ saúde...
-
 function videosDevos(){
  var hora=sessionStorage.getItem('hora')
  var data= sessionStorage.getItem('data')
@@ -210,13 +200,11 @@ document.getElementById('UrlDevo').src="https://www.youtube.com/embed/"+ result;
 document.getElementById('lblDataDevo').innerHTML=`${doc.OBS}`
 document.getElementById('lblHoraDevo').innerHTML=`${doc.Hora_Atualizada}`
  }else{
-
  }
 })
 })
 //Vida & saúde
 setTimeout(function(){
-
 var vdV= firebase.firestore()
  var produtosRef = vdV.collection("vida&saúde");
  produtosRef.get().then((querySnapshot) => {
@@ -237,7 +225,6 @@ var vdV= firebase.firestore()
 },100)
 }
 videosDevos()
-
 //Ir para o topo da pagina
 function Home(){
   document.getElementById('a_inicio').click()
@@ -251,11 +238,7 @@ Home()
 document.getElementById('homeLater').addEventListener('click', function(){
 Home()
 })
-
-
 ///////////////////////////////////////////////////////////////////////////// 
-
-
 var listTab2 = document.getElementById('divflexEstudos');
 var btnLeft2 = document.getElementById('btnLeft2');
 var btnRight2 = document.getElementById('btnRight2');
@@ -265,7 +248,6 @@ listTab2.scrollBy({ left: -300, behavior: 'smooth' }); // rola 300px para a esqu
 btnRight2.addEventListener('click', () => {
   listTab2.scrollBy({ left: 300, behavior: 'smooth' }); // rola 300px para a direita
 });
- 
 function Perfilclick(){
 loginComGoogle()
 }
@@ -298,7 +280,6 @@ var nome2= resp[1]
 var Usuário=`Olá, ${nome1} ${nome2}`;
 var Email= user.email;
 var Foto= user.photoURL
-
 //document.getElementById('lblperfilnome').innerHTML=`Olá, ${nome1} ${nome2}`;
 document.getElementById('MeuPerNome').innerHTML=`Olá, ${nome1} ${nome2}`;
 document.getElementById('MeuPerEmail').innerHTML=`${Email}`
@@ -307,7 +288,6 @@ localStorage.setItem('GoogleEmail',`${Email}` )
 localStorage.setItem('GoogleFoto',`${Foto}` )
 //document.getElementById('fotoPertfil').src=`${user.photoURL}`;
 document.getElementById('MeuPerFoto').src=`${user.photoURL}`;
-
 lblG.innerHTML='Logado'
 lblG.id='labellogarLater_'
 var bbdd=document.getElementById('bbg');
@@ -315,7 +295,6 @@ var btnperfil=document.getElementById('PerfilBarra');
 btnperfil.id='PerfilBarra_'
 btnperfil.title='Conectado "ATIVO"'
 bbdd.id='bbg_'
-
 var ddg= firebase.firestore()
 ddg.collection('UsuáriosGoogle').doc(`${user.email}`).set({
 Nome:user.displayName,
@@ -349,7 +328,6 @@ var logEmail= localStorage.getItem('GoogleEmail')
 if(!logEmail|| logEmail==''){
 var bbdd=document.getElementById('bbg');
 var btnperfil=document.getElementById('PerfilBarra');
-
 lblG.innerHTML='Logar com o google'
 lblG.id='labellogarLater'
 btnperfil.id='PerfilBarra'
@@ -404,7 +382,6 @@ bbdd.id-'bbg'
 }
 })
 }
-
 //localStorage.setItem('Rua','')
 //localStorage.setItem('Bairro','')
 //localStorage.setItem('Cidade','')
@@ -461,7 +438,8 @@ document.body.style.paddingRight = '0px';
 
 function filmesGospel(){
 //  Swal.fire('','Página em desenvolvimento!','')
-window.open('https://sites.google.com/view/supremoaudiofilm/at%C3%A9-o-ultimo-homem-filme-completo-dublado','_blank')
+window.open('html/filmes.html','_blank')
+//window.open('https://sites.google.com/view/supremoaudiofilm/at%C3%A9-o-ultimo-homem-filme-completo-dublado','_blank')
 }
 
 
