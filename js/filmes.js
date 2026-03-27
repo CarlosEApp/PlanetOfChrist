@@ -31,7 +31,7 @@ produtosRef.get().then((querySnapshot) => {
     var div2= document.createElement('div');
     var div3= document.createElement('div');
     var img = document.createElement('img');
-    var titulo = document.createElement('h3');
+    var titulo = document.createElement('h5');
     var subtitulo = document.createElement('p');
      var label = document.createElement('label');
    // var botaoEditar = document.createElement('button');
@@ -52,6 +52,7 @@ produtosRef.get().then((querySnapshot) => {
     img.src=doc.Imagem
     titulo.textContent=`${doc.Titulo}`
     subtitulo.textContent=`${doc.OBS}`
+    label.textContent=`Site com anúncios`
 
     // Montagem
     div1.appendChild(img)
