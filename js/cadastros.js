@@ -12,9 +12,7 @@ var firebaseConfigure = {
   measurementId: "G-PML0R4VJD1"
 };
 firebase.initializeApp(firebaseConfigure);
-
 /////////////////////////////////////////////////////////////////////////////
-
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -59,7 +57,6 @@ sessionStorage.setItem('ImagemMy', '')
 function imagens(){
 var ListaCad = document.getElementById('selectCadastros').value;
 var valor01 = document.getElementById('ListaCategoriaVendas').value;
-
 if(!ListaCad||ListaCad===''||!valor01||valor01===''){
  swal('','Selecione a categoria e o tipo do cadastro para adicionar as imagens','error')
 }else{
@@ -92,19 +89,14 @@ document.body.style.paddingRight = '0px';
 })
 var img_1= document.getElementById('imgcad').src;
 document.getElementById('mymg1').src=img_1;
-
 var img_2= document.getElementById('imgcad2').src;
 document.getElementById('mymg2').src=img_2;
-
 var img_3= document.getElementById('imgcad3').src;
 document.getElementById('mymg3').src=img_3;
-
 var img_4= document.getElementById('imgcad4').src;
 document.getElementById('mymg4').src=img_4;
-
 var img_5= document.getElementById('imgcad5').src;
 document.getElementById('mymg5').src=img_5;
-
 var img_6= document.getElementById('imgcad6').src;
 document.getElementById('mymg6').src=img_6;
 
@@ -374,7 +366,7 @@ var valor10= document.getElementById('idTamanhos').innerHTML; // label tamanhos
 //var valor12= document.getElementById('Input_cores').value;//select 04 cores
 var valor11= document.getElementById('idCores').innerHTML;//label cores
 //
-var valor12= document.getElementById('Input_sexo').value;
+var valor12= document.getElementById('Input_Origem').value;
 var valor13= document.getElementById('Input_Texto').value;
 var valor14= document.getElementById('imgcad').src;
 var valor15= document.getElementById('imgcad2').src;
@@ -398,7 +390,7 @@ var data= `${dataok}`;
 var horaAtualizada=sessionStorage.getItem('hora')
 var dataAtualizada=sessionStorage.getItem('data')
 
-if(!valor01||valor01===''||!valor02||valor02===''||!valor03||valor03===""){
+if(!valor01||valor01===''||!valor02||valor02===''||!valor03||valor03===""|!valor12||valor12===""){
 Swal.fire('','Preencha os campos obrigatórios','error')
 if(valor01){
 var input1 = document.getElementById('ListaCategoriaVendas')
@@ -450,7 +442,7 @@ Lista_ReF:valor08,
 Links:valor09,
 Tamanhos:valor10,
 Cores:valor11,
-Sexo:valor12,
+Origem:valor12,
 Texto:valor13,
 Imagem:valor14,
 Imagem2:valor15,
@@ -476,7 +468,7 @@ Lista_ReF:valor08,
 Links:valor09,
 Tamanhos:valor10,
 Cores:valor11,
-Sexo:valor12,
+Origem:valor12,
 Texto:valor13,
 Imagem:valor14,
 Imagem2:valor15,
@@ -560,7 +552,7 @@ document.getElementById('idTamanhos').value=''// label tamanhos
 document.getElementById('Input_cores').value=''//select 04 cores
 document.getElementById('idCores').value=''//label cores
 //
-document.getElementById('Input_sexo').value=''
+document.getElementById('Input_Origem').value=''
 document.getElementById('Input_Texto').value=''
 document.getElementById('imgcad').src=`../src/Logo2.png`
 }
@@ -684,7 +676,7 @@ botao3.id='btnlist3';
 imagem.src=doc.Imagem;
 label.innerHTML=doc.Titulo;
 label2.innerHTML=doc.SubTitulo;
-label3.innerHTML='';
+label3.innerHTML= doc.Data_Atualizada;
 label4.innerHTML=doc.ID;
 botao.innerHTML='';
 botao.className=`fa-solid fa-pen-to-square`
@@ -732,8 +724,8 @@ document.getElementById('idTamanhos').innerHTML=doc.Tamanhos;
 //var valor12= document.getElementById('Input_cores').value;//select 04 cores
 document.getElementById('idCores').innerHTML= doc.Cores;
 
- var selectsexo= document.getElementById('Input_sexo');
-selectsexo.value=doc.Sexo;
+ var selectsexo= document.getElementById('Input_Origem');
+selectsexo.value=doc.Origem;
 
 document.getElementById('Input_Texto').value= doc.Texto;
 document.getElementById('imgcad').src= doc.Imagem;
