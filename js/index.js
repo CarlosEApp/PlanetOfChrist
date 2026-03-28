@@ -193,12 +193,12 @@ function videosDevos(){
  querySnapshot.forEach((doc) => {
  var doc = doc.data();   // dados do documento       // ID do documento
  var itens = querySnapshot.size;
- if(doc.Data_Atualizada==data){
+ if(doc.Data_Apresent==data){
    var urlDev=doc.Links;
   var result= urlDev.trim();
 document.getElementById('UrlDevo').src="https://www.youtube.com/embed/"+ result;
 document.getElementById('lblDataDevo').innerHTML=`${doc.OBS}`
-document.getElementById('lblHoraDevo').innerHTML=`${doc.Hora_Atualizada}`
+document.getElementById('lblHoraDevo').innerHTML=`AT: ${doc.Data_Atualizada}`
  }else{
  }
 })
@@ -212,12 +212,12 @@ var vdV= firebase.firestore()
  var doc = doc.data();   // dados do documento       // ID do documento
  var itens = querySnapshot.size;
  
- if(doc.Data_Atualizada==data){
+ if(doc.Data_Apresent==data){
    var urlVida=doc.Links;
   var result2= urlVida.trim();
   document.getElementById('UrlVidaSaude').src="https://www.youtube.com/embed/"+ result2;
   document.getElementById('lblDataVida').innerHTML=`${doc.OBS}`
-  document.getElementById('lblHoraVida').innerHTML=`${doc.Hora_Atualizada}`
+  document.getElementById('lblHoraVida').innerHTML=`AT: ${doc.Data_Atualizada}`;
  }else{
  }
 })

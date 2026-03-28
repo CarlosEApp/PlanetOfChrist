@@ -120,10 +120,21 @@ transform: translatey(-10px);
 transform: translateY(-10px); 
  
 }
+#titulo{
+    color: rgb(199, 199, 199);
+    font-family: 'Poppins', sans-serif;
+    
+}
 #subtitulo{
      font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+     font-family: 'Poppins', sans-serif;
+     color: rgb(182, 182, 182);
 }
 #label{
-     font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.900rem);
+     font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
      color: rgb(255, 94, 0);
+     font-family: 'Poppins', sans-serif;
+}
+#divL:hover #titulo,#divL:hover #subtitulo{
+    color: #ffffff;
 }

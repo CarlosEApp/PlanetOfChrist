@@ -52,7 +52,7 @@ produtosRef.get().then((querySnapshot) => {
     img.src=doc.Imagem
     titulo.textContent=`${doc.Titulo}`
     subtitulo.textContent=`${doc.OBS}`
-    label.textContent=`3 a 4 anúncios por filme`
+    label.textContent=`${doc.Texto}`
 
     // Montagem
     div1.appendChild(img)

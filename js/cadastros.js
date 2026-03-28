@@ -204,6 +204,7 @@ cadastroSelect()
 }
 // select cadastros
 function cadastroSelect(){
+document.getElementById('input_DataApresentação').value= sessionStorage.getItem('data')
 
 var resp= document.getElementById('selectCadastros').value;
 if(resp==='Produtos'){ //Inicio
@@ -362,7 +363,7 @@ var valor09= document.getElementById('Input_link').value;
 
 // Tamanho e cor virão das label
 //var valor10= document.getElementById('Input_Tamanhos').value;// select 03 tamanho
-var valor10= document.getElementById('idTamanhos').innerHTML; // label tamanhos
+var valor10= document.getElementById('input_DataApresentação').value; // label tamanhos
 //var valor12= document.getElementById('Input_cores').value;//select 04 cores
 var valor11= document.getElementById('idCores').innerHTML;//label cores
 //
@@ -390,7 +391,7 @@ var data= `${dataok}`;
 var horaAtualizada=sessionStorage.getItem('hora')
 var dataAtualizada=sessionStorage.getItem('data')
 
-if(!valor01||valor01===''||!valor02||valor02===''||!valor03||valor03===""|!valor12||valor12===""){
+if(!valor01||valor01===''||!valor02||valor02===''||!valor03||valor03===""|!valor12||valor12===""|!valor10||valor10===""){
 Swal.fire('','Preencha os campos obrigatórios','error')
 if(valor01){
 var input1 = document.getElementById('ListaCategoriaVendas')
@@ -440,7 +441,7 @@ VcDesconto:valor06,
 OBS:valor07,
 Lista_ReF:valor08,
 Links:valor09,
-Tamanhos:valor10,
+Data_Apresent:valor10,
 Cores:valor11,
 Origem:valor12,
 Texto:valor13,
@@ -466,7 +467,7 @@ VcDesconto:valor06,
 OBS:valor07,
 Lista_ReF:valor08,
 Links:valor09,
-Tamanhos:valor10,
+Data_Apresent:valor10,
 Cores:valor11,
 Origem:valor12,
 Texto:valor13,
@@ -546,7 +547,7 @@ document.getElementById('Input_link').value=''
 document.getElementById('idTamanhos').innerHTML='';
 document.getElementById('idCores').innerHTML='';
 // Tamanho e cor virão das label
-document.getElementById('Input_Tamanhos').value=''// select 03 tamanho
+document.getElementById('input_DataApresentação').value=''// select 03 tamanho
 document.getElementById('idTamanhos').value=''// label tamanhos
 //
 document.getElementById('Input_cores').value=''//select 04 cores
@@ -557,15 +558,15 @@ document.getElementById('Input_Texto').value=''
 document.getElementById('imgcad').src=`../src/Logo2.png`
 }
 // Setar tamanho
-document.getElementById('Input_Tamanhos').addEventListener('change', function() {
-var tamanho=document.getElementById('Input_Tamanhos').value;
-if(tamanho=='Limpar'){
+document.getElementById('input_DataApresentação').addEventListener('change', function() {
+var Data_ap=document.getElementById('input_DataApresentação').value;
+if(Data_ap==''){
 var resp1=document.getElementById('idTamanhos');
 resp1.innerHTML='';
 } else{ 
 var resp1=document.getElementById('idTamanhos');
-resp1.innerHTML= resp1.innerHTML+tamanho+ ', ';
-var TM=document.getElementById('idTamanhos').innerHTML;
+resp1.innerHTML= resp1.innerHTML= Data_ap;
+//var TM=document.getElementById('idTamanhos').innerHTML;
 //swal('Selecione varios tamanhos',`${TM}`)
 }
 });
@@ -676,7 +677,7 @@ botao3.id='btnlist3';
 imagem.src=doc.Imagem;
 label.innerHTML=doc.Titulo;
 label2.innerHTML=doc.SubTitulo;
-label3.innerHTML= doc.Data_Atualizada;
+label3.innerHTML= doc.Data_Apresent;
 label4.innerHTML=doc.ID;
 botao.innerHTML='';
 botao.className=`fa-solid fa-pen-to-square`
@@ -720,7 +721,7 @@ document.getElementById('Input_OBS').value=doc.OBS;
 document.getElementById('Input_link').value=doc.Links;
 
 //var valor10= document.getElementById('Input_Tamanhos').value;// select 03 tamanho
-document.getElementById('idTamanhos').innerHTML=doc.Tamanhos;
+document.getElementById('idTamanhos').innerHTML=doc.Data_Apresent;
 //var valor12= document.getElementById('Input_cores').value;//select 04 cores
 document.getElementById('idCores').innerHTML= doc.Cores;
 
@@ -734,7 +735,7 @@ document.getElementById('imgcad3').src= doc.Imagem3;
 document.getElementById('imgcad4').src= doc.Imagem4;
 document.getElementById('imgcad5').src= doc.Imagem5;
 document.getElementById('imgcad6').src= doc.Imagem6;
-
+ document.getElementById('input_DataApresentação').value= doc.Data_Apresent
  sessionStorage.setItem("horaok", doc.Hora);
 sessionStorage.setItem("dataok", doc.Data);
 var resplist=document.getElementById('selectCadastros')
@@ -793,6 +794,7 @@ document.body.style.paddingRight = '0px';
 })
 document.getElementById('selectCadastradosMy').addEventListener('change', function(){
  lista_cadastrados()
+ document.getElementById('input_DataApresentação').value= sessionStorage.getItem('data')
 
 })
 })
