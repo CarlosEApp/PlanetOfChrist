@@ -28,13 +28,20 @@
       <a  id="a_inicio" href="#" title="inicio"></a>
         <header>
             <div id="header_um">
-                <div id="div_header_img"><img src="src/logo_ofice.png" alt="" width="50"> <h2 id="h2_header_Titulo">Planet of Christ</h2></div> <div id="div_header_butoon_um"><button class="btnH" onclick="Home()">Home</button>   <button class="btnH">Filmes</button> <button class="btnH">Sermões</button> <button class="btnH"> Desbravadores</button> <button class="btnH">Aventureiros</button> <button class="btnH" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i> </button> <button onclick="menu()">Menu <i class="fa-solid fa-bars"></i></button></div>
+                <div id="div_header_img"><img src="src/logo_ofice.png" alt="" width="50"> <h2 id="h2_header_Titulo">Planet of Christ</h2></div> <div id="div_header_butoon_um"><button class="btnH" onclick="Home()">Home</button>   <button class="btnH">Filmes</button> <button class="btnH">Sermões</button> <button class="btnH" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i> </button> <button onclick="menu()">Menu <i class="fa-solid fa-bars"></i></button></div>
             </div>
             <div id="header_dois">
               <div id="divPesq"> <div id="inputpesq"><input id="pesquise" type="text" placeholder="Pesquisa.."></div><i id="pesq-1" onclick="pesquisarProduto()" class="fa-solid fa-magnifying-glass"></i>
             </div>
         </header>
-
+          <div id="respPesquisasadiv">
+            <div id="lisatrespPesq">
+               <label id="lblfchardivPesq" for="">X</label>
+                <label id="lblFech" for="" onclick="fech()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
+              <h2>Resultado:</h2>
+           <div id="listpesqRes"></div>
+        </div>
+        </div>
          <div id="divConfgPerfil">
            <div id="MeuPerfil">
             <label id="fecharclickperfil" for=""> X </label>
@@ -54,8 +61,6 @@
                <label id="DevocionaisLater" for="">🙏 Devocional</label><br>
                 <label id="Vida_e_saudeLater" for="">🌱 Vida & Saúde</label><br>
                  <label id="telaCheia" for="" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i> Tela</label><br>
-                  <label id="DesbravadoresLater" for=""><img src="src/D1(2).png" alt="" width="16px"> Desbravadores</label><br>
-                   <label id="AventureirosLater" for=""><img src="src/Logo dos Aventureiros.png" alt="" width="18px"> Aventureiros</label><br>
                     <label id="SobreLater" for="">📦 Sobre</label><br>
                      <label onclick="Admin()" for=""><i class="fa-solid fa-layer-group"></i> Administração</label><br>
               </div>

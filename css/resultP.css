@@ -1,0 +1,31 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+::-webkit-scrollbar {
+width: 5px;
+margin-left: 5px;
+margin-top: 5px;
+/* Largura da barra de rolagem */
+cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+margin-left: 3px;
+background-color: rgba(0, 62, 100, 0);
+/* Cor do polegar da barra de rolagem */
+margin-top: 5px;
+border-radius: 5px;
+cursor: pointer;
+}
+:-webkit-scrollbar-track {
+/* Cor da trilha da barra de rolagem */
+margin-top: 5px;
+border-radius: 7 rgb(177, 175, 175);
+background-color: rgba(38, 39, 39, 0);
+border-radius: 5px;
+cursor: pointer;
+}
+body{
+font-family: 'Poppins', sans-serif;
+background-color: rgba(255, 0, 0, 0);
+}

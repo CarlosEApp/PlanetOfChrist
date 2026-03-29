@@ -36,6 +36,7 @@ width: 100%;
  align-items: center;
  background-color: black;
  color: #ffffff;
+ z-index: 999;
 }
 #headUm{
 max-width: 1400px;
@@ -137,4 +138,167 @@ transform: translateY(-10px);
 }
 #divL:hover #titulo,#divL:hover #subtitulo{
     color: #ffffff;
+}
+#divPesq{
+margin: auto;
+ max-width: 350px;
+min-width: 225px;
+background-color: #777777;
+display: flex;
+justify-content: space-between;
+padding-right:5px ;
+align-items: center;
+margin-bottom: 10px;
+color: #ff0000;
+border-radius: 16px;
+overflow: hidden;
+outline: none;
+cursor: pointer;
+border: 1px solid  #777777;;
+font-family: 'Poppins', sans-serif;
+
+}
+#inputpesq{
+margin: auto;
+width: 80%;
+font-family: 'Poppins', sans-serif;
+}
+#pesquise{
+width: 100%;
+padding: 5px;
+border: 0cap;
+background-color: transparent;
+outline: none;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+background-color: rgba(0, 0, 0, 0.801);
+color: #e5f1ff;
+cursor: pointer;
+font-family: 'Poppins', sans-serif;
+text-align: center;
+}
+#pesquise:hover{
+background-color: rgb(230, 230, 230);
+color: rgb(253, 59, 0);
+}
+#divPesq #pesq-1{
+width: 20%;
+height: 100%;
+text-align: center;
+color: #bdbdbd;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+cursor: pointer;
+font-weight: bold;
+margin-left: 5px;
+padding: 5px 7px;
+}
+#divPesq:hover{
+font-family: 'Poppins', sans-serif;
+background-color: rgb(175, 175, 175);
+}
+#divPesq #pesq-1:hover{
+color: rgb(255, 255, 255);
+font-weight: bold;
+}
+#divPesq:hover #pesq-1{
+color: rgb(255, 255, 255);
+}
+#lblfchardivPesq{
+  float: right;
+  margin-right: 37px;
+  cursor: pointer;
+  color: #660101;
+  font-weight: bold;
+  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+ 
+}
+ #lblfchardivPesq:hover{
+color: red;
+}
+#lblfchardivPesq{
+  margin-right: 30px;
+}
+#respPesquisasadiv{
+  position: fixed;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  max-width: 1920px;
+  z-index: 9999;
+ background-color: rgb(255, 255, 255);
+  padding-top: 20px;
+  display: none;
+
+}
+#lisatrespPesq{
+  margin: auto;
+  width: 100%;
+  max-width: 640px;
+  background-color: rgb(255, 255, 255);
+  min-height: 30vh;
+    height: 82vh;
+  padding-bottom: 100px;
+  margin-bottom: 50px;
+  padding: 10px;
+  margin-top: 10px;
+   overflow: auto;
+    cursor: pointer;
+}
+#lisatrespPesq h2{
+  margin-bottom: 10px;
+}
+#imagemps{
+width: 43px;
+padding-top: 7px;
+}
+#divbase{
+display: flex;
+align-items: center;
+cursor: pointer;
+margin-bottom: 10px;
+margin-top: 10px;
+cursor: pointer;
+border-bottom: 2px solid rgba(180, 180, 180, 0.856);
+background-color: #ffffff00;
+
+}
+#divbase:hover{
+color: aliceblue;
+box-shadow: 0 4px 8px rgba(0,0,0,0.35);
+background-color: rgb(44, 61, 61);
+}
+#divum{
+  margin-left: 7px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#divdois{
+  display: flex;
+  flex-direction: column;
+}
+#lbl1{
+   font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+   font-weight: bold;
+   cursor: pointer;
+}
+#lbl2{
+   font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+   cursor: pointer;
+}
+#lblFech{
+  font-size: clamp(1.800rem, 0.3vw  + 0.5rem, 1.900rem);
+     font-weight: bold;
+     color: black;
+     cursor: pointer;
+}
+#lblFech:hover{
+  color: rgb(190, 0, 0);
+}
+#bblog{
+color: #1ba000;
+cursor: pointer;
+}
+#bbdesc{
+color: red;
+cursor: pointer;
 }

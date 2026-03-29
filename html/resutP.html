@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planet - Filmes </title>
-    <link rel="shortcut icon" id="liskIMG" href="../src/logo_ofice.png" type="image/x-icon">
+    <title id="tituloPagina">Resultado da pesquisa</title>
+      <link rel="shortcut icon" id="liskIMG" href="src/logo_ofice.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
@@ -21,41 +21,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/filme.css">
+    <link rel="stylesheet" href="../css/resultP.css">
 </head>
 <body>
-    <div id="DivContanner">
-         <header>
-            <div id="headUm">
-               <div id="Hdd"> <img src="../src/logo_ofice.png" alt="" width="70"> <h2>Filmes Online </h2></div>    <button>Botão 01</button> <button>Menu</button>
+    <div id="divContanner">
+        <header>
+            <div id="div_Header_Um">
+                <h2 id="h2_header"></h2>
+                 <h3 id="h3_header"></h3>
             </div>
-             <div id="header_dois">
-               <div id="divPesq"> <div id="inputpesq"><input id="pesquise" type="text" placeholder="Pesquisa.."></div><i id="pesq-1" onclick="pesquisarProduto()" class="fa-solid fa-magnifying-glass"></i>
-             </div>
-         </header>
-         <div id="respPesquisasadiv">
-            <div id="lisatrespPesq">
-               <label id="lblfchardivPesq" for="">X</label>
-                <label id="lblFech" for="" onclick="fech()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
-              <h2>Resultado:</h2>
-           <div id="listpesqRes"></div>
-        </div>
-        </div>
+        </header>
         <main>
             <div id="divMainUm">
-                <h2>Filmes de Site</h2>
-                <div id="listaDeFilmes">
-                    <div id="listFilmes"></div>
+                 <div id="devflex"> <h3>h3</h3>   <label id="lblData" for="data">Data</label> <label id="lblHora" for="">Hora</label></div>
+                       <iframe id="UrlVideo" width="" height="" 
+                         src=""
+                       title="YouTube video player" 
+                       frameborder="0" 
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                       allowfullscreen>
+                     </iframe><div id="devflex2"> <button>Ver Mais Video</button> </div></div>
                 </div>
+                
             </div>
         </main>
-        <footer>
-            
-        </footer>
-
-
     </div>
-    <script src="../js/filmes.js"></script>
-    
+    <script src="../js/resultP.js"></script>
 </body>
 </html>
