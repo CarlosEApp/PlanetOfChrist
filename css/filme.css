@@ -31,117 +31,109 @@ background-color: #ffffff;
 }
 header{
 width: 100%;
- position: fixed;
- justify-content: space-around;
- align-items: center;
- background-color: black;
- color: #ffffff;
- z-index: 999;
+position: fixed;
+justify-content: space-around;
+align-items: center;
+background-color: black;
+color: #ffffff;
+z-index: 999;
+padding-bottom: 10px;
+margin-bottom: 20px;
 }
 #headUm{
-max-width: 1400px;
+max-width: 1100px;
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 align-items: center;
 padding: 10px;
 margin-left: 10px;
 margin-top: 10px;
 margin: auto;
 background-color: rgba(127, 255, 212, 0);
-
 }
 #Hdd{
-    display: flex;
-    align-items: center;
+display: flex;
+align-items: center;
 }
-
 #headUm img{
-  margin-right: 10px;
-  width: 50px;
+margin-right: 10px;
+width: 50px;
 }
 main{
-    width: 100%;
-    min-height: 200vh;
-    padding-top: 70px;
-     background-color: black;
+width: 100%;
+min-height: 200vh;
+padding-top: 82px;
+background-color: black;
 }
 #divMainUm{
-    margin: auto;
-    width: 100%;
-    max-width: 1100px;
-    min-height: 100vh;
-     background-color: black;
-    padding-bottom: 100px;
-    padding-top: 40px;
+margin: auto;
+width: 100%;
+max-width: 1100px;
+min-height: 100vh;
+background-color: black;
+padding-bottom: 100px;
+padding-top: 40px;
 }
 #divMainUm h2{
-    text-align: center;
-    color: #ffffff;
-    padding-top: 10px;
-    margin-top: 5px;
-    margin-bottom: 25px;
+text-align: center;
+color: #ffffff;
+padding-top: 10px;
+margin-top: 5px;
+margin-bottom: 25px;
 }
 #listFilmes{
-    margin: auto;
-    color: aliceblue;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-
+margin: auto;
+color: aliceblue;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-wrap: wrap;
 }
 #divL{
-   color: #ffffff;
-   margin-right: 5px;
-   margin-left: 5px;
-   margin-bottom: 30px;
-   cursor: pointer;
-    border: 2px solid transparent;
-    width: 163px;
-    overflow: hidden;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    
-    
-
+color: #ffffff;
+margin-right: 5px;
+margin-left: 5px;
+margin-bottom: 30px;
+cursor: pointer;
+border: 2px solid transparent;
+width: 163px;
+overflow: hidden;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
 }
 #divL:hover{
-
 border-bottom: 2px solid rgb(9, 255, 0);
 }
 #divL:hover #img{
 transform: translatey(-10px); 
-
 }
 #img{
-    width: 100%;
-     transition: transform 0.7s ease;
+width: 100%;
+transition: transform 0.7s ease;
 }
 #img:hover{
 transform: translateY(-10px); 
- 
 }
 #titulo{
-    color: rgb(199, 199, 199);
-    font-family: 'Poppins', sans-serif;
-    
+color: rgb(199, 199, 199);
+font-family: 'Poppins', sans-serif;
 }
 #subtitulo{
-     font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
-     font-family: 'Poppins', sans-serif;
-     color: rgb(182, 182, 182);
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+font-family: 'Poppins', sans-serif;
+color: rgb(182, 182, 182);
 }
 #label{
-     font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
-     color: rgb(255, 94, 0);
-     font-family: 'Poppins', sans-serif;
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+color: rgb(255, 94, 0);
+font-family: 'Poppins', sans-serif;
 }
 #divL:hover #titulo,#divL:hover #subtitulo{
-    color: #ffffff;
+color: #ffffff;
 }
 #divPesq{
 margin: auto;
- max-width: 350px;
+max-width: 350px;
 min-width: 225px;
 background-color: #777777;
 display: flex;
@@ -156,7 +148,6 @@ outline: none;
 cursor: pointer;
 border: 1px solid  #777777;;
 font-family: 'Poppins', sans-serif;
-
 }
 #inputpesq{
 margin: auto;
@@ -191,6 +182,26 @@ font-weight: bold;
 margin-left: 5px;
 padding: 5px 7px;
 }
+@media (max-width: 530px) {
+#divPesq{
+margin: auto;
+max-width: 333px;
+min-width: 220px;
+background-color: #777777;
+display: flex;
+justify-content: space-between;
+padding-right:5px ;
+align-items: center;
+margin-bottom: 10px;
+color: #ff0000;
+border-radius: 16px;
+overflow: hidden;
+outline: none;
+cursor: pointer;
+border: 1px solid  #777777;;
+font-family: 'Poppins', sans-serif;
+}
+}
 #divPesq:hover{
 font-family: 'Poppins', sans-serif;
 background-color: rgb(175, 175, 175);
@@ -203,48 +214,47 @@ font-weight: bold;
 color: rgb(255, 255, 255);
 }
 #lblfchardivPesq{
-  float: right;
-  margin-right: 37px;
-  cursor: pointer;
-  color: #660101;
-  font-weight: bold;
-  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
- 
+float: right;
+margin-right: 37px;
+cursor: pointer;
+color: #660101;
+font-weight: bold;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
 }
- #lblfchardivPesq:hover{
+#lblfchardivPesq:hover{
 color: red;
 }
 #lblfchardivPesq{
-  margin-right: 30px;
+margin-right: 30px;
 }
 #respPesquisasadiv{
-  position: fixed;
-  margin: auto;
-  width: 100%;
-  height: 100vh;
-  max-width: 1920px;
-  z-index: 9999;
- background-color: rgb(255, 255, 255);
-  padding-top: 20px;
-  display: none;
-
+position: fixed;
+margin: auto;
+width: 100%;
+height: 100vh;
+max-width: 1920px;
+z-index: 9999;
+background-color: rgb(255, 255, 255);
+padding-top: 20px;
+display: none;
 }
 #lisatrespPesq{
-  margin: auto;
-  width: 100%;
-  max-width: 640px;
-  background-color: rgb(255, 255, 255);
-  min-height: 30vh;
-    height: 82vh;
-  padding-bottom: 100px;
-  margin-bottom: 50px;
-  padding: 10px;
-  margin-top: 10px;
-   overflow: auto;
-    cursor: pointer;
+margin: auto;
+width: 100%;
+max-width: 640px;
+background-color: rgb(255, 255, 255);
+min-height: 30vh;
+height: 82vh;
+padding-bottom: 100px;
+margin-bottom: 50px;
+padding: 10px;
+margin-top: 10px;
+overflow: auto;
+cursor: pointer;
 }
 #lisatrespPesq h2{
-  margin-bottom: 10px;
+margin-bottom: 20px;
+margin-top: 20px;
 }
 #imagemps{
 width: 50px;
@@ -259,7 +269,6 @@ margin-top: 10px;
 cursor: pointer;
 border-bottom: 2px solid rgba(180, 180, 180, 0.856);
 background-color: #ffffff00;
-
 }
 #divbase:hover{
 color: aliceblue;
@@ -267,39 +276,40 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.35);
 background-color: rgb(44, 61, 61);
 }
 #divum{
-  margin-left: 7px;
-  margin-right: 10px;
-  cursor: pointer;
+margin-left: 7px;
+margin-right: 10px;
+cursor: pointer;
 }
-
 #divdois{
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 #lbl1{
-   font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-   font-weight: bold;
-   cursor: pointer;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
+cursor: pointer;
 }
 #lbl2{
-   font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
-   cursor: pointer;
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
+cursor: pointer;
 }
-#lblFech{
-  font-size: clamp(1.800rem, 0.3vw  + 0.5rem, 1.900rem);
-     font-weight: bold;
-     color: black;
-     cursor: pointer;
+#lblFech,#lblfchardivPesq{
+font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
+font-weight: bold;
+color: rgb(128, 0, 0);
+cursor: pointer;
+
 }
-#lblFech:hover{
-  color: rgb(190, 0, 0);
+#lblFech:hover, #lblfchardivPesq:hover{
+color: rgb(255, 0, 0);
 }
+
 #bblog{
 color: #1ba000;
 cursor: pointer;
 }
 #bbdesc{
-color: red;
+color: rgb(255, 255, 255);
 cursor: pointer;
 }
 #myProgresos {
@@ -358,4 +368,14 @@ transform: rotate(360deg);
 .my-customTime #divInit{
 width: 100%;
 min-height: 15vh;
+}
+#headUm button{
+  border: 0cap;
+  cursor: pointer;
+  background-color: transparent;
+  color: #e5f1ff;
+  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+}
+#headUm button:hover{
+  color: #2bff00;
 }

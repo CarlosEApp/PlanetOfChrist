@@ -13,6 +13,50 @@ var firebaseConfigure = {
 };
 firebase.initializeApp(firebaseConfigure);
 //////////////////////////////////////////////////////////
+// Tela Cheia
+function toggleFullScreen() {
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||
+(!document.mozFullScreen && !document.webkitIsFullScreen)) {
+if (document.documentElement.requestFullScreen) {
+document.documentElement.requestFullScreen();
+} else if (document.documentElement.mozRequestFullScreen) {
+document.documentElement.mozRequestFullScreen();
+} else if (document.documentElement.webkitRequestFullScreen) {
+document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+}
+} else {
+if (document.cancelFullScreen) {
+document.cancelFullScreen();
+} else if (document.mozCancelFullScreen) {
+document.mozCancelFullScreen();
+} else if (document.webkitCancelFullScreen) {
+document.webkitCancelFullScreen();
+}
+}
+//fecharperf()
+}
+//Data e Hora
+setInterval(function() {
+const newDate = new Date()
+var dia = String(newDate.getDate()).padStart(2, '0');
+var mes = String(newDate.getMonth() + 1).padStart(2, '0');
+var ano = String(newDate.getFullYear()).padStart(2, '0')
+var data = `${dia}/${mes}/${ano}`
+const now = new Date();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const timeString = `${hours}:${minutes}:${seconds}`;
+//const lbl_data = document.getElementById('lbl-data');
+//lbl_data.innerHTML = `${data}`
+//localStorage.setItem('data', data)
+sessionStorage.setItem('hora', timeString)
+sessionStorage.setItem('data', data)
+localStorage.setItem('data', data)
+localStorage.setItem('hora', timeString)
+}, 1000)
+
+
 
 //Lista Devocional
 function filmesSites(){
@@ -69,7 +113,7 @@ produtosRef.get().then((querySnapshot) => {
     flexgrup.addEventListener('click', function(){
   var urlDev=doc.Links;
   var result= urlDev.trim();
-      window.open(`${result}`,'_self')
+     
     })
   });
 });
@@ -161,13 +205,14 @@ Swal.close()
           if(data.Origem==='site'){
           window.open(`${data.Links}`,'_self')
           } else if(data.Origem==='YouTube'){
-             window.open(`../html/resutP.html`,'_self')
-          }else{
+            sessionStorage.setItem('Código_Result_PSQ', data.ID)
+            setTimeout(function(){
+            window.open(`../html/resutP.html`,'_self')
+            },400)
            
           }
         });
        }
-      
       } else{
       }
     });
@@ -182,7 +227,6 @@ fech()
 function fech(){
    document.getElementById('respPesquisasadiv').style.display='none'
 }
-
 //inicio progresso
 function initPage(){
 Swal.fire({ 
@@ -222,6 +266,7 @@ if (width >= 100) {
 i = 0;
 
 document.getElementById('myProgresos').style.display = 'none'
+document.getElementById('pesquise').value=""// impt de pesquisa
 swalclose()
 clearInterval(id)
 //document.getElementById('imgcad').value = `${url_imagem}`

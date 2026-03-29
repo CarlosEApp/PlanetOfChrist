@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="tituloPagina">Resultado da pesquisa</title>
-      <link rel="shortcut icon" id="liskIMG" href="src/logo_ofice.png" type="image/x-icon">
+      <link rel="shortcut icon" id="liskIMG" href="../src/logo_ofice.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
@@ -27,14 +27,19 @@
     <div id="divContanner">
         <header>
             <div id="div_Header_Um">
-                <h2 id="h2_header"></h2>
-                 <h3 id="h3_header"></h3>
+                  <div id="header_um">
+                <div id="div_header_img"><img id="img" src="../src/logo_ofice.png" alt="" width="50"> <h2 id="h2_header_Titulo">Titulo</h2></div> 
+            </div>
+            <div id="headerDois">
+                <h4 id="h2_header">SubTitulo</h4>
+                 <h5 id="h3_header">OBS</h5>
+                 </div>
             </div>
         </header>
         <main>
             <div id="divMainUm">
-                 <div id="devflex"> <h3>h3</h3>   <label id="lblData" for="data">Data</label> <label id="lblHora" for="">Hora</label></div>
-                       <iframe id="UrlVideo" width="" height="" 
+                 <div id="devflex">  <label id="lblHora" for="">Hora</label></div>
+                       <iframe id="Url" width="" height="" 
                          src=""
                        title="YouTube video player" 
                        frameborder="0" 

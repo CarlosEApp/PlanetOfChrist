@@ -15,6 +15,7 @@ var firebaseConfigure = {
 };
 firebase.initializeApp(firebaseConfigure);
 /////////////////////////////////////////////////////////////////////////////
+sessionStorage.setItem('Link_Result_PSQ', '')
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -250,12 +251,15 @@ btnRight2.addEventListener('click', () => {
 });
 function Perfilclick(){
 loginComGoogle()
+
 }
 //document.getElementById('Perfil').addEventListener('click',function(){
    // loginComGoogle()
 //})
 function PerfilB(){
+  //labelLog()
 loginComGoogle()
+
 }
 function loginComGoogle() {
   var lblG=document.getElementById('labellogarLater');
@@ -563,6 +567,8 @@ if (width >= 100) {
 i = 0;
 
 document.getElementById('myProgresos').style.display = 'none'
+document.getElementById('pesquise').value=""// impt de pesquisa
+sessionStorage.setItem('Link_Result_PSQ', '')
 swalclose()
 clearInterval(id)
 //document.getElementById('imgcad').value = `${url_imagem}`
@@ -583,7 +589,6 @@ setTimeout(function(){
 videosDevos()
 },3000)
 
-
 //Pesquisa
 function pesquisarProduto() {
    document.getElementById('respPesquisasadiv').style.display='none'
@@ -598,7 +603,7 @@ text: ``,
 html:`
 <div>
 <b id="bbdesc"> Não encontramos nada relacionado as informações digitadas</b><br> digite as primeiras letras  do que deseja encontrar e procure em uma lista a opção desejada<b id="b"></b> .
-      </div> 
+   </div> 
 `,
 imageUrl: ``,
 background: '#000000',
@@ -625,7 +630,7 @@ Swal.close()
       if (data.Titulo && data.Titulo.toLowerCase().includes(termo) || data.SubTitulo && data.SubTitulo.toLowerCase().includes(termo)  ||data.OBS && data.OBS.toLowerCase().includes(termo) )  {
         var titulo = data.Titulo ? data.Titulo.toLowerCase() : ""; var sub = data.SubTitulo ? data.SubTitulo.toLowerCase() : ""; var obs = data.OBS ? data.OBS.toLowerCase() : "";
           
-          if (titulo.includes(termo) || termo.includes(titulo)||obs.includes(termo) || termo.includes(obs)||sub.includes(termo) || termo.includes(sub)) {
+       if (titulo.includes(termo) || termo.includes(titulo)||obs.includes(termo) || termo.includes(obs)||sub.includes(termo) || termo.includes(sub)) {
        //alert(data.Titulo)
         var divbase=document.createElement('div');
         var div=document.createElement('div');
@@ -666,8 +671,14 @@ Swal.close()
           //alert(data.Titulo)
           if(data.Origem==='site'){
           window.open(`${data.Links}`,'_self')
+          
           } else if(data.Origem==='YouTube'){
-             window.open(`html/resutP.html`,'_self')
+           // alert(data.ID)
+            sessionStorage.setItem('Código_Result_PSQ', data.ID)
+            setTimeout(function(){
+            window.open(`html/resutP.html`,'_self')
+            },400)
+        
           }else{
            
           }
@@ -688,3 +699,21 @@ fech()
 function fech(){
    document.getElementById('respPesquisasadiv').style.display='none'
 }
+//Select Um
+document.getElementById('selectListaUm').addEventListener('change', function(){
+  var resp= document.getElementById('selectListaUm').value;
+  if(resp==='devocional')   {
+  alert('Devocional')
+  } else if(resp==='vida&saúde'){
+ alert('Vida & saúde')
+  }else if(resp==='Semões'){
+ alert('Semões')
+  }else if(resp==='Filmes'){
+ alert('Filmes')
+  }else if(resp==='series'){
+ alert('Series')
+  }else if(resp==='sair'){
+   var resp_= document.getElementById('selectListaUm');
+  resp_.value=''
+  }
+});

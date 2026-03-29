@@ -86,11 +86,11 @@ align-items: center;
 font-family: 'Poppins', sans-serif;
 }
 #div_header_img img{
- width: 52px;
- margin-left: 10px;
- transition: transform 0.7s ease;
- border-radius: 50%;
- box-shadow: 0 1px 15px rgba(255, 255, 255, 0.25);
+width: 52px;
+margin-left: 10px;
+transition: transform 0.7s ease;
+border-radius: 50%;
+box-shadow: 0 1px 15px rgba(255, 255, 255, 0.25);
 }
 #div_header_img img:hover{
 font-family: 'Poppins', sans-serif;
@@ -112,7 +112,7 @@ font-family: 'Poppins', sans-serif;
 }
 #divPesq{
 margin: auto;
- max-width: 350px;
+max-width: 350px;
 min-width: 225px;
 background-color: #777777;
 display: flex;
@@ -172,6 +172,7 @@ font-weight: bold;
 #divPesq:hover #pesq-1{
 color: rgb(255, 255, 255);
 }
+
 main{
 margin: auto;
 width: 100%;
@@ -444,7 +445,7 @@ margin-left: 20px;
 margin-right: 20px;
 }
 #videoDevocional h2, #videoDevocional h3{
- font-family: 'Poppins', sans-serif;
+font-family: 'Poppins', sans-serif;
 margin-left: 20px;
 color:rgb(255, 72, 0) ;
 font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem); 
@@ -928,7 +929,7 @@ color: #1ba000;
 cursor: pointer;
 }
 #bbdesc{
-color: red;
+color: rgb(255, 255, 255);
 cursor: pointer;
 }
 #filmesdiv{
@@ -971,7 +972,7 @@ margin-left: 10px;
 margin-right: 10px;
 padding: 12px;
 font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
-background-color: #201b14d8;
+background-color: #b32a01;
 border: 0cap;
 color: aliceblue;
 font-weight: bold;
@@ -1045,66 +1046,63 @@ margin-top: 20px;
 }
 }
 #BBFilmes{
-    color: red;
-    font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
+color: red;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #BBOrintaçao{
-    color: blue;
-    font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
+color: blue;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
 }
 #videoDevocional #lblHoraDevo,#videoDevocional #lblHoraVida{
-     color: rgb(104, 104, 104);
-      font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 0.900rem);
-     
+color: rgb(104, 104, 104);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 0.900rem);
 }
 #videoDevocional #lblDataDevo,#videoDevocional #lblDataVida{
-    color: #000000;
-    font-weight: bold;
+color: #000000;
+font-weight: bold;
 }
-
 #lblfchardivPesq{
-  float: right;
-  margin-right: 37px;
-  cursor: pointer;
-  color: #660101;
-  font-weight: bold;
-  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
- 
+float: right;
+margin-right: 37px;
+cursor: pointer;
+color: #660101;
+font-weight: bold;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
 }
- #lblfchardivPesq:hover{
+#lblfchardivPesq:hover{
 color: red;
 }
 #lblfchardivPesq{
-  margin-right: 30px;
+margin-right: 30px;
 }
 #respPesquisasadiv{
-  position: fixed;
-  margin: auto;
-  width: 100%;
-  height: 100vh;
-  max-width: 1920px;
-  z-index: 9999;
- background-color: rgb(255, 255, 255);
-  padding-top: 20px;
-  display: none;
-
+position: fixed;
+margin: auto;
+width: 100%;
+height: 100vh;
+max-width: 1920px;
+z-index: 9999;
+background-color: rgb(255, 255, 255);
+padding-top: 20px;
+display: none;
 }
 #lisatrespPesq{
-  margin: auto;
-  width: 100%;
-  max-width: 640px;
-  background-color: rgb(255, 255, 255);
-  min-height: 30vh;
-    height: 82vh;
-  padding-bottom: 100px;
-  margin-bottom: 50px;
-  padding: 10px;
-  margin-top: 10px;
-   overflow: auto;
-    cursor: pointer;
+margin: auto;
+width: 100%;
+max-width: 640px;
+background-color: rgb(255, 255, 255);
+min-height: 30vh;
+height: 82vh;
+padding-bottom: 100px;
+margin-bottom: 50px;
+padding: 10px;
+margin-top: 10px;
+overflow: auto;
+cursor: pointer;
 }
 #lisatrespPesq h2{
-  margin-bottom: 10px;
+margin-bottom: 20px;
+margin-top: 20px;
 }
 #imagemps{
 width: 50px;
@@ -1119,7 +1117,6 @@ margin-top: 10px;
 cursor: pointer;
 border-bottom: 2px solid rgba(180, 180, 180, 0.856);
 background-color: #ffffff00;
-
 }
 #divbase:hover{
 color: aliceblue;
@@ -1144,12 +1141,13 @@ cursor: pointer;
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 cursor: pointer;
 }
-#lblFech{
-font-size: clamp(1.800rem, 0.3vw  + 0.5rem, 1.900rem);
+#lblFech,#lblfchardivPesq{
+font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
 font-weight: bold;
-color: black;
+color: rgb(128, 0, 0);
 cursor: pointer;
+
 }
-#lblFech:hover{
-color: rgb(190, 0, 0);
+#lblFech:hover, #lblfchardivPesq:hover{
+color: rgb(255, 0, 0);
 }
