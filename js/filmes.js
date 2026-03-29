@@ -69,7 +69,7 @@ produtosRef.get().then((querySnapshot) => {
     flexgrup.addEventListener('click', function(){
   var urlDev=doc.Links;
   var result= urlDev.trim();
-      window.open(`${result}`,'_blank')
+      window.open(`${result}`,'_self')
     })
   });
 });
@@ -158,9 +158,9 @@ Swal.close()
         divbase.addEventListener('click',function(){
           //alert(data.Titulo)
           if(data.Origem==='site'){
-          window.open(`${data.Links}`,'_blank')
+          window.open(`${data.Links}`,'_self')
           } else if(data.Origem==='YouTube'){
-             window.open(`../html/resutP.html`,'_blank')
+             window.open(`../html/resutP.html`,'_self')
           }else{
            
           }

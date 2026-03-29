@@ -404,20 +404,18 @@ LocalUserClouse()
 window.location.reload()
 })
 
-
-
 function labelLog(){
  var resp= localStorage.getItem('GoogleEmail' )
   if(!resp||resp==''){
  loginComGoogle() 
-   }else{ 
+  }else{ 
     Swal.fire({ 
 title: ``,
 text: ``, 
 html:`
 <div>
 <b id="bblog"> Você está logado(a)!</b><br>Clique em <b id="bbdesc"> Desconectar conta </b> para sair.
-      </div> 
+  </div> 
 `,
 imageUrl: ``,
 background: '#000000e8',
@@ -432,11 +430,10 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';   
 }
 })
-   }
-  }
-
+}
+ }
 function filmesGospel(){
-window.open('html/filmes.html','_blank')
+window.open('html/filmes.html','_self')
 
 }
 
@@ -670,9 +667,9 @@ Swal.close()
         divbase.addEventListener('click',function(){
           //alert(data.Titulo)
           if(data.Origem==='site'){
-          window.open(`${data.Links}`,'_blank')
+          window.open(`${data.Links}`,'_self')
           } else if(data.Origem==='YouTube'){
-             window.open(`html/resutP.html`,'_blank')
+             window.open(`html/resutP.html`,'_self')
           }else{
            
           }
