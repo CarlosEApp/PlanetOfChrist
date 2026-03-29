@@ -441,10 +441,6 @@ window.open('html/filmes.html','_self')
 
 
 
-
-
-
-
 /////////////////Botões links estudos bíblicos//////////////////////////////////////////
 document.getElementById('estudo01').addEventListener('click',function(){
   window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%201.pdf?alt=media&token=5c131edd-7b9d-4099-96ff-d74787caba0e', '_blank')
@@ -528,7 +524,7 @@ document.getElementById('estudo27').addEventListener('click',function(){
   window.open('https://firebasestorage.googleapis.com/v0/b/planet-of-christ.firebasestorage.app/o/PDFs%2FEstudos_Biblicos%2Fvoz%2027.pdf?alt=media&token=191c62dc-09f9-4bf8-b1f0-8918696c8907', '_blank')
 });
 
-
+//inicio progresso
 function initPage(){
 Swal.fire({ 
 title: ``,
@@ -561,7 +557,7 @@ if (i == 0){
 i = 1;
 var elem = document.getElementById("myBarr");
 var width = 1;
-var id = setInterval(frame, 82);
+var id = setInterval(frame, 55);
 function frame() {
 if (width >= 100) {
 i = 0;
@@ -618,23 +614,22 @@ document.body.style.paddingRight = '0px';
 }
 })
  setTimeout(function(){
+   
 Swal.close()
     },25000)
  },1000)
   var db= firebase.firestore()
   db.collection("Lista Geral").get().then(snapshot => {
- 
     snapshot.forEach(docSnap => {
       var data = docSnap.data();
       if (data.Titulo && data.Titulo.toLowerCase().includes(termo) || data.SubTitulo && data.SubTitulo.toLowerCase().includes(termo)  ||data.OBS && data.OBS.toLowerCase().includes(termo) )  {
         var titulo = data.Titulo ? data.Titulo.toLowerCase() : ""; var sub = data.SubTitulo ? data.SubTitulo.toLowerCase() : ""; var obs = data.OBS ? data.OBS.toLowerCase() : "";
           
           if (titulo.includes(termo) || termo.includes(titulo)||obs.includes(termo) || termo.includes(obs)||sub.includes(termo) || termo.includes(sub)) {
-        
        //alert(data.Titulo)
-  
         var divbase=document.createElement('div');
         var div=document.createElement('div');
+        var h3=document.createElement('h4');
         var div2=document.createElement('div');
         var imagem=document.createElement('img');
         var label=document.createElement('label');
@@ -648,12 +643,15 @@ Swal.close()
         label.id='lbl1';
         label2.id='lbl2';
         label3.id='lbl3';
+        h3.id='h33'
 
          imagem.src=data.Imagem;
-         label.textContent= data.Titulo;
-         label2.textContent= data.SubTitulo
+         label.textContent= data.SubTitulo;
+         label2.textContent= data.Lista_Cad
+         h3.textContent=data.Titulo
 
          div.appendChild(imagem);
+         div2.appendChild(h3);
          div2.appendChild(label);
          div2.appendChild(label2);
          divbase.appendChild(div);

@@ -247,7 +247,7 @@ color: red;
   margin-bottom: 10px;
 }
 #imagemps{
-width: 43px;
+width: 50px;
 padding-top: 7px;
 }
 #divbase{
@@ -301,4 +301,61 @@ cursor: pointer;
 #bbdesc{
 color: red;
 cursor: pointer;
+}
+#myProgresos {
+width: 90%;
+background-color:rgb(78, 78, 78);
+display: none;
+border-radius: 10px;
+margin-bottom: 3px;
+margin-left: 10%;
+margin-top: 10px;
+outline: none;
+border: 2px solid rgb(200, 204, 207);
+}
+#myBarr {
+width: 2%;
+/* Começa com 1% */
+height: 20px;
+background-color:rgba(197, 197, 197, 0.993);
+text-align: center;
+/* Centraliza horizontalmente */
+line-height: 20px;
+/* Centraliza verticalmente */
+color: rgb(255, 60, 0);
+border-radius: 7px;
+border: 2px solid rgb(200, 204, 207);
+font-weight: bolder;
+outline: none;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+}   
+.my-customTime{
+margin: auto;
+width: 90%;
+max-width: 400px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+.my-customTime #btnTime{
+text-align: center;
+border: 0cap;
+background-color: #007e1100;
+float: left;
+outline: none;
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
+animation: girar 10s linear infinite; /* já inicia girando  */
+}
+#btnTime_{
+animation: girar 77s linear infinite; /* já inicia girando  */
+}
+@keyframes girar { from {
+transform: rotate(0deg); 
+} 
+to {
+transform: rotate(360deg); 
+} 
+}
+.my-customTime #divInit{
+width: 100%;
+min-height: 15vh;
 }

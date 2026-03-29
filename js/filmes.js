@@ -77,7 +77,6 @@ produtosRef.get().then((querySnapshot) => {
 }
 filmesSites()
 
-
 //Pesquisa
 function pesquisarProduto() {
    document.getElementById('respPesquisasadiv').style.display='none'
@@ -120,12 +119,11 @@ Swal.close()
       if (data.Titulo && data.Titulo.toLowerCase().includes(termo) || data.SubTitulo && data.SubTitulo.toLowerCase().includes(termo)  ||data.OBS && data.OBS.toLowerCase().includes(termo) )  {
         var titulo = data.Titulo ? data.Titulo.toLowerCase() : ""; var sub = data.SubTitulo ? data.SubTitulo.toLowerCase() : ""; var obs = data.OBS ? data.OBS.toLowerCase() : "";
           
-          if (titulo.includes(termo) || termo.includes(titulo)||obs.includes(termo) || termo.includes(obs)||sub.includes(termo) || termo.includes(sub)) {
-        
+          if (titulo.includes(termo) || termo.includes(titulo)||obs.includes(termo) || termo.includes(obs)||sub.includes(termo) || termo.includes(sub)) {   
        //alert(data.Titulo)
-  
-        var divbase=document.createElement('div');
+      var divbase=document.createElement('div');
         var div=document.createElement('div');
+        var h3=document.createElement('h4');
         var div2=document.createElement('div');
         var imagem=document.createElement('img');
         var label=document.createElement('label');
@@ -139,12 +137,15 @@ Swal.close()
         label.id='lbl1';
         label2.id='lbl2';
         label3.id='lbl3';
+        h3.id='h33'
 
          imagem.src=data.Imagem;
-         label.textContent= data.Titulo;
-         label2.textContent= data.SubTitulo
+         label.textContent= data.SubTitulo;
+         label2.textContent= data.Lista_Cad
+         h3.textContent=data.Titulo
 
          div.appendChild(imagem);
+         div2.appendChild(h3);
          div2.appendChild(label);
          div2.appendChild(label2);
          divbase.appendChild(div);
@@ -181,3 +182,58 @@ fech()
 function fech(){
    document.getElementById('respPesquisasadiv').style.display='none'
 }
+
+//inicio progresso
+function initPage(){
+Swal.fire({ 
+title: ``,
+text: ``, 
+html:`
+<div id='btnTime_'>
+<img src="../src/Logo2.png" alt="" class="logo-swal" width="55%"></div>
+<div id="divInit"> 
+<button id='btnTime'>⏳ </button> 
+<div id="myProgresos" title="Progresos">
+<div id="myBarr">10%</div>
+</div>
+</div>
+`,
+imageUrl: ``,
+background: '#00325300',
+color: '#fff', // cor do texto });
+allowOutsideClick: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-customTime' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';   
+}
+})
+document.getElementById('myProgresos').style.display = 'block'
+var i = 0;
+if (i == 0){
+i = 1;
+var elem = document.getElementById("myBarr");
+var width = 1;
+var id = setInterval(frame, 55);
+function frame() {
+if (width >= 100) {
+i = 0;
+
+document.getElementById('myProgresos').style.display = 'none'
+swalclose()
+clearInterval(id)
+//document.getElementById('imgcad').value = `${url_imagem}`
+} else {
+width++;
+elem.style.width = width + "%";
+elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
+}
+}
+}
+}
+function swalclose(){
+Swal.close()
+}
+initPage()
