@@ -94,10 +94,16 @@ width: 900px;
 min-height: 505px;
 }
 #lblHora{
-    color: rgb(133, 133, 133);
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-    font-family: 'Poppins', sans-serif;
+color: rgba(85, 85, 85, 0.671);
+font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+font-family: 'Poppins', sans-serif;
+cursor: pointer;
 }
+#lblHora:hover{
+color: rgba(255, 255, 255, 0.671);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-family: 'Poppins', sans-serif;
+}                    
 #devflex2 button{
 margin: auto;
 width:91%;
