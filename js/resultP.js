@@ -94,3 +94,8 @@ videos()
     var resp=document.getElementById('img').src
     swal('','',`${resp}`)
  })
+
+
+ document.getElementById('lblVoltar').addEventListener('click',function(){
+window.open(`../index.html`,'_self')
+ })
