@@ -95,7 +95,7 @@ min-height: 505px;
 }
 #lblHora{
 color: rgba(85, 85, 85, 0.671);
-font-size: clamp(0.700rem, 0.3vw  + 0.5rem, 0.800rem);
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.800rem);
 font-family: 'Poppins', sans-serif;
 cursor: pointer;
 }
