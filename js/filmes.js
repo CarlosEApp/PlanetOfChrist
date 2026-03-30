@@ -113,6 +113,7 @@ produtosRef.get().then((querySnapshot) => {
     flexgrup.addEventListener('click', function(){
   var urlDev=doc.Links;
   var result= urlDev.trim();
+   window.open(`${result}`,'_self')
      
     })
   });
