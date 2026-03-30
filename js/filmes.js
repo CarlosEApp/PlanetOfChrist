@@ -72,11 +72,7 @@ var produtosRef = db.collection(`${coleção}`);
 produtosRef.get().then((querySnapshot) => {
   querySnapshot.forEach(docSnap => {
     var doc = docSnap.data();
-    if(doc.Origem==='YouTube'){
-      document.getElementById('divMainDois').style.display='block'
-    alert(doc.Origem)
-    } else if( doc.Origem==='site'){
-     
+   
     // Criar elementos
     var flexgrup = document.createElement('div');
     var div1= document.createElement('div');
@@ -122,14 +118,20 @@ produtosRef.get().then((querySnapshot) => {
         document.getElementById('h2Titulo').innerHTML=`${doc.Lista_Cad} Site`
     },500)
     flexgrup.addEventListener('click', function(){
-  var urlDev=doc.Links;
+       var urlDev=doc.Links;
   var result= urlDev.trim();
-   window.open(`${result}`,'_self')
+      if(doc.Origem=='site'){
+     window.open(`${result}`,'_self')
+      } else if(doc.Origem=='YouTube'){
+          sessionStorage.setItem('Código_Result_PSQ', doc.ID)
+          setTimeout(function(){
+          window.open(`../html/resutP.html`,'_self')
+        },400)
+      }
+ 
+  
      
     })
-  } else{
-
-  }
   });
 
 });

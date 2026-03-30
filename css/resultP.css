@@ -113,6 +113,7 @@ color: rgb(245, 50, 1);
 background-color: #d1d1d100;
 font-weight: bold;
 border-radius: 10px;
+display: none;
 }
 @media (max-width: 1000px) {
 #Url{
