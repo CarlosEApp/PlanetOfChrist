@@ -74,7 +74,7 @@ background-color: black;
 padding-bottom: 100px;
 padding-top: 40px;
 }
-#divMainUm h2{
+#divMainUm h2, #h2TituloDois{
 text-align: center;
 color: #ffffff;
 padding-top: 10px;
@@ -88,6 +88,8 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 flex-wrap: wrap;
+max-height:150vh;
+overflow: auto;
 }
 #divL{
 color: #ffffff;
@@ -298,12 +300,10 @@ font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
 font-weight: bold;
 color: rgb(128, 0, 0);
 cursor: pointer;
-
 }
 #lblFech:hover, #lblfchardivPesq:hover{
 color: rgb(255, 0, 0);
 }
-
 #bblog{
 color: #1ba000;
 cursor: pointer;
@@ -370,12 +370,126 @@ width: 100%;
 min-height: 15vh;
 }
 #headUm button{
-  border: 0cap;
-  cursor: pointer;
-  background-color: transparent;
-  color: #e5f1ff;
-  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+border: 0cap;
+cursor: pointer;
+background-color: transparent;
+color: #e5f1ff;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 }
 #headUm button:hover{
-  color: #2bff00;
+color: #2bff00;
+}
+#MeuPerfil{
+position: fixed;
+left: -100%;
+width: 100%;
+max-width: 400px;
+height: 100vh;
+background-color: #070707;
+color: #e5f1ff;
+transition: left 0.3s ease;
+z-index: 999;
+padding: 0px;
+top: 0px;
+padding-top: 30px;
+padding-bottom: 250px;
+overflow: auto;
+padding-left: 10px;
+}
+.btnH{
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem); 
+font-family: 'Poppins', sans-serif;
+}
+@media (max-width: 730px) {
+#MeuPerfil{
+position: fixed;
+left: -100%;
+width: 100%;
+max-width: 1920px;
+height: 100vh;
+background-color: #000000;
+color: rgb(255, 255, 255);
+transition: left 0.3s ease;
+z-index: 999;
+padding: 0px;
+padding-top: 0px;
+padding-bottom: 50px;
+overflow: auto;
+padding-left: 10px;
+}
+.btnH{
+display: none;
+font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem); 
+font-family: 'Poppins', sans-serif;
+}
+}
+.MeuPerfil-ativo {
+left: 0 !important;
+}
+#lblFecharPerf{
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.500rem);
+cursor: pointer;
+margin-bottom: 30px;
+color: #e5f1ff;
+margin-left: 12px;
+}
+#lblFecharPerf:hover{
+color: rgb(255, 0, 0);
+}
+meuPerfilIMGfllex label{
+margin-left: 0px;
+}
+#fecharclickperfil{
+width: 25px;
+float: right;
+cursor: pointer;
+margin-right: 2px;
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+background-color: transparent;
+color: #e5f1ff;
+font-weight: bold;
+}
+#fecharclickperfil:hover{
+color: red;
+}
+#labeDivLater{
+  display: flex;
+  flex-direction: column;
+  
+}
+#labeDivLater label{
+ cursor: pointer;
+}
+#labeDivLater label:hover{
+ cursor: pointer;
+ color: #2bff00;
+}
+#divMainDois{
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  background-color: rgba(77, 0, 56, 0);
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+  border-top-left-radius: 50px ;
+  border-top-right-radius: 50px;
+  border-top: 12px solid rgb(69, 0, 71);
+  display: none;
+}
+#selectListaUm{
+  color: #e5f1ff;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0cap;
+  background-color: #000000;
+  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+  font-family: 'Poppins', sans-serif;
+}
+#selectListaUm option{
+  font-family: 'Poppins', sans-serif;
+  padding: 10px;
+  cursor: pointer;
+  color: rgb(30, 255, 0);
 }

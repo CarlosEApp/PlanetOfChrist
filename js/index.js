@@ -407,7 +407,6 @@ document.getElementById('desconectlab').addEventListener('click',function(){
 LocalUserClouse()
 window.location.reload()
 })
-
 function labelLog(){
  var resp= localStorage.getItem('GoogleEmail' )
   if(!resp||resp==''){
@@ -437,13 +436,52 @@ document.body.style.paddingRight = '0px';
 }
  }
 function filmesGospel(){
+  sessionStorage.setItem('Coleção','Filmes')
+  setTimeout(function(){
 window.open('html/filmes.html','_self')
-
+  },700)
 }
 
+//Serie
+function serie(){
+  sessionStorage.setItem('Coleção','Séries')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
+}
 
+//seleção de coleção
+document.getElementById('selectListaUm').addEventListener('change', function(){
+  var resp= document.getElementById('selectListaUm').value;
 
+    var resp= document.getElementById('selectListaUm').value;
+  if(resp==='devocional')   {
+  alert('Devocional')
+  } else if(resp==='vida&saúde'){
+ alert('Vida & saúde')
+  }else if(resp==='Sermões'){
+ alert('Semões')
+  }else if(resp==='Filmes'){
+   filmesGospel()
+  }else if(resp==='Séries'){
+   serie()
+   }else if(resp==='Desenhos'){
+    alert('Desenhos')
+   }else if(resp==='Documentários'){
+   alert('Documentários')
+  }else if(resp==='sair'){
+   var resp_= document.getElementById('selectListaUm');
+  resp_.value=''
+  }
 
+});
+
+function filmesHead(){
+  filmesGospel()
+}
+function sermãoHead(){
+  alert('Sermões')
+}
 
 /////////////////Botões links estudos bíblicos//////////////////////////////////////////
 document.getElementById('estudo01').addEventListener('click',function(){
@@ -674,6 +712,7 @@ Swal.close()
           
           } else if(data.Origem==='YouTube'){
            // alert(data.ID)
+           
             sessionStorage.setItem('Código_Result_PSQ', data.ID)
             setTimeout(function(){
             window.open(`html/resutP.html`,'_self')
@@ -699,21 +738,3 @@ fech()
 function fech(){
    document.getElementById('respPesquisasadiv').style.display='none'
 }
-//Select Um
-document.getElementById('selectListaUm').addEventListener('change', function(){
-  var resp= document.getElementById('selectListaUm').value;
-  if(resp==='devocional')   {
-  alert('Devocional')
-  } else if(resp==='vida&saúde'){
- alert('Vida & saúde')
-  }else if(resp==='Semões'){
- alert('Semões')
-  }else if(resp==='Filmes'){
- alert('Filmes')
-  }else if(resp==='series'){
- alert('Series')
-  }else if(resp==='sair'){
-   var resp_= document.getElementById('selectListaUm');
-  resp_.value=''
-  }
-});

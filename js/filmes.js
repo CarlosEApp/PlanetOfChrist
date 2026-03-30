@@ -13,6 +13,8 @@ var firebaseConfigure = {
 };
 firebase.initializeApp(firebaseConfigure);
 //////////////////////////////////////////////////////////
+ var col=sessionStorage.getItem('Coleção')
+sessionStorage.setItem('Cadastro', `${col}`)
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -60,15 +62,21 @@ localStorage.setItem('hora', timeString)
 
 //Lista Devocional
 function filmesSites(){
+  var coleção=sessionStorage.getItem('Cadastro')
 var listTab = document.getElementById('listFilmes');
 listTab.innerHTML = '';
 var db = firebase.firestore();
-var produtosRef = db.collection(`Filmes`);
+
+var produtosRef = db.collection(`${coleção}`);
 
 produtosRef.get().then((querySnapshot) => {
   querySnapshot.forEach(docSnap => {
     var doc = docSnap.data();
-
+    if(doc.Origem==='YouTube'){
+      document.getElementById('divMainDois').style.display='block'
+    alert(doc.Origem)
+    } else if( doc.Origem==='site'){
+     
     // Criar elementos
     var flexgrup = document.createElement('div');
     var div1= document.createElement('div');
@@ -110,18 +118,39 @@ produtosRef.get().then((querySnapshot) => {
     flexgrup.appendChild(div2);
     flexgrup.appendChild(div3);
     listTab.appendChild(flexgrup);
+    setTimeout(function(){
+        document.getElementById('h2Titulo').innerHTML=`${doc.Lista_Cad} Site`
+    },500)
     flexgrup.addEventListener('click', function(){
   var urlDev=doc.Links;
   var result= urlDev.trim();
    window.open(`${result}`,'_self')
      
     })
+  } else{
+
+  }
   });
+
 });
 
 }
-filmesSites()
+ var resp= sessionStorage.getItem('Cadastro')
+ if(!resp||resp==''){
+  sessionStorage.setItem('Cadastro',"Filmes")
+  setTimeout(function(){
+   
+    filmesSites()
+  },1000)
+ }else{
+  setTimeout(function(){
+     var resp=sessionStorage.getItem('Cadastro')
+    filmesSites()
+  },1000)
+ }
 
+
+ 
 //Pesquisa
 function pesquisarProduto() {
    document.getElementById('respPesquisasadiv').style.display='none'
@@ -283,3 +312,62 @@ function swalclose(){
 Swal.close()
 }
 initPage()
+
+//Ir para o topo da pagina
+function Home(){
+  document.getElementById('a_inicio').click()
+  fecharperf()
+}
+
+//Menu
+function fecharperf(){
+document.getElementById("MeuPerfil").classList.remove("MeuPerfil-ativo");
+}
+function menu(){
+    document.getElementById("MeuPerfil").classList.add("MeuPerfil-ativo");
+}
+document.getElementById('fecharclickperfil').addEventListener('click',function(){
+ fecharperf()
+})
+
+//Serie
+function serie(){
+  sessionStorage.setItem('Coleção','Séries')
+  setTimeout(function(){
+ window.location.reload()
+  },500)
+}
+
+//Filme
+function Filme(){
+  sessionStorage.setItem('Coleção','Filmes')
+  setTimeout(function(){
+ window.location.reload()
+  },500)
+}
+
+//seleção de coleção
+document.getElementById('selectListaUm').addEventListener('change', function(){
+  var resp= document.getElementById('selectListaUm').value;
+
+    var resp= document.getElementById('selectListaUm').value;
+  if(resp==='devocional')   {
+  alert('Devocional')
+  } else if(resp==='vida&saúde'){
+ alert('Vida & saúde')
+  }else if(resp==='Sermões'){
+ alert('Semões')
+  }else if(resp==='Filmes'){
+   Filme()
+  }else if(resp==='Séries'){
+   serie()
+   }else if(resp==='Desenhos'){
+    alert('Desenhos')
+   }else if(resp==='Documentários'){
+   alert('Documentários')
+  }else if(resp==='sair'){
+   var resp_= document.getElementById('selectListaUm');
+  resp_.value=''
+  }
+
+});

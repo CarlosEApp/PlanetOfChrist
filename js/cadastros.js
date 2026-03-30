@@ -281,14 +281,16 @@ html:`
 <div id="divSelectCadastradosMy">
 <select id="selectCadastradosMy">
 <option value="">Selecione uma lista</option>
-  <option value='Destaques'>Em destaque</option>
+ <option value='Destaques'>Em destaque</option>
   <option value='Lançamentos'>Lançamentos</option>
-   <option value="VD Semões">VD. Sermões</option>
+   <option value="Sermões">VD. Sermões</option>
     <option value="devocional">VD. Devocionais</option>
      <option value="vida&saúde">VD. Vida & saúde</option>
       <option value="Estudos">Estudos Bíblicos</option>
-        <option value="Filmes">Filmes</option>
-          <option value="series">Series</option>
+       <option value="Filmes">Filmes</option>
+         <option value="Séries">Series</option>
+         <option value="Desenhos">Desenhos</option>
+          <option value="Documentários">Documentários</option>
            <option value="Lista Geral">Lista Geral</option>
 </div>
 
@@ -769,14 +771,16 @@ html:`
 <select id="selectCadastradosMy">
 <option value="">Selecione uma lista</option>
 <option value='Destaques'>Em destaque</option>
-  <option value='Lançamentos'>Lançamentos</option>
-   <option value="VD Semões">VD. Sermões</option>
-    <option value="devocional">VD. Devocionais</option>
-     <option value="vida&saúde">VD. Vida & saúde</option>
-      <option value="Estudos">Estudos Bíblicos</option>
-        <option value="Filmes">Filmes</option>
-        <option value="series">Series</option>
-         <option value="Lista Geral">Lista Geral</option>
+ <option value='Lançamentos'>Lançamentos</option>
+  <option value="Sermões">VD. Sermões</option>
+   <option value="devocional">VD. Devocionais</option>
+    <option value="vida&saúde">VD. Vida & saúde</option>
+     <option value="Estudos">Estudos Bíblicos</option>
+      <option value="Filmes">Filmes</option>
+        <option value="Séries">Series</option>
+        <option value="Desenhos">Desenhos</option>
+         <option value="Documentários">Documentários</option>
+          <option value="Lista Geral">Lista Geral</option>
 </div>
 `,
 imageUrl: ``,

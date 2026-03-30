@@ -28,7 +28,7 @@
       <a  id="a_inicio" href="#" title="inicio"></a>
         <header>
             <div id="header_um">
-                <div id="div_header_img"><img src="src/logo_ofice.png" alt="" width="50"> <h2 id="h2_header_Titulo">Planet of Christ</h2></div> <div id="div_header_butoon_um"><button class="btnH" onclick="Home()">Home</button>   <button class="btnH">Filmes</button> <button class="btnH">Sermões</button> <button class="btnH" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i> </button> <button onclick="menu()">Menu <i class="fa-solid fa-bars"></i></button></div>
+                <div id="div_header_img"><img src="src/logo_ofice.png" alt="" width="50"> <h2 id="h2_header_Titulo">Planet of Christ</h2></div> <div id="div_header_butoon_um"><button class="btnH" onclick="Home()">Home</button>   <button class="btnH" onclick="filmesHead()">Filmes</button> <button class="btnH" onclick="sermãoHead()">Sermões</button> <button class="btnH" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i> </button> <button onclick="menu()">Menu <i class="fa-solid fa-bars"></i></button></div>
             </div>
             <div id="header_dois">
               <div id="divPesq"> <div id="inputpesq"><input id="pesquise" type="text" placeholder="Pesquisa.."></div><i id="pesq-1" onclick="pesquisarProduto()" class="fa-solid fa-magnifying-glass"></i>
@@ -57,6 +57,8 @@
            <div id="labeDivLater">
             <label id="homeLater" for=""><i class="fa-solid fa-house"></i> Home</label><br>
              <label id="FilmesLaterLater" for=""><i class="fa-solid fa-video"></i> Filmes</label><br>
+               <label id="Séries" for="" onclick="serie()">Séries</label><br>
+                 <label id="Desenhos" for="">Desenhos</label><br>
               <label id="SermõesLater" for="">📖 Sermões</label><br>
                <label id="DevocionaisLater" for="">🙏 Devocional</label><br>
                 <label id="Vida_e_saudeLater" for="">🌱 Vida & Saúde</label><br>
@@ -99,12 +101,14 @@
                 <br>
                 <div id="divSelect"> 
                 <select name="Seleção de conteúdo" id="selectListaUm" title="Seleção de conteúdo">
-                        <option value="">Busca rapida aqui 👇 </option>
-                          <option value="Semões">Sermões em videos</option>
-                           <option value="devocional">Videos Devocionais</option>
-                            <option value="vida&saúde">Videos Vida & saúde</option>                        
-                             <option value="Filmes">Filmes</option>
-                              <option value="series">Series</option><br>
+                    <option value="">Busca rapida aqui 👇 </option>
+                      <option value="Sermões">Sermões</option>
+                       <option value="devocional">Devocionais</option>
+                        <option value="vida&saúde">Vida & saúde</option>                        
+                         <option value="Filmes">Filmes</option>
+                          <option value="Séries">Series</option>
+                           <option value="Desenhos">Desenhos</option>
+                            <option value="Documentários">Documentários</option>
                               <option value="sair">Sair, exit</option>
                 </select></div>
               <div id="Devocional_para_hoje">      

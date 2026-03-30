@@ -15,7 +15,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -25,9 +25,21 @@
 </head>
 <body>
     <div id="DivContanner">
+       <a  id="a_inicio" href="#" title="inicio"></a>
          <header>
             <div id="headUm">
-               <div id="Hdd"> <img src="../src/logo_ofice.png" alt="" width="70"> <h2>Filmes Online </h2></div>    <button class="btnH" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i> </button> 
+            <div id="Hdd"> <img src="../src/logo_ofice.png" alt="" width="70"> <h2>Filmes Online </h2></div>   
+              <select name="Seleção de conteúdo" id="selectListaUm" title="Seleção de conteúdo">
+               <option value="">✅ Categoria </option>
+                 <option value="Sermões">Sermões</option>
+                  <option value="devocional">Devociona</option>
+                   <option value="vida&saúde">Vida & saúde</option>                        
+                    <option value="Filmes">Filmes</option>
+                     <option value="Séries">Series</option>
+                      <option value="Desenhos">Desenhos</option>
+                       <option value="Documentários">Documentários</option>
+                         <option value="sair">Sair, exit</option>
+                </select>  <button class="btnH" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i> </button> <button onclick="menu()">Menu <i class="fa-solid fa-bars"></i></button>
             </div>
              <div id="header_dois">
                <div id="divPesq"> <div id="inputpesq"><input id="pesquise" type="text" placeholder="Pesquisa.."></div><i id="pesq-1" onclick="pesquisarProduto()" class="fa-solid fa-magnifying-glass"></i>
@@ -39,19 +51,38 @@
                 <label id="lblFech" for="" onclick="fech()"><i id="ffx" class="fa-solid fa-left-long" ></i></label><br>
               <h2>Resultado:</h2>
            <div id="listpesqRes"></div>
+         </div>
         </div>
-        </div>
-        <main>
+
+          <div id="MeuPerfil">
+            <label id="fecharclickperfil" for=""> X </label>
+             <label id="lblFecharPerf" for="" onclick="fecharperf()"><i id="ffx" class="fa-solid fa-left-long" ></i></label> <br><br>
+           <div id="labeDivLater">
+            <label id="homeLater" for="" onclick="Home()"><i class="fa-solid fa-house"></i> Home</label><br>
+             <label id="FilmesLaterLater" for="" onclick="Filme()"><i class="fa-solid fa-video"></i> Filmes</label><br>
+              <label id="SermõesLater" for="" onclick="serie()"> Séries</label><br>
+               <label id="DevocionaisLater" for="">🙏 Desenhos</label><br>
+                <label id="Vida_e_saudeLater" for="">Documentários</label><br>
+                 <label id="telaCheia" for="" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i> Tela</label><br>
+              </div>
+          
+         </div>
+         <main>
             <div id="divMainUm">
-                <h2>Filmes de Site</h2>
+                <h2 id="h2Titulo">Filmes de Site</h2>
                 <div id="listaDeFilmes">
                     <div id="listFilmes"></div>
                 </div>
             </div>
-        </main>
-        <footer>
+
+             <div id='divMainDois'>
+              <h2 id="h2TituloDois"> Filmes You Tube</h2>
+             </div>
+             <br><br>
+         </main>
+         <footer>
             
-        </footer>
+         </footer>
 
 
     </div>
