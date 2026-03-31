@@ -501,7 +501,6 @@ window.open('html/filmes.html','_self')
 }
 
 function documentarios(){
-
  sessionStorage.setItem('Coleção','Documentários')
   setTimeout(function(){
 window.open('html/filmes.html','_self')
@@ -520,6 +519,15 @@ function devocional(){
 window.open('html/filmes.html','_self')
   },700)
 }
+function vid(){
+   vidaEsaude()
+}
+document.getElementById('btnDV').addEventListener('click',function(){
+  devocional()
+
+})
+
+
 
 
 /////////////////Botões links estudos bíblicos//////////////////////////////////////////

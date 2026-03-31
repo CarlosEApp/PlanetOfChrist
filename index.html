@@ -6,6 +6,13 @@
     <title>Planet of Christ</title>
      <link rel="shortcut icon" id="liskIMG" href="src/logo_ofice.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+     <meta property="og:title" content="Planet Of Christ!">
+    <meta name="description" content="No Planet of Christ, compartilhamos sermões, devocionais, filmes gospel e pedidos de oração para levar esperança em Cristo.">
+    <meta property="og:image" content="https://planetofchrist.netlify.app/src/mtlogo.png">
+    <meta property="og:url" content="https://planetofchrist.netlify.app/">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
@@ -123,7 +130,7 @@
                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                        allowfullscreen >   
                      </iframe>
-                         <div id="devflex2"> <button>Ver Mais Devocionais</button> </div>
+                         <div id="devflex2"> <button id="btnDV">Ver Mais Devocionais</button> </div>
                     </div>
                       <div>
                   
@@ -134,7 +141,7 @@
                        frameborder="0" 
                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                        allowfullscreen>
-                     </iframe><div id="devflex2"> <button>Ver Mais Vida & Saúde</button> </div></div>
+                     </iframe><div id="devflex2"> <button onclick="vid()">Ver Mais Vida & Saúde</button> </div></div>
                 </div>
                 
               </div>
