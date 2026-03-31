@@ -456,32 +456,71 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
 
     var resp= document.getElementById('selectListaUm').value;
   if(resp==='devocional')   {
-  alert('Devocional')
+  devocional()
   } else if(resp==='vida&saúde'){
- alert('Vida & saúde')
+ vidaEsaude()
   }else if(resp==='Sermões'){
- alert('Semões')
+  sermãoHead()
   }else if(resp==='Filmes'){
    filmesGospel()
   }else if(resp==='Séries'){
    serie()
    }else if(resp==='Desenhos'){
-    alert('Desenhos')
+    desenhos()
    }else if(resp==='Documentários'){
-   alert('Documentários')
+   documentarios()
   }else if(resp==='sair'){
    var resp_= document.getElementById('selectListaUm');
   resp_.value=''
   }
+});
 
+document.getElementById('SermõesLater').addEventListener('click',function(){
+sermãoHead()
 });
 
 function filmesHead(){
   filmesGospel()
 }
+document.getElementById('FilmesLaterLater').addEventListener('click', function(){
+    filmesGospel()
+})
+
 function sermãoHead(){
-  alert('Sermões')
+   sessionStorage.setItem('Coleção','Sermões')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
 }
+
+function desenhos(){
+ sessionStorage.setItem('Coleção','Desenhos')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
+}
+
+function documentarios(){
+
+ sessionStorage.setItem('Coleção','Documentários')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
+}
+function vidaEsaude(){
+ sessionStorage.setItem('Coleção','vida&saúde')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
+}
+
+function devocional(){
+   sessionStorage.setItem('Coleção','devocional')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
+}
+
 
 /////////////////Botões links estudos bíblicos//////////////////////////////////////////
 document.getElementById('estudo01').addEventListener('click',function(){

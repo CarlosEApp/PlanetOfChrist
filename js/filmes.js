@@ -115,25 +115,22 @@ produtosRef.get().then((querySnapshot) => {
     flexgrup.appendChild(div3);
     listTab.appendChild(flexgrup);
     setTimeout(function(){
-        document.getElementById('h2Titulo').innerHTML=`${doc.Lista_Cad} Site`
+        document.getElementById('h2Titulo').innerHTML=`${doc.Lista_Cad}`
     },500)
     flexgrup.addEventListener('click', function(){
        var urlDev=doc.Links;
   var result= urlDev.trim();
       if(doc.Origem=='site'){
      window.open(`${result}`,'_self')
+     
       } else if(doc.Origem=='YouTube'){
           sessionStorage.setItem('Código_Result_PSQ', doc.ID)
           setTimeout(function(){
           window.open(`../html/resutP.html`,'_self')
         },400)
       }
- 
-  
-     
     })
   });
-
 });
 
 }
@@ -141,7 +138,6 @@ produtosRef.get().then((querySnapshot) => {
  if(!resp||resp==''){
   sessionStorage.setItem('Cadastro',"Filmes")
   setTimeout(function(){
-   
     filmesSites()
   },1000)
  }else{
@@ -152,7 +148,6 @@ produtosRef.get().then((querySnapshot) => {
  }
 
 
- 
 //Pesquisa
 function pesquisarProduto() {
    document.getElementById('respPesquisasadiv').style.display='none'
@@ -167,7 +162,7 @@ text: ``,
 html:`
 <div>
 <b id="bbdesc"> Não encontramos nada relacionado as informações digitadas</b><br> digite as primeiras letras  do que deseja encontrar e procure em uma lista a opção desejada<b id="b"></b> .
-      </div> 
+  </div> 
 `,
 imageUrl: ``,
 background: '#000303',
@@ -189,7 +184,6 @@ Swal.close()
  
   var db= firebase.firestore()
   db.collection("Lista Geral").get().then(snapshot => {
- 
     snapshot.forEach(docSnap => {
       var data = docSnap.data();
       if (data.Titulo && data.Titulo.toLowerCase().includes(termo) || data.SubTitulo && data.SubTitulo.toLowerCase().includes(termo)  ||data.OBS && data.OBS.toLowerCase().includes(termo) )  {
@@ -240,8 +234,7 @@ Swal.close()
             sessionStorage.setItem('Código_Result_PSQ', data.ID)
             setTimeout(function(){
             window.open(`../html/resutP.html`,'_self')
-            },400)
-           
+            },400)   
           }
         });
        }
@@ -317,8 +310,8 @@ initPage()
 
 //Ir para o topo da pagina
 function Home(){
-  document.getElementById('a_inicio').click()
-  fecharperf()
+document.getElementById('a_inicio').click()
+fecharperf()
 }
 
 //Menu
@@ -348,28 +341,68 @@ function Filme(){
   },500)
 }
 
+function sermãoHead(){
+   sessionStorage.setItem('Coleção','Sermões')
+  setTimeout(function(){
+window.location.reload()
+  },700)
+}
+
+function desenhos(){
+ sessionStorage.setItem('Coleção','Desenhos')
+  setTimeout(function(){
+window.location.reload()
+  },700)
+}
+
+function documentarios(){
+ sessionStorage.setItem('Coleção','Documentários')
+  setTimeout(function(){
+window.location.reload()
+  },700)
+}
+
+function vidaEsaude(){
+ sessionStorage.setItem('Coleção','vida&saúde')
+  setTimeout(function(){
+window.location.reload()
+  },700)
+}
+
+function devocional(){
+   sessionStorage.setItem('Coleção','devocional')
+  setTimeout(function(){
+window.location.reload()
+  },700)
+}
+
+document.getElementById('SermõesLater').addEventListener('click',function(){
+sermãoHead()
+
+});
 //seleção de coleção
 document.getElementById('selectListaUm').addEventListener('change', function(){
   var resp= document.getElementById('selectListaUm').value;
 
     var resp= document.getElementById('selectListaUm').value;
   if(resp==='devocional')   {
-  alert('Devocional')
+  devocional()
   } else if(resp==='vida&saúde'){
- alert('Vida & saúde')
+  vidaEsaude()
   }else if(resp==='Sermões'){
- alert('Semões')
+   sermãoHead()
   }else if(resp==='Filmes'){
    Filme()
   }else if(resp==='Séries'){
    serie()
    }else if(resp==='Desenhos'){
-    alert('Desenhos')
+    desenhos()
    }else if(resp==='Documentários'){
-   alert('Documentários')
+   documentarios()
   }else if(resp==='sair'){
    var resp_= document.getElementById('selectListaUm');
   resp_.value=''
   }
-
 });
+
+
