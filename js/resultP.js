@@ -75,12 +75,20 @@ function videos(){
    var url=dados.Links;
   var result= url.trim();
  document.getElementById('Url').src="https://www.youtube.com/embed/"+ result;
- document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`
- document.getElementById('h2_header').innerHTML=`${dados.SubTitulo}`
- document.getElementById('h2_header_Titulo').innerHTML=`${dados.Titulo}`
-  document.getElementById('img').src=dados.Imagem
- document.getElementById('lblHora').innerHTML=`Ultima Atualizaçõa: ${dados.Data_Atualizada}`
- document.getElementById('tituloPagina').innerHTML=`${dados.Lista_Cad}`
+ document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`;
+ document.getElementById('h2_header').innerHTML=`${dados.SubTitulo}`;
+ document.getElementById('h2_header_Titulo').innerHTML=`${dados.Titulo}`;
+  document.getElementById('img').src=dados.Imagem;
+ document.getElementById('lblHora').innerHTML=`Ultima Atualizaçõa: ${dados.Data_Atualizada}`;
+ document.getElementById('tituloPagina').innerHTML=`${dados.Lista_Cad}`;
+ setTimeout(function(){
+  document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`;
+ document.getElementById('h2_header').innerHTML=`${dados.SubTitulo}`;
+ document.getElementById('h2_header_Titulo').innerHTML=`${dados.Titulo}`;
+  document.getElementById('img').src=dados.Imagem;
+ document.getElementById('lblHora').innerHTML=`Ultima Atualizaçõa: ${dados.Data_Atualizada}`;
+ document.getElementById('tituloPagina').innerHTML=`${dados.Lista_Cad}`;
+ },3000)
     }else{
 alert( 'Não foi possivel localizar o Arquivo! ')
     }

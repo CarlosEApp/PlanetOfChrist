@@ -271,6 +271,7 @@ color: #e5f1ff;
 }
 #MeuPerfil label{
     margin-left: 10px;
+
 }
 #meuPerfilIMGfllex{
 display: flex;
@@ -810,7 +811,7 @@ flex-direction: column;
 cursor: pointer;
 color: #ffffff;
 font-family: 'Poppins', sans-serif;
-font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 }
 #labeDivLater label:hover{
 color: rgb(94, 255, 0);
@@ -1158,73 +1159,78 @@ font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
 font-weight: bold;
 color: rgb(128, 0, 0);
 cursor: pointer;
-
 }
 #lblFech:hover, #lblfchardivPesq:hover{
 color: rgb(255, 0, 0);
 font-family: 'Poppins', sans-serif;
 }
 #starsAvaliar label{
-    margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+margin-top: 10px;
+margin-bottom: 30px;
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+cursor: pointer;
+font-family: 'Poppins', sans-serif;
 }
 #starsAvaliar label:hover{
-    color: #00ff40;
+color: #00ff40;
 }
 .my-custom_compartilhar h2{
-    font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
-    font-family: 'Poppins', sans-serif;
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.400rem);
+font-family: 'Poppins', sans-serif;
+color: rgb(73, 73, 73);
 }
 .my-custom_compartilhar #face, .my-custom_compartilhar #whats_a, #logAgora{
-    outline: none;
-    width: 80%;
-    padding: 10px;
-    border: 0cap;
-    cursor: pointer;
-    background-color: aliceblue;
-    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    border-radius: 7px;
-   
+outline: none;
+width: 80%;
+padding: 10px;
+border: 0cap;
+cursor: pointer;
+background-color: rgb(0, 94, 0);
+font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+font-weight: bold;
+font-family: 'Poppins', sans-serif;
+border-radius: 7px;
+color: rgb(219, 219, 219);
 }
 .my-custom_compartilhar #face:hover, .my-custom_compartilhar #whats_a:hover, #logAgora:hover{
-    background-color:rgb(255, 72, 0);
-    color: #00ff15;
-    
+background-color:rgb(16, 138, 0);
 }
 .my-custom_Avaliar  label{
-    font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
-    background-color: #bed3c000;
-    border-radius: 50%;
-    padding: 3px;
-    
-    cursor: pointer;
+font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
+background-color: #bed3c000;
+border-radius: 50%;
+padding: 3px;
+cursor: pointer;
+}
+.my-custom_Avaliar  label:hover{
+background-color: #272726d8;
+}
+.my-custom_compartilhar{
+width: 95%;
+max-width: 400px;
 }
 
 #star1{
- background-color: #2bff00;
- transition: transform 0.7s ease;
+background-color: #ff7b00d8;
+transition: transform 0.7s ease;
 }
 #star1:hover{
-    transform: translateY(-10px); 
+transform: translateY(-10px); 
 }
 #lblgrato{
-    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
-    color: rgb(252, 252, 252);
-    background-color: transparent;
-    font-weight: bolder;
-    margin-top: 20px;
-    display: none;
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+color: rgb(15, 15, 15);
+background-color: transparent;
+font-weight: bolder;
+margin-top: 20px;
 }
 .my-custom_Avaliar, .my-custom_logar{
-    border-radius: 20px;
+border-radius: 10px;
+width: 95%;
+max-width: 400px;
 }
 #meuPerfilIMGfllex  #labeStars{
-     font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
 }
 #lblAv1{
 transition: transform 0.7s ease;
@@ -1233,5 +1239,17 @@ transition: transform 0.7s ease;
 transform: translateY(-10px); 
 }
 #ultimoHomem img{
-    max-width: 390px;
+max-width: 390px;
+}
+.my-custom_logar h2{
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+.my-custom_logar #pp{
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+ color: #000000bb;
+}
+.my-custom_Avaliar h2{
+font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.400rem);
+font-family: 'Poppins', sans-serif;
+color: rgb(73, 73, 73);
 }

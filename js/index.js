@@ -795,13 +795,11 @@ function Comparltlhar(){
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
-<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
-<br><br>
 <button id="whats_a" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
 <br>
 `,
-background: 'rgb(255, 72, 0)', // Cor de fundo
-color: '#e5f1ff', // Cor do texto// Cor do texto
+background: 'hsla(0, 0%, 100%, 0.97)', // Cor de fundo
+color: '#2f2f30', // Cor do texto// Cor do texto
 showCloseButton: true,  
 showCancelButton: false,
 showConfirmButton: false,
@@ -813,10 +811,7 @@ document.body.style.paddingRight = '0px';
 }
 });
 
-document.getElementById('face').addEventListener('click',function(){
-var url = encodeURIComponent("https://planetofchrist.netlify.app/");
-window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
-});
+
 document.getElementById('whats_a').addEventListener('click',function(){
 var pagina =`https://planetofchrist.netlify.app/`
 var loja=`https://planetofchrist.netlify.app/`
@@ -834,8 +829,8 @@ if(!logEmail||logEmail===''||!lognome|| lognome===''){
 Swal.fire({
 title: `Você não está logado!`,
 html: `
- <p>Entre com sua conta google para interagir com a página!
-<br><br>
+ <p id='pp'>Entre com sua conta google para interagir com a página!</p>
+<br>
 <button id="logAgora" title="">Sim entrar agora</button>            
 <br>
 `,
@@ -855,21 +850,20 @@ document.getElementById('logAgora').addEventListener('click',function(){
   loginComGoogle()
    setTimeout(function(){
    Swal.close()
-   },3000)
+   },1000)
 
 })
 } else{
   Swal.fire({
-title: `🌟 Avaliação`,
+title: `Avaliação`,
 html: `
 <div id='custonAvaliar'>
  <label id='lblAv1'>🌟</label> <label id='lblAv2'>🌟</label> <label id='lblAv3'>🌟</label> <label id='lblAv4'>🌟</label> <label id='lblAv5'>🌟</label>
- <br> <label id='lblgrato'>Grato!</label>
- 
+ <br><br> <label id='lblgrato'>Click em uma estrela de 1 a 5</label>
 </div>
 `,
-background: 'rgb(255, 72, 0)', // Cor de fundo
-color: '#e5f1ff', // Cor do texto// Cor do texto
+background: 'hsla(0, 0%, 100%, 0.97)', // Cor de fundo
+color: '#272727', // Cor do texto// Cor do texto
 showCloseButton: true,  
 showCancelButton: false,
 showConfirmButton: false,
@@ -880,7 +874,7 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-document.getElementById('lblgrato').style.display='none';
+//document.getElementById('lblgrato').style.display='none';
  var resp1= document.getElementById('lblAv1');
   var resp2= document.getElementById('lblAv2');
    var resp3= document.getElementById('lblAv3');
@@ -890,15 +884,13 @@ document.getElementById('lblAv1').addEventListener('click',function(){
   var resp1= document.getElementById('lblAv1');
    resp1.id='star1';
    //alert('01');
-   var replic=document.getElementById('lblgrato');
-   document.getElementById('lblgrato').style.display='block';
-   replic.innerHTML='Obrigado, vamos melhorar!'
+ 
    sessionStorage.setItem('NotaAvalie','2')
       document.getElementById('labeStars').innerHTML=`🌟`
    setTimeout(function(){
     salveAvaliação()
    Swal.close()
-   },3000)
+   },1000)
 });
 document.getElementById('lblAv2').addEventListener('click',function(){
   var resp1= document.getElementById('lblAv1');
@@ -906,15 +898,13 @@ document.getElementById('lblAv2').addEventListener('click',function(){
    resp1.id='star1';
    resp2.id='star1';
    //alert('01, 02')
-   var replic=document.getElementById('lblgrato');
-   document.getElementById('lblgrato').style.display='block';
-   replic.innerHTML='Obrigado, vamos melhorar!'
+ 
    sessionStorage.setItem('NotaAvalie','4')
       document.getElementById('labeStars').innerHTML=`🌟🌟`
    setTimeout(function(){
     salveAvaliação()
    Swal.close()
-   },3000)
+   },1000)
 });
 document.getElementById('lblAv3').addEventListener('click',function(){
   var resp1= document.getElementById('lblAv1');
@@ -924,15 +914,13 @@ document.getElementById('lblAv3').addEventListener('click',function(){
    resp2.id='star1';
    resp3.id='star1';
    //alert('01, 02, 03');
-   var replic=document.getElementById('lblgrato');
-   document.getElementById('lblgrato').style.display='block';
-   replic.innerHTML='Muito Obrigado!'
+
    sessionStorage.setItem('NotaAvalie','6')
       document.getElementById('labeStars').innerHTML=`🌟🌟🌟`
    setTimeout(function(){
     salveAvaliação()
    Swal.close()
-   },3000)
+   },1000)
 });
 document.getElementById('lblAv4').addEventListener('click',function(){
   var resp1= document.getElementById('lblAv1');
@@ -944,15 +932,13 @@ document.getElementById('lblAv4').addEventListener('click',function(){
    resp3.id='star1';
    resp4.id='star1';
    //alert('01, 02, 03, 04');
-   var replic=document.getElementById('lblgrato');
-   document.getElementById('lblgrato').style.display='block';
-   replic.innerHTML='Muitíssimo obrigado!'
+
    sessionStorage.setItem('NotaAvalie','8')
       document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟`
   setTimeout(function(){
     salveAvaliação()
    Swal.close()
-   },3000)
+   },1000)
 });
 document.getElementById('lblAv5').addEventListener('click',function(){
   var resp1= document.getElementById('lblAv1');
@@ -967,15 +953,12 @@ document.getElementById('lblAv5').addEventListener('click',function(){
    resp5.id='star1';
    //alert('01, 02, 03, 04, 05');
    
-   var replic=document.getElementById('lblgrato');
-   document.getElementById('lblgrato').style.display='block';
-   replic.innerHTML='Muitíssimo obrigado. Gloria a Deus!!'
    sessionStorage.setItem('NotaAvalie','10')
       document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟🌟`
   setTimeout(function(){
     salveAvaliação()
    Swal.close()
-   },3000)
+   },1000)
 });
 
 }}
