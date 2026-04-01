@@ -1034,7 +1034,7 @@ width: 100%;
 max-width: 370px;
 padding: 12px;
 font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
-background-color: #201b14d8;
+background-color: #b32a01;
 border: 0cap;
 color: aliceblue;
 font-weight: bold;
@@ -1231,4 +1231,7 @@ transition: transform 0.7s ease;
 }
 #lblAv1:hover{
 transform: translateY(-10px); 
+}
+#ultimoHomem img{
+    max-width: 390px;
 }
