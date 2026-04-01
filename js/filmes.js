@@ -114,6 +114,8 @@ produtosRef.get().then((querySnapshot) => {
     flexgrup.appendChild(div2);
     flexgrup.appendChild(div3);
     listTab.appendChild(flexgrup);
+
+    document.getElementById('a_inicio').click()
     setTimeout(function(){
         document.getElementById('h2Titulo').innerHTML=`${doc.Lista_Cad}`
     },500)
@@ -406,3 +408,7 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
 });
 
 
+//voltar
+ document.getElementById('lblVoltar').addEventListener('click',function(){
+window.open(`../index.html`,'_self')
+ })
