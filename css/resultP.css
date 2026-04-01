@@ -34,8 +34,8 @@ header{
 margin: auto;
 width: 100%;
 background-color: #3b002f;
-padding-top: 10px;
-padding-bottom: 20px;
+padding-top: 5px;
+padding-bottom: 5px;
 position: fixed;
 z-index: 999;
 color: #e5f1ff;
@@ -77,7 +77,7 @@ main{
 margin: auto;
 width: 100%;
 max-width: 1100px;
-padding-top: 200px;
+padding-top: 170px;
 min-height: 120vh;
 }
 #divMainUm{
@@ -121,13 +121,22 @@ font-weight: bold;
 border-radius: 10px;
 display: none;
 }
+
+@media (max-width: 1400px) {
+#Url{
+margin: auto;
+width: 100%;
+width: 800px;
+min-height: 405px;
+}
+}
+
 @media (max-width: 1000px) {
 #Url{
 margin: auto;
 width: 100%;
 width: 800px;
 min-height: 405px;
-
 }
 }
 @media (max-width: 900px) {
