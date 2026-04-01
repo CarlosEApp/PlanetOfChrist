@@ -859,7 +859,7 @@ title: `Avaliação`,
 html: `
 <div id='custonAvaliar'>
  <label id='lblAv1'>🌟</label> <label id='lblAv2'>🌟</label> <label id='lblAv3'>🌟</label> <label id='lblAv4'>🌟</label> <label id='lblAv5'>🌟</label>
- <br><br> <label id='lblgrato'>Click em uma estrela de 1 a 5</label>
+ <br><br> <label id='lblgrato'>Click em uma das estrelas de 1 a 5</label>
 </div>
 `,
 background: 'hsla(0, 0%, 100%, 0.97)', // Cor de fundo
