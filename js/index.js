@@ -292,6 +292,7 @@ localStorage.setItem('GoogleEmail',`${Email}` )
 localStorage.setItem('GoogleFoto',`${Foto}` )
 //document.getElementById('fotoPertfil').src=`${user.photoURL}`;
 document.getElementById('MeuPerFoto').src=`${user.photoURL}`;
+receberAvaliacão()
 lblG.innerHTML='Logado'
 lblG.id='labellogarLater_'
 var bbdd=document.getElementById('bbg');
@@ -671,6 +672,7 @@ Swal.close()
 initPage()
 
 setTimeout(function(){
+  
 videosDevos()
 },3000)
 
@@ -785,3 +787,242 @@ fech()
 function fech(){
    document.getElementById('respPesquisasadiv').style.display='none'
 }
+
+
+//Compartilhar
+function Comparltlhar(){
+
+Swal.fire({
+title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
+html: `
+<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+<br><br>
+<button id="whats_a" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+<br>
+`,
+background: 'rgb(255, 72, 0)', // Cor de fundo
+color: '#e5f1ff', // Cor do texto// Cor do texto
+showCloseButton: true,  
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+
+document.getElementById('face').addEventListener('click',function(){
+var url = encodeURIComponent("https://planetofchrist.netlify.app/");
+window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
+});
+document.getElementById('whats_a').addEventListener('click',function(){
+var pagina =`https://planetofchrist.netlify.app/`
+var loja=`https://planetofchrist.netlify.app/`
+var whatsappMessage =`✅Visite nossa Página na Web\n\n${pagina}`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+});
+}
+
+// Avaliação
+function avaliaçao(){
+var lognome= localStorage.getItem('GoogleNome')
+var logEmail= localStorage.getItem('GoogleEmail')
+if(!logEmail||logEmail===''||!lognome|| lognome===''){
+Swal.fire({
+title: `Você não está logado!`,
+html: `
+ <p>Entre com sua conta google para interagir com a página!
+<br><br>
+<button id="logAgora" title="">Sim entrar agora</button>            
+<br>
+`,
+background: 'rgb(247, 247, 247)', // Cor de fundo
+color: '#292929', // Cor do texto// Cor do texto
+showCloseButton: true,  
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_logar' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('logAgora').addEventListener('click',function(){
+  loginComGoogle()
+   setTimeout(function(){
+   Swal.close()
+   },3000)
+
+})
+} else{
+  Swal.fire({
+title: `🌟 Avaliação`,
+html: `
+<div id='custonAvaliar'>
+ <label id='lblAv1'>🌟</label> <label id='lblAv2'>🌟</label> <label id='lblAv3'>🌟</label> <label id='lblAv4'>🌟</label> <label id='lblAv5'>🌟</label>
+ <br> <label id='lblgrato'>Grato!</label>
+ 
+</div>
+`,
+background: 'rgb(255, 72, 0)', // Cor de fundo
+color: '#e5f1ff', // Cor do texto// Cor do texto
+showCloseButton: true,  
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_Avaliar' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('lblgrato').style.display='none';
+ var resp1= document.getElementById('lblAv1');
+  var resp2= document.getElementById('lblAv2');
+   var resp3= document.getElementById('lblAv3');
+    var resp4= document.getElementById('lblAv4');
+     var resp5= document.getElementById('lblAv5');
+document.getElementById('lblAv1').addEventListener('click',function(){
+  var resp1= document.getElementById('lblAv1');
+   resp1.id='star1';
+   //alert('01');
+   var replic=document.getElementById('lblgrato');
+   document.getElementById('lblgrato').style.display='block';
+   replic.innerHTML='Obrigado, vamos melhorar!'
+   sessionStorage.setItem('NotaAvalie','2')
+      document.getElementById('labeStars').innerHTML=`🌟`
+   setTimeout(function(){
+    salveAvaliação()
+   Swal.close()
+   },3000)
+});
+document.getElementById('lblAv2').addEventListener('click',function(){
+  var resp1= document.getElementById('lblAv1');
+  var resp2= document.getElementById('lblAv2');
+   resp1.id='star1';
+   resp2.id='star1';
+   //alert('01, 02')
+   var replic=document.getElementById('lblgrato');
+   document.getElementById('lblgrato').style.display='block';
+   replic.innerHTML='Obrigado, vamos melhorar!'
+   sessionStorage.setItem('NotaAvalie','4')
+      document.getElementById('labeStars').innerHTML=`🌟🌟`
+   setTimeout(function(){
+    salveAvaliação()
+   Swal.close()
+   },3000)
+});
+document.getElementById('lblAv3').addEventListener('click',function(){
+  var resp1= document.getElementById('lblAv1');
+  var resp2= document.getElementById('lblAv2');
+  var resp3= document.getElementById('lblAv3');
+   resp1.id='star1';
+   resp2.id='star1';
+   resp3.id='star1';
+   //alert('01, 02, 03');
+   var replic=document.getElementById('lblgrato');
+   document.getElementById('lblgrato').style.display='block';
+   replic.innerHTML='Muito Obrigado!'
+   sessionStorage.setItem('NotaAvalie','6')
+      document.getElementById('labeStars').innerHTML=`🌟🌟🌟`
+   setTimeout(function(){
+    salveAvaliação()
+   Swal.close()
+   },3000)
+});
+document.getElementById('lblAv4').addEventListener('click',function(){
+  var resp1= document.getElementById('lblAv1');
+  var resp2= document.getElementById('lblAv2');
+  var resp3= document.getElementById('lblAv3');
+  var resp4= document.getElementById('lblAv4');
+   resp1.id='star1';
+   resp2.id='star1';
+   resp3.id='star1';
+   resp4.id='star1';
+   //alert('01, 02, 03, 04');
+   var replic=document.getElementById('lblgrato');
+   document.getElementById('lblgrato').style.display='block';
+   replic.innerHTML='Muitíssimo obrigado!'
+   sessionStorage.setItem('NotaAvalie','8')
+      document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟`
+  setTimeout(function(){
+    salveAvaliação()
+   Swal.close()
+   },3000)
+});
+document.getElementById('lblAv5').addEventListener('click',function(){
+  var resp1= document.getElementById('lblAv1');
+  var resp2= document.getElementById('lblAv2');
+  var resp3= document.getElementById('lblAv3');
+  var resp4= document.getElementById('lblAv4');
+  var resp5= document.getElementById('lblAv5');
+   resp1.id='star1';
+   resp2.id='star1';
+   resp3.id='star1';
+   resp4.id='star1';
+   resp5.id='star1';
+   //alert('01, 02, 03, 04, 05');
+   
+   var replic=document.getElementById('lblgrato');
+   document.getElementById('lblgrato').style.display='block';
+   replic.innerHTML='Muitíssimo obrigado. Gloria a Deus!!'
+   sessionStorage.setItem('NotaAvalie','10')
+      document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟🌟`
+  setTimeout(function(){
+    salveAvaliação()
+   Swal.close()
+   },3000)
+});
+
+}}
+
+//salve avaliação firebase
+function salveAvaliação(){
+ var hora= sessionStorage.getItem('hora')
+ var data = sessionStorage.getItem('data')
+var lognome= localStorage.getItem('GoogleNome')
+var logEmail= localStorage.getItem('GoogleEmail')
+var nota=sessionStorage.getItem('NotaAvalie')
+
+var dba = firebase.firestore();
+dba.collection('Avaliações').doc(`${logEmail}`).set({
+ Nome:lognome,
+ Email:logEmail,
+ Data:data,
+ Hora:hora,
+ Nota:nota,
+})
+}
+//recebe avaliação firebase
+function receberAvaliacão(){
+  var hora= sessionStorage.getItem('hora')
+ var data = sessionStorage.getItem('data')
+var lognome= localStorage.getItem('GoogleNome')
+var logEmail= localStorage.getItem('GoogleEmail')
+var nota=sessionStorage.getItem('NotaAvalie')
+ var dbrv= firebase.firestore();
+ dbrv.collection('Avaliações').doc(`${logEmail}`).get().then((doc)=>{
+  if(doc){
+    var doc= doc.data()
+    var nota=  doc.Nota
+  
+    sessionStorage.setItem('NotaAvalie', `${nota}`)
+    if(nota==='2'){
+ document.getElementById('labeStars').innerHTML=`🌟`
+    }else if(nota==='4'){
+ document.getElementById('labeStars').innerHTML=`🌟🌟`
+   }else if(nota==='6'){
+ document.getElementById('labeStars').innerHTML=`🌟🌟🌟`
+   }else if(nota==='8'){
+ document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟`
+  }else if(nota==='10'){
+   document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟🌟`
+  }
+}
+ })
+}
+receberAvaliacão()

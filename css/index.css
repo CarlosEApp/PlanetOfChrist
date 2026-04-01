@@ -846,11 +846,13 @@ box-shadow: 0 2px 12px rgba(255, 255, 255, 0.25);
 }
 #footerP{
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 0.900rem);
+font-family: 'Poppins', sans-serif;
 }
 #bpfooter{
 color: #ff0505;
 font-weight: bold;
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+font-family: 'Poppins', sans-serif;
 }
 #myProgresos {
 width: 90%;
@@ -916,6 +918,7 @@ color: #ff0202;
 font-weight: bold;
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
 cursor: pointer;
+font-family: 'Poppins', sans-serif;
 }
 #labellogarLater_{
 float: right;
@@ -923,6 +926,7 @@ margin-right: 30px;
 color: #1ba000;
 font-weight: bold;
 cursor: pointer;
+font-family: 'Poppins', sans-serif;
 }
 #bblog{
 color: #1ba000;
@@ -931,6 +935,7 @@ cursor: pointer;
 #bbdesc{
 color: rgb(255, 255, 255);
 cursor: pointer;
+font-family: 'Poppins', sans-serif;
 }
 #filmesdiv{
 margin: auto;
@@ -1052,10 +1057,12 @@ font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
 #BBOrintaçao{
 color: blue;
 font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
+font-family: 'Poppins', sans-serif;
 }
 #videoDevocional #lblHoraDevo,#videoDevocional #lblHoraVida{
 color: rgb(104, 104, 104);
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 0.900rem);
+font-family: 'Poppins', sans-serif;
 }
 #videoDevocional #lblDataDevo,#videoDevocional #lblDataVida{
 color: #000000;
@@ -1068,12 +1075,15 @@ cursor: pointer;
 color: #660101;
 font-weight: bold;
 font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+font-family: 'Poppins', sans-serif;
 }
 #lblfchardivPesq:hover{
 color: red;
+font-family: 'Poppins', sans-serif;
 }
 #lblfchardivPesq{
 margin-right: 30px;
+font-family: 'Poppins', sans-serif;
 }
 #respPesquisasadiv{
 position: fixed;
@@ -1136,10 +1146,12 @@ flex-direction: column;
 font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
 font-weight: bold;
 cursor: pointer;
+font-family: 'Poppins', sans-serif;
 }
 #lbl2{
 font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
 cursor: pointer;
+font-family: 'Poppins', sans-serif;
 }
 #lblFech,#lblfchardivPesq{
 font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
@@ -1150,4 +1162,73 @@ cursor: pointer;
 }
 #lblFech:hover, #lblfchardivPesq:hover{
 color: rgb(255, 0, 0);
+font-family: 'Poppins', sans-serif;
+}
+#starsAvaliar label{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+#starsAvaliar label:hover{
+    color: #00ff40;
+}
+.my-custom_compartilhar h2{
+    font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+    font-family: 'Poppins', sans-serif;
+}
+.my-custom_compartilhar #face, .my-custom_compartilhar #whats_a, #logAgora{
+    outline: none;
+    width: 80%;
+    padding: 10px;
+    border: 0cap;
+    cursor: pointer;
+    background-color: aliceblue;
+    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 7px;
+   
+}
+.my-custom_compartilhar #face:hover, .my-custom_compartilhar #whats_a:hover, #logAgora:hover{
+    background-color:rgb(255, 72, 0);
+    color: #00ff15;
+    
+}
+.my-custom_Avaliar  label{
+    font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.700rem);
+    background-color: #bed3c000;
+    border-radius: 50%;
+    padding: 3px;
+    
+    cursor: pointer;
+}
+
+#star1{
+ background-color: #2bff00;
+ transition: transform 0.7s ease;
+}
+#star1:hover{
+    transform: translateY(-10px); 
+}
+#lblgrato{
+    font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+    color: rgb(252, 252, 252);
+    background-color: transparent;
+    font-weight: bolder;
+    margin-top: 20px;
+    display: none;
+}
+.my-custom_Avaliar, .my-custom_logar{
+    border-radius: 20px;
+}
+#meuPerfilIMGfllex  #labeStars{
+     font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+}
+#lblAv1{
+transition: transform 0.7s ease;
+}
+#lblAv1:hover{
+transform: translateY(-10px); 
 }
