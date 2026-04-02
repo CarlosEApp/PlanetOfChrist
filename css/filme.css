@@ -34,7 +34,7 @@ width: 100%;
 position: fixed;
 justify-content: space-around;
 align-items: center;
-background-color: black;
+background-color: rgba(0, 0, 0, 0.815);
 color: #ffffff;
 z-index: 999;
 padding-bottom: 10px;

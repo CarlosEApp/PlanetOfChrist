@@ -78,16 +78,19 @@ function videos(){
  document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`;
  document.getElementById('h2_header').innerHTML=`${dados.SubTitulo}`;
  document.getElementById('h2_header_Titulo').innerHTML=`${dados.Titulo}`;
-  document.getElementById('img').src=dados.Imagem;
+  document.getElementById('img_').src=dados.Imagem;
  document.getElementById('lblHora').innerHTML=`Ultima Atualizaçõa: ${dados.Data_Atualizada}`;
  document.getElementById('tituloPagina').innerHTML=`${dados.Lista_Cad}`;
+ sessionStorage.setItem('collection',dados.Lista_Cad)
  setTimeout(function(){
+  sessionStorage.setItem('collection',dados.Lista_Cad)
   document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`;
  document.getElementById('h2_header').innerHTML=`${dados.SubTitulo}`;
  document.getElementById('h2_header_Titulo').innerHTML=`${dados.Titulo}`;
-  document.getElementById('img').src=dados.Imagem;
+  document.getElementById('img_').src=dados.Imagem;
  document.getElementById('lblHora').innerHTML=`Ultima Atualizaçõa: ${dados.Data_Atualizada}`;
  document.getElementById('tituloPagina').innerHTML=`${dados.Lista_Cad}`;
+  filmesSites()
  },3000)
     }else{
 alert( 'Não foi possivel localizar o Arquivo! ')
@@ -104,6 +107,83 @@ videos()
  })
 
 
- document.getElementById('lblVoltar').addEventListener('click',function(){
-window.open(`../index.html`,'_self')
- })
+function fech(){
+  window.open(`../index.html`,'_self')
+}
+
+
+
+ function filmesSites(){
+  var coleção=sessionStorage.getItem('collection')
+var listTab = document.getElementById('listFilmes');
+listTab.innerHTML = '';
+var db = firebase.firestore();
+
+var produtosRef = db.collection(`${coleção}`);
+
+produtosRef.get().then((querySnapshot) => {
+  querySnapshot.forEach(docSnap => {
+    var doc = docSnap.data();
+   
+    // Criar elementos
+    var flexgrup = document.createElement('div');
+    var div1= document.createElement('div');
+    var div2= document.createElement('div');
+    var div3= document.createElement('div');
+    var img = document.createElement('img');
+    var titulo = document.createElement('h5');
+    var subtitulo = document.createElement('p');
+     var label = document.createElement('label');
+   // var botaoEditar = document.createElement('button');
+   // var botaoExcluir = document.createElement('button');
+   // var botaoVer = document.createElement('button');
+    flexgrup.id='divL'
+    div1.id='div'
+    div2.id='div2'
+    div3.id='div3'
+    titulo.id='titulo'
+    subtitulo.id='subtitulo'
+    label.id='label'
+    img.id='img'
+        
+    //botaoEditar.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+   // botaoExcluir.innerHTML = '<i class="fa-solid fa-trash"></i>';
+   // botaoVer.innerHTML = '<i class="fa-solid fa-eye"></i>';
+    img.src=doc.Imagem
+    titulo.textContent=`${doc.Titulo}`
+    subtitulo.textContent=`${doc.OBS}`
+    label.textContent=`${doc.Texto}`
+
+    // Montagem
+    div1.appendChild(img)
+    div2.appendChild(titulo);
+    div2.appendChild(subtitulo);
+    div2.appendChild(label)
+    //div3.appendChild(botaoEditar);
+    //div3.appendChild(botaoExcluir);
+   // div3.appendChild(botaoVer);
+    flexgrup.appendChild(div1);
+    flexgrup.appendChild(div2);
+    flexgrup.appendChild(div3);
+    listTab.appendChild(flexgrup);
+
+    document.getElementById('a_inicio').click()
+    setTimeout(function(){
+        document.getElementById('h2Titulo').innerHTML=`${doc.Lista_Cad}`
+    },500)
+    flexgrup.addEventListener('click', function(){
+       var urlDev=doc.Links;
+  var result= urlDev.trim();
+      if(doc.Origem=='site'){
+     window.open(`${result}`,'_self')
+     
+      } else if(doc.Origem=='YouTube'){
+          sessionStorage.setItem('Código_Result_PSQ', doc.ID)
+          setTimeout(function(){
+          window.open(`../html/resutP.html`,'_self')
+        },400)
+      }
+    })
+  });
+});
+ }
