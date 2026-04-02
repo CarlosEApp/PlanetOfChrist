@@ -32,7 +32,7 @@ background-color: #ffffff;
 header{
 margin: auto;
 width: 100%;
-background-color: #000000f3;
+background-color: #000000e5;
 padding-top: 10px;
 padding-bottom: 20px;
 position: fixed;
@@ -336,7 +336,7 @@ box-sizing: border-box;
 }
 .carousel-item img {
 width: 100%;
-min-height: 22vh;
+min-height: 18vh;
 display: block;
 }
 .prev, .next {
