@@ -101,7 +101,7 @@ alert( 'Não foi possivel localizar o Arquivo! ')
 
 videos()
 
- document.getElementById('img').addEventListener('click',function(){
+ document.getElementById('img_').addEventListener('click',function(){
     var resp=document.getElementById('img').src
     swal('','',`${resp}`)
  })
