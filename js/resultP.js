@@ -102,10 +102,28 @@ alert( 'Não foi possivel localizar o Arquivo! ')
 videos()
 
  document.getElementById('img_').addEventListener('click',function(){
-    var resp=document.getElementById('img').src
-    swal('','',`${resp}`)
+    var resp=document.getElementById('img_').src
+    Swal.fire({
+title: ``,
+html: `
+     <img id='imimg' src="" alt="" width="280"> 
+`,
+background: 'hsla(0, 0%, 100%, 0.00)', // Cor de fundo
+color: '#2f2f30', // Cor do texto// Cor do texto
+showCloseButton: true,  
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_img' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+   document.getElementById('imimg').src=`${resp}`
+  
  })
-
+ 
 
 function fech(){
   window.open(`../index.html`,'_self')

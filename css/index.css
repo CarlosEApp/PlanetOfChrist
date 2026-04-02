@@ -1253,3 +1253,27 @@ font-size: clamp(1.400rem, 0.3vw  + 0.5rem, 1.400rem);
 font-family: 'Poppins', sans-serif;
 color: rgb(73, 73, 73);
 }
+.my-custom_img button{
+ background-color: #ff3c00;
+ border-radius: 50%;
+ 
+}
+.my-custom_img {
+    max-width: 340px;
+}
+#fileInput{
+    display: none;
+}
+#trocarFoto{
+    background-color: rgb(236, 48, 1);
+    padding:5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: aliceblue;
+    border-radius: 10px;
+    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+    font-family: 'Poppins', sans-serif;
+}
+#trocarFoto:hover{
+    background-color: #00661a;
+}

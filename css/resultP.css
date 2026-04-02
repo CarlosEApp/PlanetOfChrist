@@ -324,3 +324,11 @@ color: #ffffff;
     padding-bottom: 10px;
     background-color: #35353500;
 }
+.my-custom_img button{
+ background-color: #ff3c00;
+ border-radius: 50%;
+ 
+}
+.my-custom_img {
+    max-width: 340px;
+}

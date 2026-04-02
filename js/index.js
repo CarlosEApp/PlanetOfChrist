@@ -1009,3 +1009,80 @@ var nota=sessionStorage.getItem('NotaAvalie')
  })
 }
 receberAvaliacão()
+
+
+
+
+document.getElementById('MeuPerFoto').addEventListener('click', function(){
+  var resp = document.getElementById('MeuPerFoto').src;
+  Swal.fire({
+    title: ``,
+    html: `
+      <img id='imimg' src="${resp}" alt="" width="280"> 
+      <br><label id='trocarFoto' style="cursor:pointer">Trocar foto do Perfil</label>
+    `,
+    background: 'hsla(0, 0%, 100%, 0.00)',
+    color: '#0e0e0e',
+    showCloseButton: true,
+    showConfirmButton: false,
+    customClass: { popup: 'my-custom_img' },
+    didOpen: () => { document.body.style.paddingRight = '0px'; }
+  });
+
+  // Quando clicar em "Trocar de foto"
+  document.getElementById('trocarFoto').addEventListener('click', function(){
+    document.getElementById('fileInput').click();
+  });
+});
+
+// Captura o arquivo escolhido
+document.getElementById('fileInput').addEventListener('change', function(e){
+  var file = e.target.files[0];
+  var logEmail = localStorage.getItem('GoogleEmail');
+
+  if(file && logEmail){
+    var storageRef = firebase.storage().ref();
+    var fotoRef = storageRef.child(`usuarios/${logEmail}/foto.jpg`);
+
+    fotoRef.put(file).then(snapshot => {
+      return snapshot.ref.getDownloadURL();
+    }).then(downloadURL => {
+      // Atualiza Firestore
+      var ddg = firebase.firestore();
+      ddg.collection('UsuáriosGoogle').doc(logEmail).update({
+        Foto: downloadURL
+      });
+
+      // Atualiza localStorage
+      localStorage.setItem('fotoUsuario', downloadURL);
+
+      // Atualiza preview no modal
+      document.getElementById('MeuPerFoto').src = downloadURL;
+      localStorage.setItem('GoogleFoto',`${downloadURL}` )
+      Swal.fire("Foto atualizada com sucesso!");
+       Swal.fire({
+       title: `Foto Atualizada`,
+       html: `
+       <div id='custonAvaliar'>
+         <p>Sucesso!</p>
+       </div>
+       `,
+       background: 'hsla(0, 0%, 100%, 0.97)', // Cor de fundo
+       color: '#141414', // Cor do texto// Cor do texto
+       showCloseButton: true,  
+       showCancelButton: false,
+       showConfirmButton: false,
+       customClass: {
+       popup: 'my-custom_Avaliar' // Aplica a classe CSS personalizada
+       },
+       didOpen: () => {
+       document.body.style.paddingRight = '0px';
+       }
+       });
+    }).catch(error => {
+      console.error("Erro ao enviar a foto:", error);
+    });
+  }
+});
+
+
