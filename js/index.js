@@ -795,6 +795,9 @@ function Comparltlhar(){
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
+
+<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+<br><br>
 <button id="whats_a" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
 <br>
 `,
@@ -810,7 +813,10 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-
+document.getElementById('face').addEventListener('click',function(){
+var url = encodeURIComponent("https://planetofchrist.netlify.app/");
+window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
+});
 
 document.getElementById('whats_a').addEventListener('click',function(){
 var pagina =`https://planetofchrist.netlify.app/`
