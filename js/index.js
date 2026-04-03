@@ -813,10 +813,10 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-document.getElementById('face').addEventListener('click',function(){
-var url = encodeURIComponent("https://planetofchrist.netlify.app/");
-window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
-});
+//document.getElementById('face').addEventListener('click',function(){
+//var url = encodeURIComponent("https://planetofchrist.netlify.app/");
+// window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
+//});
 
 document.getElementById('whats_a').addEventListener('click',function(){
 var pagina =`https://planetofchrist.netlify.app/`
