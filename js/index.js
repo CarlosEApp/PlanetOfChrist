@@ -1092,3 +1092,19 @@ document.getElementById('fileInput').addEventListener('change', function(e){
 });
 
 
+//clic pesquisa teclado
+
+  var botao = document.getElementById('pesq-1');
+
+  // Captura o evento de tecla pressionada
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // evita o comportamento padrão (como enviar formulário)
+      botao.click(); // aciona o clique do botão
+    }
+  });
+    
+
+
+
+  

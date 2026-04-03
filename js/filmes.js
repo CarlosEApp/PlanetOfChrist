@@ -412,3 +412,18 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
  document.getElementById('lblVoltar').addEventListener('click',function(){
 window.open(`../index.html`,'_self')
  })
+
+
+ //clic pesquisa teclado
+//const input = document.getElementById('meuInput');
+  var botao = document.getElementById('pesq-1');
+
+  // Captura o evento de tecla pressionada
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // evita o comportamento padrão (como enviar formulário)
+      botao.click(); // aciona o clique do botão
+    }
+  });
+
+  
