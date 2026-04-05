@@ -103,18 +103,22 @@ function videos(){
  document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`;
  document.getElementById('h2_header').innerHTML=`${dados.SubTitulo}`;
  document.getElementById('h2_header_Titulo').innerHTML=`${dados.Titulo}`;
-  document.getElementById('img_').src=dados.Imagem;
+document.getElementById('img_').src=dados.Imagem;
  document.getElementById('lblHora').innerHTML=`Ultima Atualizaçõa: ${dados.Data_Atualizada}`;
  document.getElementById('tituloPagina').innerHTML=`${dados.Lista_Cad}`;
  sessionStorage.setItem('collection',dados.Lista_Cad)
+ sessionStorage.setItem('compartilhar', dados.ID)
+ sessionStorage.setItem('titulo', dados.Titulo)
  setTimeout(function(){
-  sessionStorage.setItem('collection',dados.Lista_Cad)
-  document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`;
+ sessionStorage.setItem('collection',dados.Lista_Cad)
+ document.getElementById('h3_header').innerHTML=`${dados.Lista_Cad}`;
  document.getElementById('h2_header').innerHTML=`${dados.SubTitulo}`;
  document.getElementById('h2_header_Titulo').innerHTML=`${dados.Titulo}`;
-  document.getElementById('img_').src=dados.Imagem;
+ document.getElementById('img_').src=dados.Imagem;
  document.getElementById('lblHora').innerHTML=`Ultima Atualizaçõa: ${dados.Data_Atualizada}`;
  document.getElementById('tituloPagina').innerHTML=`${dados.Lista_Cad}`;
+ sessionStorage.setItem('compartilhar', dados.ID)
+ sessionStorage.setItem('titulo', dados.Titulo)
   filmesSites()
  },3000)
     }else{
@@ -145,24 +149,17 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-   document.getElementById('imimg').src=`${resp}`
-  
- })
- 
-
+document.getElementById('imimg').src=`${resp}`
+})
 function fech(){
   window.open(`../index.html`,'_self')
 }
 
-
-
  function filmesSites(){
-   var coleção=sessionStorage.getItem('collection')
-
+var coleção=sessionStorage.getItem('collection')
 var listTab = document.getElementById('listFilmes');
 listTab.innerHTML = '';
 var db = firebase.firestore();
-
 var produtosRef = db.collection(`${coleção}`);
 
 produtosRef.get().then((querySnapshot) => {
@@ -231,3 +228,15 @@ produtosRef.get().then((querySnapshot) => {
   });
 });
  }
+
+
+ // Compartilhar video
+ document.getElementById('btn_CC').addEventListener('click',function(){
+  var comp=sessionStorage.getItem('compartilhar')
+var pagina =`https://planetofchrist.netlify.app/`;
+var titulo = sessionStorage.getItem('titulo')
+var url = "https://planetofchrist.netlify.app/html/result.html?codigo=" + comp;
+var whatsappMessage =`✅ Te Recomedo: ${titulo} ☝️\n-------------------------------------\n\n 👉 Video: ${url}\n\n✅ Pagina: ${pagina}`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+});
