@@ -765,7 +765,7 @@ color: aliceblue;
 #PerfilBarra_:hover{
 background-color: rgb(0, 163, 0);
 color: aliceblue;
-box-shadow: 0 4px 8px rgb(235, 74, 0);
+box-shadow: 0 2px 4px rgb(0, 90, 30);
 }
 #PerfilBarra:hover #bbg{
 background-color: rgb(253, 81, 2);
@@ -1290,5 +1290,5 @@ padding-right: 10px;
 }
 #imgbtnYouTube:hover{
 background-color: rgb(114, 214, 0);
-box-shadow: 0 4px 8px rgba(255, 0, 0, 0.877);
+box-shadow: 0 2px 4px rgba(255, 81, 0, 0.774);
 }
