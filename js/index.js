@@ -764,7 +764,7 @@ Swal.close()
            
             sessionStorage.setItem('Código_Result_PSQ', data.ID)
             setTimeout(function(){
-            window.open(`html/resutP.html`,'_self')
+            window.open(`html/result.html`,'_self')
             },400)
         
           }else{
@@ -1104,6 +1104,9 @@ document.getElementById('fileInput').addEventListener('change', function(e){
   });
     
 
-
+//You tube
+function yuoTube(){
+  window.open('https://www.youtube.com/@PlanetofChrist','_blank')
+}
 
   

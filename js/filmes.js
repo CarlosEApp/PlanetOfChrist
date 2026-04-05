@@ -128,7 +128,7 @@ produtosRef.get().then((querySnapshot) => {
       } else if(doc.Origem=='YouTube'){
           sessionStorage.setItem('Código_Result_PSQ', doc.ID)
           setTimeout(function(){
-          window.open(`../html/resutP.html`,'_self')
+          window.open(`../html/result.html`,'_self')
         },400)
       }
     })
@@ -235,7 +235,7 @@ Swal.close()
           } else if(data.Origem==='YouTube'){
             sessionStorage.setItem('Código_Result_PSQ', data.ID)
             setTimeout(function(){
-            window.open(`../html/resutP.html`,'_self')
+            window.open(`../html/result.html`,'_self')
             },400)   
           }
         });

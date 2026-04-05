@@ -1,4 +1,23 @@
 
+sessionStorage.setItem("Meucodigo",'');
+
+// código link compatilhado{
+window.onload = function () {
+// Captura o parâmetro da URL
+var params = new URLSearchParams(window.location.search);
+var codigo = params.get("codigo");
+if (codigo) {
+//wal("Código capturado: " + codigo);
+sessionStorage.setItem("Meucodigo",codigo);
+//alert("Código capturado: " + codigo);
+videos()
+
+} else {
+console.log("Nenhum código encontrado na URL.");
+//wal("Nenhum código encontrado!");
+}
+}
+
 
 
 //Iniciando o Firebase
@@ -59,12 +78,18 @@ localStorage.setItem('hora', timeString)
 
 
 function videos(){
-
+ //var codigo=sessionStorage.getItem('Código_Result_PSQ')
  var hora=sessionStorage.getItem('hora')
  var data= sessionStorage.getItem('data')
- 
- var codigo=sessionStorage.getItem('Código_Result_PSQ')
- var list= sessionStorage.getItem('Lista_Result_PSQ')
+
+   var resp=sessionStorage.getItem("Meucodigo");
+  if(!resp|| resp=='' || resp==null){
+  var codigo=sessionStorage.getItem('Código_Result_PSQ')
+  }else{
+     var codigo=resp
+  }
+
+ //var list= sessionStorage.getItem('Lista_Result_PSQ')
 
  var db= firebase.firestore()
   db.collection(`Lista Geral`).doc(`${codigo}`).get().then((doc)=>{
@@ -132,7 +157,8 @@ function fech(){
 
 
  function filmesSites(){
-  var coleção=sessionStorage.getItem('collection')
+   var coleção=sessionStorage.getItem('collection')
+
 var listTab = document.getElementById('listFilmes');
 listTab.innerHTML = '';
 var db = firebase.firestore();
@@ -198,7 +224,7 @@ produtosRef.get().then((querySnapshot) => {
       } else if(doc.Origem=='YouTube'){
           sessionStorage.setItem('Código_Result_PSQ', doc.ID)
           setTimeout(function(){
-          window.open(`../html/resutP.html`,'_self')
+          window.open(`../html/result.html`,'_self')
         },400)
       }
     })

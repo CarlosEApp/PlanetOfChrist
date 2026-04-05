@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tituloPagina">Resultado da pesquisa</title>
+
+      <meta property="og:title" content="Planet Of Christ!">
+    <meta name="description" content="No Planet of Christ, compartilhamos sermões, devocionais, filmes gospel e pedidos de oração para levar esperança em Cristo.">
+    <meta property="og:image" content="https://planetofchrist.netlify.app/../src/tegmetalogo.png">
+    <meta property="og:url" content="https://planetofchrist.netlify.app/">
+    <meta property="og:type" content="website">
+    <meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518"/>
+    <meta name="google-site-verification" content="I5QDbpWaGPHDZCWZITuNbd94oKGkibaclmduJlckKqU"/>
+    
+      <link rel="shortcut icon" id="liskIMG" href="../src/logo_ofice.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/resultP.css">
+</head>
+<body>
+    <div id="divContanner">
+         <a  id="a_inicio" href="#" title="inicio"></a>
+        <header>
+            <div id="div_Header_Um">
+                  <div id="header_um">
+                <div id="div_header_img"><img id="img_" src="../src/logo_ofice.png" alt="" width="50"> <h2 id="h2_header_Titulo">Titulo</h2></div> 
+            </div>
+              <div id="headerDois">
+                 <div> <h4 id="h2_header">SubTitulo</h4> <h5 id="h3_header">OBS</h5></div> 
+                 <div>  <label id="lblVoltar" for="" onclick="fech()"><i id="ffx"  class="fa-solid fa-house"></i> Inicio</label></div>
+             </div>
+            </div>
+        </header>
+        <main>
+            <div id="divMainUm">
+                 <div id="devflex">  <label id="lblHora" for="">Hora</label></div>
+                       <iframe id="Url" width="" height="" 
+                         src=""
+                       title="YouTube video player" 
+                       frameborder="0" 
+                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                       allowfullscreen>
+                     </iframe><div id="devflex2"> <button>Ver Mais Video</button> </div></div>
+                     <br>
+                     <div id="divlista">
+                        <div id="listFilmes"></div>
+                     </div>
+                
+        </main>
+    </div>
+    <script src="../js/resultP.js"></script>
+</body>
+</html>
