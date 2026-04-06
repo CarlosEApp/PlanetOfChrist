@@ -229,7 +229,6 @@ videosDevos()
 //Ir para o topo da pagina
 function Home(){
   document.getElementById('a_inicio').click()
-
   fecharperf()
 }
 document.getElementById('rolar').addEventListener('click', function(){
@@ -251,7 +250,6 @@ btnRight2.addEventListener('click', () => {
 });
 function Perfilclick(){
 loginComGoogle()
-
 }
 //document.getElementById('Perfil').addEventListener('click',function(){
    // loginComGoogle()
@@ -259,7 +257,6 @@ loginComGoogle()
 function PerfilB(){
   //labelLog()
 loginComGoogle()
-
 }
 function loginComGoogle() {
   var lblG=document.getElementById('labellogarLater');
@@ -277,6 +274,8 @@ const user = result.user;
 console.log("Nome:", user.displayName);
 console.log("Email:", user.email);
 console.log("Foto:", user.photoURL);
+ localStorage.setItem('GoogleFoto',user.photoURL)
+ localStorage.setItem('GoogleEmail',user.email);
 var nome_= user.displayName
 var resp=nome_.split(' ');
 var nome1=resp[0]
@@ -338,6 +337,7 @@ lblG.id='labellogarLater'
 btnperfil.id='PerfilBarra'
 btnperfil.title='Desconectado "conecte-se"'
 bbdd.id='bbg'
+document.getElementById('MeuPerFoto').src=`src/Profile-PNG-Images.png`
 }else{
 var bnn=firebase.firestore()
 bnn.collection('UsuáriosGoogle').doc(`${logEmail}`).get().then((doc)=>{
@@ -359,12 +359,7 @@ document.getElementById('MeuPerFoto').src=`${Foto}`
 document.getElementById('MeuPerNome').innerHTML=`Olá, ${Usuário}`;
 //document.getElementById('MeuPerNome').innerHTML=`Olá, ${Usuário}`;
 document.getElementById('MeuPerEmail').innerHTML=`${Email}`;
-//document.getElementById("rua").innerHTML = doc.Rua;
-//document.getElementById("numero").innerHTML = doc.Numero;
-//document.getElementById("bairro").innerHTML = doc.Bairro;
-//document.getElementById("cidade").innerHTML = doc.Cidade;
-//document.getElementById("estado").innerHTML= doc.Estado;
-//document.getElementById('Cep').innerHTML=doc.CEP;
+
 lblG.innerHTML='Logado!'
 lblG.id='labellogarLater_'
 var bbdd=document.getElementById('bbg');
@@ -372,11 +367,7 @@ var btnperfil=document.getElementById('PerfilBarra');
 btnperfil.id='PerfilBarra_'
 btnperfil.title='Conectado "ATIVO"'
 bbdd.id='bbg_'
-if(!doc.Rua||doc.Rua==''||!doc.Bairro||doc.Bairro==''){
 
-}else{
- document.getElementById('endDiv').style.display='block'
-}
 }else{
 LocalUserClouse()
 var bbdd=document.getElementById('bbg');
@@ -387,22 +378,10 @@ bbdd.id-'bbg'
 }
 })
 }
-//localStorage.setItem('Rua','')
-//localStorage.setItem('Bairro','')
-//localStorage.setItem('Cidade','')
-//localStorage.setItem('Estado','')
-//localStorage.setItem('Numero','')
-//localStorage.setItem('CEP','')
 function  LocalUserClouse(){
-localStorage.setItem('GoogleNome', '')
-localStorage.setItem('GoogleEmail',`` )
-localStorage.setItem('GoogleFoto',`` )
-//localStorage.setItem('Rua','')
-//localStorage.setItem('Bairro','')
-//localStorage.setItem('Cidade','')
-//localStorage.setItem('Estado','')
-//localStorage.setItem('Numero','')
-//localStorage.setItem('CEP','')
+localStorage.setItem('GoogleNome','')
+localStorage.setItem('GoogleEmail',``)
+localStorage.setItem('GoogleFoto',``)
  }
 document.getElementById('desconectlab').addEventListener('click',function(){
 LocalUserClouse()
@@ -527,9 +506,6 @@ document.getElementById('btnDV').addEventListener('click',function(){
   devocional()
 
 })
-
-
-
 
 /////////////////Botões links estudos bíblicos//////////////////////////////////////////
 document.getElementById('estudo01').addEventListener('click',function(){
@@ -1019,6 +995,12 @@ receberAvaliacão()
 
 
 document.getElementById('MeuPerFoto').addEventListener('click', function(){
+          var conf= localStorage.getItem('GoogleFoto')
+          var logEmail = localStorage.getItem('GoogleEmail');
+          if(!conf|| conf==''||!logEmail|| logEmail==''||conf==null||logEmail==null){
+            Swal.fire('','Você Precisa se conectar com sua conta do Google!','')
+          }else{
+  
   var resp = document.getElementById('MeuPerFoto').src;
   Swal.fire({
     title: ``,
@@ -1038,6 +1020,7 @@ document.getElementById('MeuPerFoto').addEventListener('click', function(){
   document.getElementById('trocarFoto').addEventListener('click', function(){
     document.getElementById('fileInput').click();
   });
+          }
 });
 
 // Captura o arquivo escolhido
@@ -1088,7 +1071,9 @@ document.getElementById('fileInput').addEventListener('change', function(e){
       console.error("Erro ao enviar a foto:", error);
     });
   }
+
 });
+
 
 
 //clic pesquisa teclado
