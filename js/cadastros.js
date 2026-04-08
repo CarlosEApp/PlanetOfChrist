@@ -490,7 +490,7 @@ text: ``,
 html:`
 <div id="divInit"> 
 <img id='prodImgSalvo' src="" alt="Logo Orla Sul Marketplace" class="logo-swal" width="70%">
-<button id='btnTime'>☀️</button><p>Salvando...</p>
+<button id='btnTime'></button><p>Salvando...</p>
 <div id="myProgresos_" title="Progresos_">
 <div id="myBarr_">10%</div>
 </div>
@@ -659,9 +659,9 @@ var label=document.createElement('label');
 var label2=document.createElement('label');
 var label3=document.createElement('label');
 var label4=document.createElement('label');
-var botao=document.createElement('butonn');
-var botao2=document.createElement('butonn');
-var botao3=document.createElement('butonn');
+var botao=document.createElement('button');
+var botao2=document.createElement('button');
+var botao3=document.createElement('button');
 //IDs
 flexgrup.id='divlist';
 div.id='div1list';
@@ -709,6 +709,20 @@ listTab.appendChild(flexgrup);
 setTimeout(function(){
 document.getElementById('lblListaItens').innerHTML=`✅ <b id='b_list_1'>${resp}</b> - <b id='b_list_2'>(${itens})</b> itens`
 },1000)
+botao2.addEventListener('click', function(){
+  
+  var ex =firebase.firestore();
+  var exx =firebase.firestore();
+  ex.collection(`${doc.Lista_Cad}`).doc(`${doc.ID}`).delete()
+ 
+    exx.collection(`Lista Geral`).doc(`${doc.ID}`).delete()
+
+   Swal.fire('Doc. Excluido!','','success')
+   setTimeout(function(){
+   Swal.close();
+   window.location.reload()
+   },2000)
+})
 botao.addEventListener('click',function(){
 var list1=document.getElementById('ListaCategoriaVendas');
 list1.value= doc.Lista_Cad;

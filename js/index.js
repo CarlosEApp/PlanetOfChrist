@@ -795,13 +795,12 @@ document.body.style.paddingRight = '0px';
 
 document.getElementById('whats_a').addEventListener('click',function(){
 var pagina =`https://planetofchrist.netlify.app/`
-var loja=`https://planetofchrist.netlify.app/`
-var whatsappMessage =`✅Visite nossa Página na Web\n\n${pagina}`;
+var Youtube=`https://www.youtube.com/@PlanetofChrist`
+var whatsappMessage =`✅Visite nossa Página na Web e YouTube\n\nWeb 👉 ${pagina}\n\nYouTube 👉 ${Youtube}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
 }
-
 // Avaliação
 function avaliaçao(){
 var lognome= localStorage.getItem('GoogleNome')
@@ -832,7 +831,6 @@ document.getElementById('logAgora').addEventListener('click',function(){
    setTimeout(function(){
    Swal.close()
    },1000)
-
 })
 } else{
   Swal.fire({
@@ -865,7 +863,7 @@ document.getElementById('lblAv1').addEventListener('click',function(){
   var resp1= document.getElementById('lblAv1');
    resp1.id='star1';
    //alert('01');
- 
+
    sessionStorage.setItem('NotaAvalie','2')
       document.getElementById('labeStars').innerHTML=`🌟`
    setTimeout(function(){
@@ -895,7 +893,6 @@ document.getElementById('lblAv3').addEventListener('click',function(){
    resp2.id='star1';
    resp3.id='star1';
    //alert('01, 02, 03');
-
    sessionStorage.setItem('NotaAvalie','6')
       document.getElementById('labeStars').innerHTML=`🌟🌟🌟`
    setTimeout(function(){
@@ -913,7 +910,6 @@ document.getElementById('lblAv4').addEventListener('click',function(){
    resp3.id='star1';
    resp4.id='star1';
    //alert('01, 02, 03, 04');
-
    sessionStorage.setItem('NotaAvalie','8')
       document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟`
   setTimeout(function(){
@@ -933,7 +929,6 @@ document.getElementById('lblAv5').addEventListener('click',function(){
    resp4.id='star1';
    resp5.id='star1';
    //alert('01, 02, 03, 04, 05');
-   
    sessionStorage.setItem('NotaAvalie','10')
       document.getElementById('labeStars').innerHTML=`🌟🌟🌟🌟🌟`
   setTimeout(function(){
@@ -941,9 +936,7 @@ document.getElementById('lblAv5').addEventListener('click',function(){
    Swal.close()
    },1000)
 });
-
 }}
-
 //salve avaliação firebase
 function salveAvaliação(){
  var hora= sessionStorage.getItem('hora')
@@ -951,7 +944,6 @@ function salveAvaliação(){
 var lognome= localStorage.getItem('GoogleNome')
 var logEmail= localStorage.getItem('GoogleEmail')
 var nota=sessionStorage.getItem('NotaAvalie')
-
 var dba = firebase.firestore();
 dba.collection('Avaliações').doc(`${logEmail}`).set({
  Nome:lognome,
@@ -973,7 +965,6 @@ var nota=sessionStorage.getItem('NotaAvalie')
   if(doc){
     var doc= doc.data()
     var nota=  doc.Nota
-  
     sessionStorage.setItem('NotaAvalie', `${nota}`)
     if(nota==='2'){
  document.getElementById('labeStars').innerHTML=`🌟`
@@ -990,9 +981,6 @@ var nota=sessionStorage.getItem('NotaAvalie')
  })
 }
 receberAvaliacão()
-
-
-
 
 document.getElementById('MeuPerFoto').addEventListener('click', function(){
           var conf= localStorage.getItem('GoogleFoto')
@@ -1015,14 +1003,12 @@ document.getElementById('MeuPerFoto').addEventListener('click', function(){
     customClass: { popup: 'my-custom_img' },
     didOpen: () => { document.body.style.paddingRight = '0px'; }
   });
-
   // Quando clicar em "Trocar de foto"
   document.getElementById('trocarFoto').addEventListener('click', function(){
     document.getElementById('fileInput').click();
-  });
-          }
+   });
+  }
 });
-
 // Captura o arquivo escolhido
 document.getElementById('fileInput').addEventListener('change', function(e){
   var file = e.target.files[0];
@@ -1043,7 +1029,6 @@ document.getElementById('fileInput').addEventListener('change', function(e){
 
       // Atualiza localStorage
       localStorage.setItem('fotoUsuario', downloadURL);
-
       // Atualiza preview no modal
       document.getElementById('MeuPerFoto').src = downloadURL;
       localStorage.setItem('GoogleFoto',`${downloadURL}` )
@@ -1071,15 +1056,9 @@ document.getElementById('fileInput').addEventListener('change', function(e){
       console.error("Erro ao enviar a foto:", error);
     });
   }
-
 });
-
-
-
 //clic pesquisa teclado
-
   var botao = document.getElementById('pesq-1');
-
   // Captura o evento de tecla pressionada
   document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
@@ -1088,7 +1067,6 @@ document.getElementById('fileInput').addEventListener('change', function(e){
     }
   });
     
-
 //You tube
 function yuoTube(){
   window.open('https://www.youtube.com/@PlanetofChrist','_blank')
