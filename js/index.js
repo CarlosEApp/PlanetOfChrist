@@ -429,7 +429,13 @@ function serie(){
 window.open('html/filmes.html','_self')
   },700)
 }
-
+//Shorts
+function shorts(){
+   sessionStorage.setItem('Coleção','Shorts')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
+}
 //seleção de coleção
 document.getElementById('selectListaUm').addEventListener('change', function(){
   var resp= document.getElementById('selectListaUm').value;
@@ -447,6 +453,8 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
    serie()
    }else if(resp==='Desenhos'){
     desenhos()
+    }else if(resp==='Shorts'){
+      shorts()
    }else if(resp==='Documentários'){
    documentarios()
   }else if(resp==='sair'){

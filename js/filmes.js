@@ -377,6 +377,12 @@ function devocional(){
 window.location.reload()
   },700)
 }
+function shorts(){
+   sessionStorage.setItem('Coleção','Shorts')
+  setTimeout(function(){
+window.location.reload()
+  },700)
+}
 
 document.getElementById('SermõesLater').addEventListener('click',function(){
 sermãoHead()
@@ -401,6 +407,8 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
     desenhos()
    }else if(resp==='Documentários'){
    documentarios()
+   }else if(resp==='Shorts'){
+ shorts()
   }else if(resp==='sair'){
    var resp_= document.getElementById('selectListaUm');
   resp_.value=''

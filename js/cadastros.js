@@ -290,6 +290,7 @@ html:`
        <option value="Filmes">Filmes</option>
          <option value="Séries">Series</option>
          <option value="Desenhos">Desenhos</option>
+         <option value="Shorts">Shorts</option>
           <option value="Documentários">Documentários</option>
            <option value="Lista Geral">Lista Geral</option>
 </div>
@@ -793,6 +794,7 @@ html:`
       <option value="Filmes">Filmes</option>
         <option value="Séries">Series</option>
         <option value="Desenhos">Desenhos</option>
+        <option value="Shorts">Shorts</option>
          <option value="Documentários">Documentários</option>
           <option value="Lista Geral">Lista Geral</option>
 </div>
