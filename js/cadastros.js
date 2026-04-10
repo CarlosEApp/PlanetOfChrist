@@ -711,18 +711,53 @@ setTimeout(function(){
 document.getElementById('lblListaItens').innerHTML=`✅ <b id='b_list_1'>${resp}</b> - <b id='b_list_2'>(${itens})</b> itens`
 },1000)
 botao2.addEventListener('click', function(){
+ var hora= sessionStorage.getItem('hora')
+ var data= sessionStorage.getItem('data')
   
+  Swal.fire({
+title: `Excluir Arquivo?`,
+html: `
+ <p id='pp'>Exclusão permanente!</p>
+<br>
+<button id="ExAgora" title="">Sim excluir agora</button>            
+<br>
+`,
+background: 'rgb(247, 247, 247)', // Cor de fundo
+color: '#292929', // Cor do texto// Cor do texto
+showCloseButton: true,  
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_logar' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('ExAgora').addEventListener('click', function(){
+
+  var dbget= firebase.firestore()
+  dbget.collection('Excluidos').doc(`${doc.ID}`).set({
+    Data:data,
+    Hora:hora,
+    Nome:doc.Titulo,
+    Lista:doc.Lista_Cad,
+    ID: doc.ID,
+    Imagem: doc.Imagem
+  })
   var ex =firebase.firestore();
   var exx =firebase.firestore();
-  ex.collection(`${doc.Lista_Cad}`).doc(`${doc.ID}`).delete()
- 
-    exx.collection(`Lista Geral`).doc(`${doc.ID}`).delete()
 
+  ex.collection(`${doc.Lista_Cad}`).doc(`${doc.ID}`).delete()
+  exx.collection(`Lista Geral`).doc(`${doc.ID}`).delete()
+  
    Swal.fire('Doc. Excluido!','','success')
    setTimeout(function(){
    Swal.close();
    window.location.reload()
    },2000)
+})
+
 })
 botao.addEventListener('click',function(){
 var list1=document.getElementById('ListaCategoriaVendas');

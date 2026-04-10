@@ -1209,8 +1209,8 @@ background-color: #272726d8;
 .my-custom_compartilhar{
 width: 95%;
 max-width: 400px;
+border-radius: 7px;
 }
-
 #star1{
 background-color: #ff7b00d8;
 transition: transform 0.7s ease;

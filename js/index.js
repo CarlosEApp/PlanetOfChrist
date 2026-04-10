@@ -779,8 +779,7 @@ function Comparltlhar(){
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
-
-
+<p>Compartilhe por WhatsApp!</p><br>
 <button id="whats_a" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
 <br>
 `,

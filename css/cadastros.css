@@ -476,3 +476,29 @@ outline: none;
 .my-listselect{
     margin-bottom: 160px;
 }
+.my-custom_logar{
+    width: 95%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+.my-custom_logar h2{
+font-size: clamp(1.300rem, 0.3vw  + 0.5rem, 1.400rem);
+}
+.my-custom_logar #pp{
+font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+ color: #000000bb;
+}
+#ExAgora{
+    width: 90%;
+    padding: 12px;
+    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+    background-color: rgb(6, 71, 0);
+    cursor:pointer;
+    border: 0cap;
+    color: aliceblue;
+     border-radius: 5px;
+}
+#ExAgora:hover{
+    background-color: rgb(14, 172, 0);
+   
+}
