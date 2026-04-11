@@ -435,6 +435,10 @@ function shorts(){
   setTimeout(function(){
 window.open('html/filmes.html','_self')
   },700)
+} 
+
+function ver_shorts(){
+  shorts()
 }
 //seleção de coleção
 document.getElementById('selectListaUm').addEventListener('change', function(){
@@ -631,7 +635,7 @@ if (i == 0){
 i = 1;
 var elem = document.getElementById("myBarr");
 var width = 1;
-var id = setInterval(frame, 33);
+var id = setInterval(frame, 46);
 function frame() {
 if (width >= 100) {
 i = 0;
@@ -1079,4 +1083,75 @@ function yuoTube(){
   window.open('https://www.youtube.com/@PlanetofChrist','_blank')
 }
 
-  
+ function listaLateral(){
+  var itens = 0
+    var listTab = document.getElementById('laterList__');
+listTab.innerHTML = '';
+var db = firebase.firestore();
+var produtosRef = db.collection(`Shorts`);
+
+produtosRef.get().then((querySnapshot) => {
+  querySnapshot.forEach(docSnap => {
+    var doc = docSnap.data();
+ //alert (itens)
+  if(itens >= 5){
+
+  } else{
+    itens++
+    // Criar elementos
+    var flexgrup = document.createElement('div');
+    var divInfo = document.createElement('div');
+    var divVideo = document.createElement('div');
+    var divActions = document.createElement('div');
+    var iframe = document.createElement('iframe');
+    var titulo = document.createElement('h4');
+    var subtitulo = document.createElement('p');
+    var botaoEditar = document.createElement('button');
+   
+    // IDs e classes
+    flexgrup.className = 'video-item';
+    iframe.className = 'youtube-player';
+    iframe.width = "160";
+    iframe.height = "280";
+    iframe.allowFullscreen = false;
+    divVideo.id='divggr'
+
+    // Conteúdos
+    // Supondo que você tenha salvo no Firestore o ID do vídeo do YouTube
+    iframe.src = `https://www.youtube.com/embed/${doc.Links}`;
+    titulo.innerHTML = doc.Titulo;
+    subtitulo.innerHTML = doc.SubTitulo;
+
+    botaoEditar.innerHTML = '<i class="fa-solid fa-eye"></i>';
+     
+
+    // Montagem
+     
+    divVideo.appendChild(iframe);
+    divActions.appendChild(botaoEditar);
+   
+    divInfo.appendChild(titulo);
+    divInfo.appendChild(subtitulo);
+    flexgrup.appendChild(divVideo);
+    flexgrup.appendChild(divInfo);
+     flexgrup.appendChild(divActions);
+    listTab.appendChild(flexgrup);
+
+    botaoEditar.addEventListener('click', () => {
+  if (iframe.requestFullscreen) {
+    iframe.requestFullscreen();
+  } else if (iframe.mozRequestFullScreen) { // Firefox
+    iframe.mozRequestFullScreen();
+  } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari e Opera
+    iframe.webkitRequestFullscreen();
+  } else if (iframe.msRequestFullscreen) { // IE/Edge
+    iframe.msRequestFullscreen();
+  }
+});
+  }
+  });
+
+})
+ }
+
+listaLateral()

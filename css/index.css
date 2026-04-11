@@ -11,7 +11,7 @@ cursor: pointer;
 }
 ::-webkit-scrollbar-thumb {
 margin-left: 2px;
-background-color: rgba(240, 239, 239, 0.158);
+background-color: rgba(240, 239, 239, 0);
 /* Cor do polegar da barra de rolagem */
 margin-top: 1px;
 border-radius: 5px;
@@ -1291,4 +1291,53 @@ padding-right: 10px;
 #imgbtnYouTube:hover{
 background-color: rgb(114, 214, 0);
 box-shadow: 0 2px 4px rgba(255, 81, 0, 0.774);
+}
+
+#listalateral_{
+    margin: auto;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    max-height: 170vh;
+    margin-top: 10px;
+    
+}
+#div_lateral h2{
+    color: aliceblue;
+}
+#div_lateral #btnversh{
+    margin: auto;
+    width: 90%;
+    cursor: pointer;
+    padding: 5px;
+    border: 0cap;
+    background-color: rgb(201, 201, 201);
+    border-radius: 5px;
+    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+    color: #555555;
+}
+#div_lateral  #btnversh:hover{
+    background-color: rgb(243, 246, 255);
+    color: #000000;
+}
+
+#laterList__ h4, #laterList__ p {
+    color: rgb(180, 180, 180);
+}
+#laterList__ button{
+    border: 0cap;
+    cursor: pointer;
+    font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+    background-color: transparent;
+    color: aliceblue;
+}
+#divggr{
+    margin: auto;
+    max-width: 200px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 20px;
+ 
 }
