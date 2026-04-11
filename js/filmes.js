@@ -263,7 +263,7 @@ html:`
 <div id='btnTime_'>
 <img src="../src/Logo2.png" alt="" class="logo-swal" width="55%"></div>
 <div id="divInit"> 
-<button id='btnTime'>⏳ </button> 
+<button id='btnTime'></button> 
 <div id="myProgresos" title="Progresos">
 <div id="myBarr">10%</div>
 </div>

@@ -518,3 +518,12 @@ color: red;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+.my-customTime  img{
+    text-align: center;
+   max-width: 120px;
+   margin-left: 40px;
+}
+.my-customTime {
+    text-align: center;
+
+}
