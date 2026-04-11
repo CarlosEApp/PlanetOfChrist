@@ -1321,17 +1321,25 @@ box-shadow: 0 2px 4px rgba(255, 81, 0, 0.774);
 #div_lateral  #btnversh:hover{
     background-color: rgb(243, 246, 255);
     color: #000000;
+    
 }
 
-#laterList__ h4, #laterList__ p {
+#laterList__  h4, #laterList__ p {
+     font-size: clamp(0.800rem, 0.3vw  + 0.5rem, 0.900rem);
     color: rgb(180, 180, 180);
+   
 }
 #laterList__ button{
     border: 0cap;
     cursor: pointer;
-    font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.300rem);
+    font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
     background-color: transparent;
-    color: aliceblue;
+    color: rgb(218, 216, 217);
+    font-weight: normal;
+}
+
+#laterList__ button:hover{
+    color: rgb(0, 255, 13);
 }
 #divggr{
     margin: auto;

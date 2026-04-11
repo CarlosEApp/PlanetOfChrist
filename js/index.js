@@ -603,6 +603,7 @@ document.getElementById('estudo27').addEventListener('click',function(){
 });
 
 //inicio progresso
+
 function initPage(){
 Swal.fire({ 
 title: ``,
@@ -611,7 +612,7 @@ html:`
 <div id='btnTime_'>
 <img src="src/Logo2.png" alt="" class="logo-swal" width="55%"></div>
 <div id="divInit"> 
-<button id='btnTime'>⏳ </button> 
+<button id='btnTime'></button> 
 <div id="myProgresos" title="Progresos">
 <div id="myBarr">10%</div>
 </div>
@@ -654,15 +655,15 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 }
 }
 }
+
 function swalclose(){
 Swal.close()
 }
 initPage()
 
 setTimeout(function(){
-  
 videosDevos()
-},3000)
+},3700)
 
 //Pesquisa
 function pesquisarProduto() {
@@ -1094,7 +1095,7 @@ produtosRef.get().then((querySnapshot) => {
   querySnapshot.forEach(docSnap => {
     var doc = docSnap.data();
  //alert (itens)
-  if(itens >= 5){
+  if(itens >= 7){
 
   } else{
     itens++
@@ -1111,8 +1112,8 @@ produtosRef.get().then((querySnapshot) => {
     // IDs e classes
     flexgrup.className = 'video-item';
     iframe.className = 'youtube-player';
-    iframe.width = "160";
-    iframe.height = "280";
+    iframe.width = "120";
+    iframe.height = "210";
     iframe.allowFullscreen = false;
     divVideo.id='divggr'
 
@@ -1122,11 +1123,9 @@ produtosRef.get().then((querySnapshot) => {
     titulo.innerHTML = doc.Titulo;
     subtitulo.innerHTML = doc.SubTitulo;
 
-    botaoEditar.innerHTML = '<i class="fa-solid fa-eye"></i>';
-     
+    botaoEditar.innerHTML = '<i class="fa-solid fa-desktop"></i> ';
 
     // Montagem
-     
     divVideo.appendChild(iframe);
     divActions.appendChild(botaoEditar);
    
@@ -1154,4 +1153,16 @@ produtosRef.get().then((querySnapshot) => {
 })
  }
 
+// Função menos para celular
+function isMobile() {
+  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+}
+
+if (!isMobile()) {
+  listaLateral(); // só chama se NÃO for celular
+}
+
+
+if (!window.matchMedia("(max-width: 768px)").matches) {
 listaLateral()
+}
