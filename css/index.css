@@ -1343,12 +1343,18 @@ box-shadow: 0 2px 4px rgba(255, 81, 0, 0.774);
 #laterList__ button:hover{
     color: rgb(0, 255, 13);
 }
+#divggr iframe{
+    border-radius: 10px;
+    border: 5px solid #000000;
+}
 #divggr{
     margin: auto;
-    max-width: 200px;
+    max-width: 130px;
+    padding: 0;
     text-align: center;
     margin-top: 20px;
     border-radius: 20px;
+ 
  
 }
 .my-customTime  img{
