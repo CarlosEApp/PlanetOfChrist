@@ -1163,6 +1163,6 @@ if (!isMobile()) {
 }
 
 
-if (!window.matchMedia("(max-width: 768px)").matches) {
-listaLateral()
-}
+//if (!window.matchMedia("(max-width: 768px)").matches) {
+//listaLateral()
+//}
