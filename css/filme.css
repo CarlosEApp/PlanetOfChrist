@@ -499,16 +499,21 @@ color: red;
   outline: none;
   cursor: pointer;
   background-color: transparent;
-  border: 0cap;
-  background-color: #000000;
-  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.100rem);
+  border: 1px;
+  background-color: #3a3a3a;
+  font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
   font-family: 'Poppins', sans-serif;
+    padding: 4px;
+  border-radius: 5px;
+  
 }
 #selectListaUm option{
   font-family: 'Poppins', sans-serif;
   padding: 10px;
   cursor: pointer;
   color: rgb(30, 255, 0);
+  border-radius: 10px;
+  background-color: #000000
 }
 #fecharclickperfil{
   margin-top: 10px;
