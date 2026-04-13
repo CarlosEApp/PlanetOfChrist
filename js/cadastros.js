@@ -284,6 +284,7 @@ html:`
  <option value='Destaques'>Em destaque</option>
   <option value='Lançamentos'>Lançamentos</option>
    <option value="Sermões">VD. Sermões</option>
+    <option value="180° Graus">Testemunhos 180°</option>
     <option value="devocional">VD. Devocionais</option>
      <option value="vida&saúde">VD. Vida & saúde</option>
       <option value="Estudos">Estudos Bíblicos</option>
@@ -823,6 +824,7 @@ html:`
 <option value='Destaques'>Em destaque</option>
  <option value='Lançamentos'>Lançamentos</option>
   <option value="Sermões">VD. Sermões</option>
+   <option value="180° Graus">Restemunhos 180°</option>
    <option value="devocional">VD. Devocionais</option>
     <option value="vida&saúde">VD. Vida & saúde</option>
      <option value="Estudos">Estudos Bíblicos</option>

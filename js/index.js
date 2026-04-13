@@ -15,6 +15,13 @@ var firebaseConfigure = {
 };
 firebase.initializeApp(firebaseConfigure);
 /////////////////////////////////////////////////////////////////////////////
+
+if (!window.matchMedia("(max-width: 910px)").matches) {
+listaLateral()
+
+}
+//////////////////////////
+
 sessionStorage.setItem('Link_Result_PSQ', '')
 // Tela Cheia
 function toggleFullScreen() {
@@ -451,6 +458,8 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
  vidaEsaude()
   }else if(resp==='Sermões'){
   sermãoHead()
+  }else if(resp==='180° Graus'){
+testemunho()
   }else if(resp==='Filmes'){
    filmesGospel()
   }else if(resp==='Séries'){
@@ -466,6 +475,12 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
   resp_.value=''
   }
 });
+function testemunho(){
+   sessionStorage.setItem('Coleção','180° Graus')
+  setTimeout(function(){
+window.open('html/filmes.html','_self')
+  },700)
+}
 
 document.getElementById('SermõesLater').addEventListener('click',function(){
 sermãoHead()
@@ -1154,15 +1169,6 @@ produtosRef.get().then((querySnapshot) => {
  }
 
 // Função menos para celular
-function isMobile() {
-  return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-}
-
-if (!isMobile()) {
-  listaLateral(); // só chama se NÃO for celular
-}
 
 
-//if (!window.matchMedia("(max-width: 768px)").matches) {
-//listaLateral()
-//}
+

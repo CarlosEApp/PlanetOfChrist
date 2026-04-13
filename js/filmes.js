@@ -349,6 +349,12 @@ function sermãoHead(){
 window.location.reload()
   },700)
 }
+function testemunho(){
+   sessionStorage.setItem('Coleção','180° Graus')
+  setTimeout(function(){
+window.location.reload()
+  },700)
+}
 
 function desenhos(){
  sessionStorage.setItem('Coleção','Desenhos')
@@ -401,6 +407,8 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
    sermãoHead()
   }else if(resp==='Filmes'){
    Filme()
+  }else if(resp==='180° Graus'){
+   testemunho()
   }else if(resp==='Séries'){
    serie()
    }else if(resp==='Desenhos'){
