@@ -429,7 +429,7 @@ flex-wrap: wrap;
 padding-top: 30px;
 padding-bottom: 50px;
 }
-#UrlDevo{
+#UrlDevo,  #Url180{
 margin: auto;
 width: 100%;
 width: 560px;
@@ -486,7 +486,7 @@ color: #777777;
 font-size: clamp(0.8, 0.3vw  + 0.5rem, 0.900rem); 
 }
 @media (max-width: 1200px) {
-#UrlVidaSaude{
+#UrlVidaSaude, #UrlDevo,  #Url180{
 width: 100%;
 width: 560px;
 min-height: 315px;
@@ -517,7 +517,7 @@ background-color: rgba(0, 255, 255, 0);
 flex-wrap: wrap;
 font-family: 'Poppins', sans-serif;
 }
-#UrlDevo,#UrlVidaSaude{
+#UrlDevo,#UrlVidaSaude, #Url180{
 margin: auto;
 width: 100%;
 min-height: 220px;
@@ -1304,7 +1304,7 @@ box-shadow: 0 2px 4px rgba(255, 81, 0, 0.774);
     flex-direction: column;
     align-items: center;
     overflow: auto;
-    max-height: 160vh;
+    max-height: 200vh;
     margin-top: 10px;
     
 }

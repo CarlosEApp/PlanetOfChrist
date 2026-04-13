@@ -230,9 +230,34 @@ var vdV= firebase.firestore()
  }
 })
 })
-},100)
+},300);
+
+// 80 Graus
+setTimeout(function(){
+var vd180= firebase.firestore()
+ var produtosRef = vd180.collection("180° Graus");
+ produtosRef.get().then((querySnapshot) => {
+ querySnapshot.forEach((doc) => {
+ var doc = doc.data();   // dados do documento       // ID do documento
+ var itens = querySnapshot.size;
+ 
+ if(doc.Lista_ReF=='Em_destaque'){
+   var urlVida=doc.Links;
+  var result2= urlVida.trim();
+  document.getElementById('Url180').src="https://www.youtube.com/embed/"+ result2;
+  document.getElementById('lblData180').innerHTML=`${doc.OBS}`
+  document.getElementById('lblHora180').innerHTML=`AT: ${doc.Data_Atualizada}`;
+ }else{
+ }
+})
+})
+},500)
 }
+
 videosDevos()
+
+
+
 //Ir para o topo da pagina
 function Home(){
   document.getElementById('a_inicio').click()
