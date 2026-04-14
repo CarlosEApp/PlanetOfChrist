@@ -1,6 +1,6 @@
 
-
-
+sessionStorage.setItem('ItensShorts', 1)
+ 
 // INICIAR FIREBASE
 
 var firebaseConfigure = {
@@ -74,7 +74,7 @@ document.getElementById('banner01').src=doc.Imagem01;
 document.getElementById('banner02').src=doc.Imagem02;
 document.getElementById('banner03').src=doc.Imagem03;
 document.getElementById('banner04').src=doc.Imagem04;
-document.getElementById('banner05').src=doc.Imagem05;
+//document.getElementById('banner05').src=doc.Imagem05;
 //document.getElementById('banner09').src=doc.Imagem06;
 //document.getElementById('banner06').src=doc.Imagem07;
 //document.getElementById('banner07').src=doc.Imagem08;
@@ -83,6 +83,7 @@ document.getElementById('banner05').src=doc.Imagem05;
 })
 }
 iniciar_banners()
+
 //Menu
 function fecharperf(){
 document.getElementById("divConfgPerfil").classList.remove("divConfgPerfil-ativo");
@@ -94,20 +95,22 @@ document.getElementById('fecharclickperfil').addEventListener('click',function()
  fecharperf()
 })
 //carrocel
+
 let currentIndex = 0;
 function moveSlide(direction) {
 const items = document.querySelectorAll('.carousel-item');
 const total = items.length;
-if(currentIndex==5){
-currentIndex =0
+if(currentIndex==2){
+
 }
 currentIndex = (currentIndex + direction + total) % total;
 document.querySelector('.carousel-inner').style.transform =
 `translateX(-${currentIndex * 100}%)`;
 }
 //Loop carrocel
+
 let lastTime = 0;
-var delay = 12000; // 7 segundos
+var delay = 25000; // 7 segundos
 
 function loop(timestamp) {
   if (!lastTime) lastTime = timestamp;
@@ -120,6 +123,7 @@ function loop(timestamp) {
 }
 // inicia o loop
 requestAnimationFrame(loop);
+
 /////////////////////
 //Adiministrador Geral
 var adbb = firebase.firestore();
@@ -253,10 +257,7 @@ var vd180= firebase.firestore()
 })
 },500)
 }
-
 videosDevos()
-
-
 
 //Ir para o topo da pagina
 function Home(){
@@ -399,7 +400,6 @@ var btnperfil=document.getElementById('PerfilBarra');
 btnperfil.id='PerfilBarra_'
 btnperfil.title='Conectado "ATIVO"'
 bbdd.id='bbg_'
-
 }else{
 LocalUserClouse()
 var bbdd=document.getElementById('bbg');
@@ -480,20 +480,20 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
   if(resp==='devocional')   {
   devocional()
   } else if(resp==='vida&saúde'){
- vidaEsaude()
+  vidaEsaude()
   }else if(resp==='Sermões'){
   sermãoHead()
   }else if(resp==='180° Graus'){
-testemunho()
+   testemunho()
   }else if(resp==='Filmes'){
    filmesGospel()
   }else if(resp==='Séries'){
    serie()
-   }else if(resp==='Desenhos'){
+  }else if(resp==='Desenhos'){
     desenhos()
-    }else if(resp==='Shorts'){
+  }else if(resp==='Shorts'){
       shorts()
-   }else if(resp==='Documentários'){
+  }else if(resp==='Documentários'){
    documentarios()
   }else if(resp==='sair'){
    var resp_= document.getElementById('selectListaUm');
@@ -676,7 +676,7 @@ if (i == 0){
 i = 1;
 var elem = document.getElementById("myBarr");
 var width = 1;
-var id = setInterval(frame, 46);
+var id = setInterval(frame, 37);
 function frame() {
 if (width >= 100) {
 i = 0;
@@ -696,6 +696,8 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 }
 }
 
+document.getElementById('pesquise').value=""
+sessionStorage.setItem('Link_Result_PSQ', '')
 function swalclose(){
 Swal.close()
 }
@@ -703,7 +705,7 @@ initPage()
 
 setTimeout(function(){
 videosDevos()
-},3700)
+},3000)
 
 //Pesquisa
 function pesquisarProduto() {
@@ -737,7 +739,7 @@ document.body.style.paddingRight = '0px';
  setTimeout(function(){
    
 Swal.close()
-    },25000)
+    },2800)
  },1000)
   var db= firebase.firestore()
   db.collection("Lista Geral").get().then(snapshot => {
@@ -1123,8 +1125,9 @@ document.getElementById('fileInput').addEventListener('change', function(e){
 function yuoTube(){
   window.open('https://www.youtube.com/@PlanetofChrist','_blank')
 }
-
+ sessionStorage.setItem('ItensShorts', 1)
  function listaLateral(){
+  var itensShorts=sessionStorage.getItem('ItensShorts')
   var itens = 0
     var listTab = document.getElementById('laterList__');
 listTab.innerHTML = '';
@@ -1135,7 +1138,7 @@ produtosRef.get().then((querySnapshot) => {
   querySnapshot.forEach(docSnap => {
     var doc = docSnap.data();
  //alert (itens)
-  if(itens >= 7){
+  if(itens >= `${itensShorts}`){
 
   } else{
     itens++
@@ -1175,7 +1178,7 @@ produtosRef.get().then((querySnapshot) => {
     flexgrup.appendChild(divInfo);
      flexgrup.appendChild(divActions);
     listTab.appendChild(flexgrup);
-
+    
     botaoEditar.addEventListener('click', () => {
   if (iframe.requestFullscreen) {
     iframe.requestFullscreen();
@@ -1195,5 +1198,13 @@ produtosRef.get().then((querySnapshot) => {
 
 // Função menos para celular
 
+function ver_shorts_(){
+   var itensShorts=sessionStorage.getItem('ItensShorts')
+   var resp= Number(itensShorts) + Number(3) 
+   //alert(resp)
+  sessionStorage.setItem('ItensShorts', resp)
+  listaLateral()
+    document.getElementById('a_inicioL').click()
+}
 
 

@@ -58,8 +58,6 @@ localStorage.setItem('data', data)
 localStorage.setItem('hora', timeString)
 }, 1000)
 
-
-
 //Lista Devocional
 function filmesSites(){
   var coleção=sessionStorage.getItem('Cadastro')
@@ -148,7 +146,6 @@ produtosRef.get().then((querySnapshot) => {
     filmesSites()
   },1000)
  }
-
 
 //Pesquisa
 function pesquisarProduto() {
@@ -255,6 +252,7 @@ function fech(){
    document.getElementById('respPesquisasadiv').style.display='none'
 }
 //inicio progresso
+/*
 function initPage(){
 Swal.fire({ 
 title: ``,
@@ -308,7 +306,8 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 function swalclose(){
 Swal.close()
 }
-initPage()
+*/
+//initPage()
 
 //Ir para o topo da pagina
 function Home(){
@@ -423,12 +422,10 @@ document.getElementById('selectListaUm').addEventListener('change', function(){
   }
 });
 
-
 //voltar
  document.getElementById('lblVoltar').addEventListener('click',function(){
 window.open(`../index.html`,'_self')
  })
-
 
  //clic pesquisa teclado
 //const input = document.getElementById('meuInput');
