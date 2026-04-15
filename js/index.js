@@ -1200,7 +1200,7 @@ produtosRef.get().then((querySnapshot) => {
 
 function ver_shorts_(){
    var itensShorts=sessionStorage.getItem('ItensShorts')
-   var resp= Number(itensShorts) + Number(3) 
+   var resp= Number(itensShorts) + Number(1) 
    //alert(resp)
   sessionStorage.setItem('ItensShorts', resp)
   listaLateral()
