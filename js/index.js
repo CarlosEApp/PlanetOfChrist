@@ -224,7 +224,7 @@ var vdV= firebase.firestore()
  var doc = doc.data();   // dados do documento       // ID do documento
  var itens = querySnapshot.size;
  
- if(doc.Data_Apresent==data){
+ if(doc.Lista_ReF=='Em_destaque'){
    var urlVida=doc.Links;
   var result2= urlVida.trim();
   document.getElementById('UrlVidaSaude').src="https://www.youtube.com/embed/"+ result2;
